@@ -1,0 +1,13 @@
+{% load static wagtailcore_tags wagtailimages_tags core_tags %}
+
+<!-- twitter card -->
+<meta name="twitter:card" content="photo">
+<meta name="twitter:site" content="@twitter_handler">
+<meta name="twitter:title" content="{% block title_twitter %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %} – Your description{% endblock %}">
+{% if self.og_image and self.og_image.image %}
+    {% image self.og_image.image width-400 as tmp_twitter_image %}
+    <meta name="twitter:image:src" content="{{ BASE_URL }}{{ tmp_twitter_image.url }}">
+{% else %}
+    <meta name="twitter:image:src" content="{{ BASE_URL }}{% static 'images/springtail.png' %}">
+{% endif %}
+<!-- end:twitter card -->
