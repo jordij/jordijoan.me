@@ -1979,6 +1979,12 @@
 		.icon > .label {
 			display: none;
 		}
+/* Figure */
+
+figure img {
+	width: 100%;
+	height: auto;
+}
 
 /* Image */
 
@@ -2931,7 +2937,7 @@
 			#footer {
 				background-attachment: scroll;
 				background-color: #1f1815;
-				background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+				background-image: url("images/overlay.png"), url("../images/bg.jpg");
 				background-position: top left,						bottom center;
 				background-repeat: repeat,							no-repeat;
 				background-size: auto,							cover;

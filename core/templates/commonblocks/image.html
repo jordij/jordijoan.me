@@ -1,0 +1,18 @@
+{% load commonblocks_tags wagtailimages_tags %}
+
+<figure>
+    {% image self.image width-800 class="img-responsive" alt=self.get_title %}
+    
+    {% if self.caption %}
+        <figcaption>{{ self.caption|simplerichtext }}</figcaption>
+    {% endif %}
+
+     {% if self.license_url %}
+        <small><a rel="license" title="{{ self.license_name }}" href="{{ self.license_url }}">{{ self.license_name }}</a></small>
+    {% endif %}
+
+     {% if self.attribution %}
+        <span>{{ self.attribution }}</span>
+    {% endif %}
+
+</figure>

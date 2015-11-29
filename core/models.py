@@ -1,8 +1,7 @@
-from datetime import timedelta, date
+from datetime import date
 
-from django.db import models
-from django.core.exceptions import ObjectDoesNotExist
 import django.db.models.options as options
+from django.db import models
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils.translation import ugettext_lazy as _
 
@@ -21,6 +20,7 @@ from commonblocks.blocks import *
 from commonblocks.fields import SimpleRichTextField
 
 from core.snippets import LinkFields
+from core.blocks import CodeBlock
 
 options.DEFAULT_NAMES = options.DEFAULT_NAMES + ('description',)
 
@@ -108,6 +108,7 @@ class BasePage(Page):
             ('links', CommonLinksBlock()),
             ('quote', CommonQuoteBlock()),
             ('video', CommonVideoBlock()),
+            ('code', CodeBlock()),
         ],
         null=True,
         blank=True,
