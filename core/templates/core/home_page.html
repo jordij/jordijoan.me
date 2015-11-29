@@ -1,8 +1,21 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
-{% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
+{% load wagtailcore_tags commonblocks_tags %}
 
 {% block content %}
-    <h1>{{ self.title }}</h1>
-    {{ self.body|richtext }}
+    {% for page in pages %}
+        <article>
+            <header class="major">
+                <h2>{{ page.title }}</h2>
+                <p>{{ page.date|date:"j M Y" }}</p>
+            </header>
+            
+            {{ page.intro|simplerichtext }}
+            <ul class="actions">
+                <li><a href="{% pageurl page %}" class="button">Read More</a></li>
+            </ul>
+        </article>
+    {% endfor %}
+
+    {{ self.body }}
+
 {% endblock %}

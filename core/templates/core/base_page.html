@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <header class="major">
+        <h1>{{ self.title }}</h1>
+        <p>{{ page.date|date:"j M Y" }}</p>
+    </header>
+
+    {% for block in self.body %}
+        {{ block }}
+    {% endfor %}
+
+    {% if self.tags %}
+        <ul class="actions horizontal small">
+            {% for tag in self.tags.all  %}
+            <li>
+                <a href="{% pageurl self.parent %}?tag={{ tag.slug }}" class="button special small">{{ tag.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

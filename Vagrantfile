@@ -2,14 +2,12 @@
 # vi: set ft=ruby :
 
 # Set your project name
-PROJECT_NAME = 'jordijoan.me'
+PROJECT_NAME = 'jordijoan'
 
 Vagrant.configure(2) do |config|
     # Base box to build off, and download URL for when it doesn't exist on the user's system already
-    config.vm.box = "wagtail-base-v0.3"
-    config.vm.box_url = "http://rich.wagtail.springload.co.nz/wagtail-base-v0.3.box"
-    # Auckland peeps, comment the previous line and uncomment the next one
-    # config.vm.box_url = "https://www.dropbox.com/s/e229abqxjkeaj8o/wagtail-base-v0.3.box?dl=1"
+    config.vm.box = "torchbox/wagtail"
+    config.vm.box_version = "~> 1.0"
 
     # Forward a port from the guest to the host, which allows for outside
     # computers to access the VM, whereas host only networking does not.
@@ -19,8 +17,6 @@ Vagrant.configure(2) do |config|
     # Share additional folders, one with the project, another with the media folder mounted from
     # the preview site in delila
     config.vm.synced_folder ".", "/home/vagrant/" + PROJECT_NAME
-    # Enable softlinks (preview media folder), Auckland peeps must comment it. If in dev local mode comment it too.
-    #config.vm.synced_folder "/Volumes/Preview Sites/" + PROJECT_NAME + "/media/", "/home/vagrant/" + PROJECT_NAME + "/media" 
 
     # Forward agent
     config.ssh.forward_agent = true

@@ -17,36 +17,27 @@ def content_type(model):
     return model.__class__.__name__
 
 
-@register.inclusion_tag('core/includes/menu_snippet.html', takes_context=True)
-def get_menu_snippet(context, menu_name=None, current_page=None, css_class="nav"):
+@register.inclusion_tag('core/includes/footer.html', takes_context=True)
+def footer(context):
     """
-    Retrieves the MenuElement(s) under the NavigationMenu with given menu_name
+    Retrieves the MenuElement(s) under the NavigationMenu with menu_name as "footer"
     """
-    menu_items = []
-    if menu_name is None or current_page is None:
-        return None
     try:
-        menu_items = NavigationMenu.objects.get(menu_name=menu_name).items
+        items = NavigationMenu.objects.get(menu_name='footer').items
     except ObjectDoesNotExist:
         return None
 
-    # Set ancestor flag to true if current_page under item link
-    if current_page:
-        for item in menu_items:
-            if item.link_page and \
-                    (current_page.is_descendant_of(item.link_page) or current_page.id == item.link_page.id):
-                item.ancestor = True
     result = {
-       'links': menu_items,
-       'css_class': css_class,
+       'items': items,
     }
-
+    print items
     if 'request' in context:
         result['request'] = context['request']
     else:
         result['request'] = None
 
     return result
+
 
 @register.inclusion_tag('core/includes/menu.html', takes_context=True)
 def navigation_menu(context, menu_name=None, current_page=None):

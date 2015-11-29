@@ -4,21 +4,23 @@ from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 import django.db.models.options as options
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.utils.translation import ugettext_lazy as _
 
-from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailcore.models import Page, Orderable
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
+from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel
+from wagtail.wagtailcore.fields import StreamField
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-
 from wagtail.wagtailsearch import index
 
 from modelcluster.fields import ParentalKey
 from modelcluster.tags import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 from bs4 import BeautifulSoup
+from commonblocks.blocks import *
+from commonblocks.fields import SimpleRichTextField
 
-from core.utilities import *
-from core.snippets import *
+from core.snippets import LinkFields
 
 options.DEFAULT_NAMES = options.DEFAULT_NAMES + ('description',)
 
@@ -38,47 +40,23 @@ class RelatedLink(LinkFields):
         abstract = True
 
 
-class CarouselItem(models.Model):
+class HomePage(Page):
     """
-    A set of carousel images
+    HomePage class, inheriting from wagtailcore.Page straight away
     """
-    image = models.ForeignKey(
+    subpage_types = ['core.BasePage']
+    feed_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    embed_url = models.URLField("Embed URL", blank=True)
-    caption = models.CharField(max_length=255, blank=True)
-
-    panels = [
-        ImageChooserPanel('image'),
-        FieldPanel('embed_url'),
-        FieldPanel('caption'),
-    ]
-
-    class Meta:
-        abstract = True
-
-
-class HomePage(Page):
-    """
-    HomePage class, inheriting from wagtailcore.Page straight away
-    """
-    subpage_types = ['core.BasePagePage']
-
-    class Meta:
-        description = "The top level homepage for your site"
-        verbose_name = "Homepage"
-
-    body = RichTextField(default='')
-    date = models.DateField("Post date", default=date.today)
     search_fields = ()
 
     def get_context(self, request):
         # Get pages
-        pages = self.get_children().live()
+        pages = BasePage.objects.child_of(self).live()
 
         # Filter by tag
         tag = request.GET.get('tag')
@@ -87,7 +65,7 @@ class HomePage(Page):
 
         # Pagination
         page = request.GET.get('page')
-        paginator = Paginator(pages, 10)  # Show 10 pages per page
+        paginator = Paginator(pages, 6)  # Show 6 pages per page
         try:
             pages = paginator.page(page)
         except PageNotAnInteger:
@@ -100,46 +78,46 @@ class HomePage(Page):
         context['pages'] = pages
         return context
 
-
-    content_panels = [
-        FieldPanel('title', classname="full title"),
-        FieldPanel('body', classname="full"),
-        FieldPanel('date'),
-    ]
-
     promote_panels = [
-        FieldPanel('slug'),
-        FieldPanel('seo_title'),
-        FieldPanel('search_description')
+        MultiFieldPanel(Page.promote_panels, "SEO and metadata fields"),
+        ImageChooserPanel('feed_image'),
     ]
 
-
-#  Some classes to use as fields (Carousel, Related links and Tags)
-class PageCarouselItem(Orderable, CarouselItem):
-    page = ParentalKey('core.BasePagePage', related_name='carousel_items')
+    class Meta:
+        description = "The homepage for your site"
+        verbose_name = "Home Page"
 
 
 class PageRelatedLink(Orderable, RelatedLink):
-    page = ParentalKey('core.BasePagePage', related_name='related_links')
+    page = ParentalKey('core.BasePage', related_name='related_links')
 
 
 class PageTag(TaggedItemBase):
-    content_object = ParentalKey('core.BasePagePage', related_name='tagged_items')
+    content_object = ParentalKey('core.BasePage', related_name='tagged_items')
 
 
-class BasePagePage(Page):
+class BasePage(Page):
     """
     Our main custom Page class. All content pages should inherit from this one.
     """
-    body = RichTextField(blank=True)
-    intro = RichTextField(blank=True)
-    date = models.DateField("Post date", default=date.today)
-    comments = models.BooleanField(
-        "Comments ON/OFF",
-        default=True,
-        help_text='''Comments are enabled by default. Uncheck the box if you would like to disable them for this\
-         page.'''
+    body = StreamField(
+        [
+            ('heading', CommonHeadingBlock()),
+            ('content', SimpleRichTextBlock()),
+            ('image', CommonImageBlock()),
+            ('links', CommonLinksBlock()),
+            ('quote', CommonQuoteBlock()),
+            ('video', CommonVideoBlock()),
+        ],
+        null=True,
+        blank=True,
     )
+    intro = SimpleRichTextField(
+        help_text=_('An excerpt of the page'),
+        null=True,
+        blank=True,
+    )
+    date = models.DateField("Post date", default=date.today)
     feed_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -155,27 +133,9 @@ class BasePagePage(Page):
     )
 
     @property
-    def child(self):
-        """
-        Returns the name of the deepest sublass of the instance
-        """
-        for related_object in self._meta.get_all_related_objects():
-            if not issubclass(related_object.model, self.__class__):
-                continue
-            try:
-                return getattr(self, related_object.get_accessor_name())
-            except ObjectDoesNotExist:
-                pass
-
-    def is_new(self):
-        """
-        Feel free to edit/delete this according to your needs
-        """
-        today = date.today()
-        if today - self.date > timedelta(days=7):
-            return False
-        else:
-            return True
+    def parent(self):
+        # Find closest ancestor which is a blog index
+        return self.get_ancestors().last()
 
     @property
     def body_text(self):
@@ -200,35 +160,26 @@ class BasePagePage(Page):
 
     @property
     def og_image(self):
-        # Returns image and image type of feed_image or image as fallback, if exists
         image = {'image': None, 'type': None}
         if self.feed_image:
             image['image'] = self.feed_image
-        elif self.image:
-            image['image'] = self.image
         name, extension = os.path.splitext(image['image'].file.url)
         image['type'] = extension[1:]
         return image
 
     class Meta:
-        description = "Standard page for your Springload site"
-        verbose_name = "Springload standard page"
+        description = "Article page for your site"
+        verbose_name = "Article page"
 
     content_panels = [
         FieldPanel('title', classname="full title"),
-        FieldPanel('intro', classname="full"),
         FieldPanel('date'),
-        FieldPanel('body', classname="full"),
-        InlinePanel(
-                    'carousel_items',
-                    label="Carousel items",
-                    help_text="Add the carousel items appearing on the article header."
-        ),
+        FieldPanel('intro', classname="full"),
+        StreamFieldPanel('body'),
         FieldPanel('tags'),
     ]
 
     promote_panels = [
-        FieldPanel('comments'),
         MultiFieldPanel(Page.promote_panels, "SEO and metadata fields"),
         ImageChooserPanel('feed_image'),
     ]

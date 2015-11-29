@@ -21,7 +21,7 @@ lib
 lib64
 *.log
 *.pot
-jordijoan.me/settings/local.py
+jordijoan/settings/local.py
 static/CACHE/*
 .vagrant/*
 media/*
