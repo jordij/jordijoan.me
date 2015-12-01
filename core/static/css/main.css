@@ -48,6 +48,10 @@
 		-webkit-text-size-adjust: none;
 	}
 
+	figcaption p {
+		font-size: 0.75em;
+	}
+
 /* Box Model */
 
 	*, *:before, *:after {
@@ -1603,7 +1607,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #787878;
+		color: #717171;
 		font-weight: 400;
 		line-height: 1em;
 		margin: 0 0 1em 0;
@@ -1615,7 +1619,7 @@
 		}
 
 	h1 {
-		font-size: 2em;
+		font-size: 1.6em;
 		line-height: 1.5em;
 	}
 
@@ -1722,13 +1726,13 @@
 	}
 
 	header h2 + p {
-		font-size: 1.25em;
+		font-size: 1.05em;
 		margin-top: -1em;
 		line-height: 1.5em;
 	}
 
 	header h3 + p {
-		font-size: 1.1em;
+		font-size: 0.9em;
 		margin-top: -0.8em;
 		line-height: 1.5em;
 	}
@@ -1736,13 +1740,13 @@
 	header h4 + p,
 	header h5 + p,
 	header h6 + p {
-		font-size: 0.9em;
+		font-size: 0.8em;
 		margin-top: -0.6em;
 		line-height: 1.5em;
 	}
 
 	header.major h2 {
-		font-size: 2em;
+		font-size: 1.6em;
 	}
 
 /* Form */
@@ -2982,15 +2986,15 @@ figure img {
 		/* Basic */
 
 			h1 {
-				font-size: 1.5em;
-			}
-
-			h2 {
 				font-size: 1.2em;
 			}
 
-			h3 {
+			h2 {
 				font-size: 1em;
+			}
+
+			h3 {
+				font-size: 0.8em;
 			}
 
 		/* Section/Article */
@@ -3000,7 +3004,7 @@ figure img {
 			}
 
 			header.major h2 {
-				font-size: 1.35em;
+				font-size: 1.15em;
 			}
 
 		/* List */

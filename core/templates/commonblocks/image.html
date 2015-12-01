@@ -1,7 +1,11 @@
 {% load commonblocks_tags wagtailimages_tags %}
 
 <figure>
-    {% image self.image width-800 class="img-responsive" alt=self.get_title %}
+
+    {% image self.image width-1200 as tmp_photo %}
+
+    <img src="{{ tmp_photo.url }}" alt="{{ self.image.title }}" style="max-width:{{ self.image.width }}px;" />
+
     
     {% if self.caption %}
         <figcaption>{{ self.caption|simplerichtext }}</figcaption>

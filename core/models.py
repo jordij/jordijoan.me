@@ -56,7 +56,7 @@ class HomePage(Page):
 
     def get_context(self, request):
         # Get pages
-        pages = BasePage.objects.child_of(self).live()
+        pages = BasePage.objects.child_of(self).live().order_by('-date')
 
         # Filter by tag
         tag = request.GET.get('tag')
