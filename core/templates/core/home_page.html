@@ -5,14 +5,11 @@
     {% for page in pages %}
         <article>
             <header class="major">
-                <h2>{{ page.title }}</h2>
-                <p>{{ page.date|date:"j M Y" }}</p>
+                <h2><a href="{% pageurl page %}">{{ page.title }}</a></h2>
+                <p>{{ page.date|date:"j F Y" }}</p>
             </header>
-            
+                
             {{ page.intro|simplerichtext }}
-            <ul class="actions">
-                <li><a href="{% pageurl page %}" class="button">Read More</a></li>
-            </ul>
         </article>
         <hr/>
     {% endfor %}
