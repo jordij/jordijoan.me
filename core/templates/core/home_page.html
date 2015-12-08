@@ -16,4 +16,21 @@
 
     {{ self.body }}
 
+    <ul class="actions fit">
+        <li>
+        {% if pages.has_previous %}
+            
+            <a href="?page={{ pages.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&amp;{{ key }}={{ value }}{% endifnotequal %}{% endfor %}" class="fit button">Previous</a>
+            
+        {% endif %}
+        </li>
+        <li>
+        {% if pages.has_next %}
+            
+                <a href="?page={{ pages.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&amp;{{ key }}={{ value }}{% endifnotequal %}{% endfor %}" class="fit button">Next</a>
+            
+        {% endif %}
+        </li>
+    </ul>
+
 {% endblock %}

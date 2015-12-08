@@ -65,7 +65,7 @@ class HomePage(Page):
 
         # Pagination
         page = request.GET.get('page')
-        paginator = Paginator(pages, 6)  # Show 6 pages per page
+        paginator = Paginator(pages, 6)  # Show 5 pages per page
         try:
             pages = paginator.page(page)
         except PageNotAnInteger:
