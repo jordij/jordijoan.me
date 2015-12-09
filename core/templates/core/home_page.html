@@ -5,8 +5,9 @@
     {% for page in pages %}
         <article>
             <header class="major">
+                <p class="small"><small>{{ page.date|date:"j F Y" }}</small></p>
                 <h2><a href="{% pageurl page %}">{{ page.title }}</a></h2>
-                <p>{{ page.date|date:"j F Y" }}</p>
+                <p>{% if page.category %}<a href="{% pageurl self %}">#{{ page.category.name|lower }}</a>{% endif %}</p>
             </header>
                 
             {{ page.intro|simplerichtext }}

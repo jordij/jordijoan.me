@@ -19,25 +19,10 @@ from bs4 import BeautifulSoup
 from commonblocks.blocks import *
 from commonblocks.fields import SimpleRichTextField
 
-from core.snippets import LinkFields
+from core.snippets import Category
 from core.blocks import CodeBlock
 
 options.DEFAULT_NAMES = options.DEFAULT_NAMES + ('description',)
-
-
-class RelatedLink(LinkFields):
-    """
-    Title + link class inheriting from LinkFields
-    """
-    title = models.CharField(max_length=255, help_text="Link title")
-
-    panels = [
-        FieldPanel('title'),
-        MultiFieldPanel(LinkFields.panels, "Link"),
-    ]
-
-    class Meta:
-        abstract = True
 
 
 class HomePage(Page):
@@ -88,10 +73,6 @@ class HomePage(Page):
         verbose_name = "Home Page"
 
 
-class PageRelatedLink(Orderable, RelatedLink):
-    page = ParentalKey('core.BasePage', related_name='related_links')
-
-
 class PageTag(TaggedItemBase):
     content_object = ParentalKey('core.BasePage', related_name='tagged_items')
 
@@ -117,6 +98,13 @@ class BasePage(Page):
         help_text=_('An excerpt of the page'),
         null=True,
         blank=True,
+    )
+    category = models.ForeignKey(
+        'Category',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='pages'
     )
     date = models.DateField("Post date", default=date.today)
     feed_image = models.ForeignKey(
@@ -177,6 +165,7 @@ class BasePage(Page):
         FieldPanel('date'),
         FieldPanel('intro', classname="full"),
         StreamFieldPanel('body'),
+        FieldPanel('category'),
         FieldPanel('tags'),
     ]
 

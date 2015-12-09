@@ -1,15 +1,16 @@
 from django.db import models
 import django.db.models.options as options
+from django.template.defaultfilters import slugify
+from django.utils.translation import ugettext_lazy as _
 
+from wagtail.wagtailsnippets.models import register_snippet
 from wagtail.wagtailadmin.edit_handlers import InlinePanel, FieldPanel, MultiFieldPanel, PageChooserPanel
 from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
-from wagtail.wagtailsnippets.models import register_snippet
 from wagtail.wagtailcore.models import Orderable
 
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
 
-from core.utilities import *
 
 options.DEFAULT_NAMES = options.DEFAULT_NAMES + ('description',)
 
@@ -179,3 +180,29 @@ NavigationMenu.panels = [
     FieldPanel('menu_name', classname='full title'),
     InlinePanel('menu_items', label="Menu Items", help_text='Set the menu items for the current menu.')
 ]
+
+
+@register_snippet
+class Category(models.Model):
+    name = models.CharField(max_length=155, unique=True)
+    slug = models.SlugField(unique=True, max_length=80, blank=True)
+    description = models.CharField(max_length=500, blank=True)
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = _("Blog Category")
+        verbose_name_plural = _("Blog Categories")
+
+    panels = [
+        FieldPanel('name'),
+        FieldPanel('slug'),
+        FieldPanel('description'),
+    ]
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        return super(Category, self).save(*args, **kwargs)
