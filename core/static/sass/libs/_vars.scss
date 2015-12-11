@@ -17,17 +17,20 @@
 
 // Font.
 	$font: (
-		family:				('Source Sans Pro', Helvetica, sans-serif),
+		family:				('Cardo', serif),
+		head-family:		('Raleway', sans-serif),
 		family-fixed:		('Courier New', monospace),
 		weight:				400,
-		weight-bold:		400
+		weight-bold:		400,
+		head-weight:		400,
+		head-weight-bold:	600
 	);
 
 // Palette.
 	$palette: (
 		bg:					#fff,
-		fg:					#a2a2a2,
-		fg-bold:			#787878,
+		fg:					#5F5F5F,
+		fg-bold:			#3C3C3C,
 		fg-light:			#b2b2b2,
 		border:				#efefef,
 		border-bg:			#f7f7f7,

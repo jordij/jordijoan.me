@@ -1,4 +1,4 @@
-Django==1.8.5
+Django==1.8.7
 psycopg2==2.6.1
 django-compressor==1.5
 django-modelcluster==1.0
@@ -6,4 +6,4 @@ django-taggit==0.17.3
 wagtail==1.2
 beautifulsoup4==4.4.1
 django-overextends
-commonblocks=0.0.1
+wagtailcommonblocks==0.0.1

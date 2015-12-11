@@ -3,6 +3,7 @@
 
 {% block content %}
     <header class="major">
+        <span>{{ page.date|date:"j F Y" }}</span>
         <h1>{{ self.title }}</h1>
         <!-- {% if self.tags %}
             <ul class="actions horizontal small">
@@ -13,7 +14,6 @@
                 {% endfor %}
             </ul>
         {% endif %} -->
-        <p>{{ page.date|date:"j M Y" }}</p>
     </header>
 
     {% for block in self.body %}

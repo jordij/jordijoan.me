@@ -5,7 +5,7 @@ from django.db import models
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils.translation import ugettext_lazy as _
 
-from wagtail.wagtailcore.models import Page, Orderable
+from wagtail.wagtailcore.models import Page
 from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel
 from wagtail.wagtailcore.fields import StreamField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
@@ -100,7 +100,7 @@ class BasePage(Page):
         blank=True,
     )
     category = models.ForeignKey(
-        'Category',
+        Category,
         null=True,
         blank=True,
         on_delete=models.SET_NULL,

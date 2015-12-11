@@ -5,33 +5,18 @@
     {% for page in pages %}
         <article>
             <header class="major">
-                <p class="small"><small>{{ page.date|date:"j F Y" }}</small></p>
+                <span>{{ page.date|date:"j F Y" }}</span>
                 <h2><a href="{% pageurl page %}">{{ page.title }}</a></h2>
-                <p>{% if page.category %}<a href="{% pageurl self %}">#{{ page.category.name|lower }}</a>{% endif %}</p>
             </header>
                 
             {{ page.intro|simplerichtext }}
+
         </article>
         <hr/>
     {% endfor %}
 
     {{ self.body }}
 
-    <ul class="actions fit">
-        <li>
-        {% if pages.has_previous %}
-            
-            <a href="?page={{ pages.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&amp;{{ key }}={{ value }}{% endifnotequal %}{% endfor %}" class="fit button">Previous</a>
-            
-        {% endif %}
-        </li>
-        <li>
-        {% if pages.has_next %}
-            
-                <a href="?page={{ pages.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&amp;{{ key }}={{ value }}{% endifnotequal %}{% endfor %}" class="fit button">Next</a>
-            
-        {% endif %}
-        </li>
-    </ul>
+    {% include "core/includes/pagination.html" with pages=pages only %}
 
 {% endblock %}

@@ -30,7 +30,7 @@ def footer(context):
     result = {
        'items': items,
     }
-    print items
+
     if 'request' in context:
         result['request'] = context['request']
     else:

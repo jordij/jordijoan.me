@@ -2,7 +2,7 @@
 @import 'libs/functions';
 @import 'libs/mixins';
 @import url('font-awesome.min.css');
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
+@import url(https://fonts.googleapis.com/css?family=Cardo:400,400italic|Raleway:400,600);
 
 /*
 	Strata by HTML5 UP
@@ -92,18 +92,24 @@
 
 	h1, h2, h3, h4, h5, h6 {
 		color: _palette(fg-bold);
-		font-weight: _font(weight-bold);
+		font-family: _font(head-family);
+		font-weight: _font(head-weight);
 		line-height: 1em;
 		margin: 0 0 (_size(element-margin) * 0.5) 0;
 
 		a {
 			color: inherit;
 			text-decoration: none;
+			border-bottom: none;
+		}
+
+		b, strong {
+			font-weight: _font(head-weight-bold);
 		}
 	}
 
 	h1 {
-		font-size: 2em;
+		font-size: 1.6em;
 		line-height: 1.5em;
 	}
 
@@ -236,7 +242,10 @@
 
 		&.major {
 			h2 {
-				font-size: 2em;
+				font-size: 1.6em;
+			}
+			span {
+				font-size: 0.8em;
 			}
 		}
 	}
@@ -547,6 +556,21 @@
 				border-radius: 100%;
 				width: 100%;
 			}
+		}
+	}
+
+	figure {
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+	}
+
+	figcaption {
+		p {
+			font-size: 0.75em;
 		}
 	}
 
@@ -899,7 +923,7 @@
 	#header {
 		background-color:		_palette(accent2, bg);
 		background-attachment:	scroll,								fixed;
-		background-image:		url('images/overlay.png'),			url('../../images/bg.jpg');
+		background-image:		url('images/overlay.png'),			url('../images/bg.jpg');
 		background-position:	top left,							top left;
 		background-repeat:		repeat,								no-repeat;
 		background-size:		auto,								auto 100%;
@@ -930,6 +954,11 @@
 		.image.avatar {
 			margin: 0 0 (_size(element-margin) * 0.5) 0;
 			width: 6.25em;
+			opacity: 0.8;
+
+			&:hover {
+				opacity: 1.0;
+			}
 		}
 	}
 
