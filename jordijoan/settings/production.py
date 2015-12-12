@@ -9,12 +9,6 @@ GOOGLE_ANALYTICS_KEY = False
 DEBUG = False
 TEMPLATE_DEBUG = False
 
-# Allow domain host headers
-ALLOWED_HOSTS = [
-    'bctt.nz',
-    'www.bctt.nz',
-]
-
 # Compress static files offline
 # http://django-compressor.readthedocs.org/en/latest/settings/#django.conf.settings.COMPRESS_OFFLINE
 
