@@ -27,4 +27,4 @@ Install Vagrant and  VirtualBox:
   $ djrun
 ```
 
-The site should be Available on **http://localhost:8111**
+The site should be Available on **http://localhost:8111** Admin credentials are admin-admin.
