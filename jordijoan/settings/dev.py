@@ -12,7 +12,6 @@ COMPRESS_ENABLED = False
 DATABASES['default']['PASSWORD'] = ''
 
 # To have fake email backend
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # As required by debug_toolbar

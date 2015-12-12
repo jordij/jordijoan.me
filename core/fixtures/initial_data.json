@@ -1,0 +1,852 @@
+[
+{
+    "fields": {
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2015-12-11T22:01:05.788Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$20000$iZozNSk7xlCm$8cPxYUqZP4TDrv7bNXLCEvxkxOPTU1u8qoPzbt8eVTY=",
+        "email": "admin@jordijoan.me",
+        "date_joined": "2015-11-29T04:25:50.599Z"
+    },
+    "model": "auth.user"
+},
+{
+    "fields": {
+        "name": "maps",
+        "slug": "maps"
+    },
+    "model": "taggit.tag",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "wordpress",
+        "slug": "wordpress"
+    },
+    "model": "taggit.tag",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "php",
+        "slug": "php"
+    },
+    "model": "taggit.tag",
+    "pk": 3
+},
+{
+    "fields": {
+        "tag": 1,
+        "content_type": [
+            "wagtailimages",
+            "image"
+        ],
+        "object_id": 1
+    },
+    "model": "taggit.taggeditem",
+    "pk": 1
+},
+{
+    "fields": {
+        "tag": 1,
+        "content_type": [
+            "wagtailimages",
+            "image"
+        ],
+        "object_id": 2
+    },
+    "model": "taggit.taggeditem",
+    "pk": 2
+},
+{
+    "fields": {
+        "link_page": null,
+        "icon_class": "icon fa-instagram",
+        "short_name": "",
+        "explicit_name": "",
+        "link_phone": "",
+        "css_class": "",
+        "link_external": "https://www.instagram.com/jordi.joan/",
+        "link_document": null,
+        "link_email": ""
+    },
+    "model": "core.menuelement",
+    "pk": 1
+},
+{
+    "fields": {
+        "link_page": null,
+        "icon_class": "icon fa-github-square",
+        "short_name": "",
+        "explicit_name": "",
+        "link_phone": "",
+        "css_class": "",
+        "link_external": "http://github.com/jordij",
+        "link_document": null,
+        "link_email": ""
+    },
+    "model": "core.menuelement",
+    "pk": 2
+},
+{
+    "fields": {
+        "link_page": null,
+        "icon_class": "icon fa-twitter-square",
+        "short_name": "",
+        "explicit_name": "",
+        "link_phone": "",
+        "css_class": "",
+        "link_external": "https://twitter.com/jordijoan81",
+        "link_document": null,
+        "link_email": ""
+    },
+    "model": "core.menuelement",
+    "pk": 3
+},
+{
+    "fields": {
+        "link_page": null,
+        "icon_class": "icon fa-envelope-square",
+        "short_name": "",
+        "explicit_name": "",
+        "link_phone": "",
+        "css_class": "",
+        "link_external": "",
+        "link_document": null,
+        "link_email": "hi@jordijoan.me"
+    },
+    "model": "core.menuelement",
+    "pk": 4
+},
+{
+    "fields": {
+        "sort_order": 0,
+        "parent": 1
+    },
+    "model": "core.navigationmenumenuelement",
+    "pk": 1
+},
+{
+    "fields": {
+        "sort_order": 1,
+        "parent": 1
+    },
+    "model": "core.navigationmenumenuelement",
+    "pk": 2
+},
+{
+    "fields": {
+        "sort_order": 2,
+        "parent": 1
+    },
+    "model": "core.navigationmenumenuelement",
+    "pk": 3
+},
+{
+    "fields": {
+        "sort_order": 3,
+        "parent": 1
+    },
+    "model": "core.navigationmenumenuelement",
+    "pk": 4
+},
+{
+    "fields": {
+        "menu_name": "footer"
+    },
+    "model": "core.navigationmenu",
+    "pk": 1
+},
+{
+    "fields": {
+        "description": "",
+        "name": "Mountains",
+        "slug": "mountains"
+    },
+    "model": "core.category",
+    "pk": 1
+},
+{
+    "fields": {
+        "description": "",
+        "name": "Sea",
+        "slug": "sea"
+    },
+    "model": "core.category",
+    "pk": 2
+},
+{
+    "fields": {
+        "description": "",
+        "name": "Code",
+        "slug": "code"
+    },
+    "model": "core.category",
+    "pk": 3
+},
+{
+    "fields": {
+        "feed_image": null
+    },
+    "model": "core.homepage",
+    "pk": 3
+},
+{
+    "fields": {
+        "content_object": 4,
+        "tag": 1
+    },
+    "model": "core.pagetag",
+    "pk": 17
+},
+{
+    "fields": {
+        "content_object": 5,
+        "tag": 1
+    },
+    "model": "core.pagetag",
+    "pk": 18
+},
+{
+    "fields": {
+        "content_object": 6,
+        "tag": 2
+    },
+    "model": "core.pagetag",
+    "pk": 19
+},
+{
+    "fields": {
+        "content_object": 7,
+        "tag": 3
+    },
+    "model": "core.pagetag",
+    "pk": 20
+},
+{
+    "fields": {
+        "body": "[{\"type\": \"content\", \"value\": \"<p>Have you ever thought of creating your own custom map and displaying it using Google Maps? Well, I did and I want to share the experience. The goal was to be able to use an old map to display a kayak trip I did some time ago. I put together a whole website around that trip,\\u00a0<a href=\\\"http://www.menorkayak.com\\\">MenorKayak</a>.</p>\"}, {\"type\": \"image\", \"value\": {\"attribution\": \"\", \"alternative_title\": \"\", \"license_name\": \"\", \"image\": 1, \"caption\": \"<p>Menorca Island</p>\", \"license_url\": \"\"}}, {\"type\": \"content\", \"value\": \"<p>To generate the tiles, I originally used a high resolution image from the <i>Institut Cartogr\\u00e0fic i Geol\\u00f2gic de Catalunya</i>. They have a very nice collection of old maps available <a href=\\\"http://cartotecadigital.icc.cat/cdm/index/lang/en_US\\\">here</a>\\u00a0that I totally recommend checking it out if you're into this sort of stuff.</p>\"}, {\"type\": \"heading\", \"value\": {\"title\": \"Installing GDAL\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>GDAL is a very cool library for raster geospatial data formats. More info available <a href=\\\"http://www.gdal.org\\\">here</a>. You can download the complete framework from\\u00a0<a href=\\\"http://www.kyngchaos.com/software:frameworks#gdal_complete\\\">http://www.kyngchaos.com/software:frameworks#gdal_complete</a>.\\u00a0</p><p>Add GDAL to your PATH:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"echo 'export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH' >> ~/.bash_profile\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>Ensure it's working by checking the output of GDAL to your PATH:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"gdal-config --version\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>By the time I did it the version was <b>1.10.1</b>.\\u00a0</p>\"}, {\"type\": \"heading\", \"value\": {\"title\": \"Getting your area template\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>Now you have to choose the area where you want to overlay your own map. Go to <a href=\\\"http://www.maptiler.org/photoshop-google-maps-overlay-tiles\\\">http://www.maptiler.org/photoshop-google-maps-overlay-tiles</a>\\u00a0and follow steps 1 and 2. No need to follow the rests of steps mentioned there.</p><p></p><ul><li>Step 1: Pan and zoom the map until you see the exact area you want to overlay.</li><li><p>Step 2: Save the image on your computer.</p></li></ul><p>After this you're gonna need the corner coordinates of the selected area. To find them out, in that very same page, open your Javascript console and execute:</p><p></p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"map.getBounds().toString()\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>Now you have the lat/lng bounds of the current map. In my case:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"\\\"((39.61168293107564, 3.6198320749999766), (40.28546166826872, 4.498738324999977))\\\"\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>With these two pair of coordinates (SW and NE) you can already figure out the four corners:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"3.6198320749999766, 40.28546166826872\\r\\n4.498738324999977, 40.28546166826872\\r\\n3.6198320749999766, 39.61168293107564\\r\\n4.498738324999977, 39.61168293107564\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>In my case the downloaded image looked like:</p>\"}, {\"type\": \"image\", \"value\": {\"attribution\": \"\", \"alternative_title\": \"\", \"license_name\": \"\", \"image\": 2, \"caption\": \"<p>Bounding box area</p>\", \"license_url\": \"\"}}, {\"type\": \"heading\", \"value\": {\"title\": \"Overlaying images\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>Now you need to use Photoshop or any other similar software to overlay your own map and the downloaded image from the previous step. Open your custom image, add the downloaded Google Map image as a layer and use the opacity controls to adjust them. Once you're done save the result, JPG or PNG depending if you need transparency or not. I used JPG because I didn't need any transparency. If you're using a weather map or similar then go for PNG option.</p>\"}, {\"type\": \"heading\", \"value\": {\"title\": \"Generating the tiles\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>Now that you have your own custom image you're ready to use GDAL to create the map tiles. Tiles are small images of 256x256 used by Google Maps.</p><p>Check your custom image:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"gdalinfo yourimage.jpg\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>Output:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"Driver: JPEG/JPEG JFIF\\r\\nFiles: yourimage.jpg\\r\\nSize is 5604, 5624\\r\\nCoordinate System is \\r\\nMetadata:\\r\\n  EXIF_BitsPerSample=8 8 8\\r\\n  EXIF_ColorSpace=65535\\r\\n  EXIF_Compression=1\\r\\n  EXIF_DateTime=2014:01:09 14:34:21\\r\\n  EXIF_Make=Metis Systems srl\\r\\n  EXIF_Model=Metis DRS 2A0 - CCD 14.4K - Firmware : 0001.01\\r\\n  EXIF_Orientation=1\\r\\n  EXIF_PhotometricInterpretation=2\\r\\n  EXIF_PixelXDimension=5604\\r\\n  EXIF_PixelYDimension=5624\\r\\n  EXIF_PlanarConfiguration=1\\r\\n  EXIF_ResolutionUnit=2\\r\\n  EXIF_SamplesPerPixel=3\\r\\n  EXIF_Software=Adobe Photoshop CS3 Macintosh\\r\\n  EXIF_XResolution=(300)\\r\\n  EXIF_YResolution=(300)\\r\\nImage Structure Metadata:\\r\\n  COMPRESSION=JPEG\\r\\n  INTERLEAVE=PIXEL\\r\\n  SOURCE_COLOR_SPACE=YCbCr\\r\\nCorner Coordinates:\\r\\nUpper Left  (    0.0,    0.0)\\r\\nLower Left  (    0.0, 5624.0)\\r\\nUpper Right ( 5604.0,    0.0)\\r\\nLower Right ( 5604.0, 5624.0)\\r\\nCenter      ( 2802.0, 2812.0)\\r\\nBand 1 Block=5604x1 Type=Byte, ColorInterp=Red\\r\\n  Overviews: 2802x2812, 1401x1406, 701x703\\r\\n  Image Structure Metadata:\\r\\n    COMPRESSION=JPEG\\r\\nBand 2 Block=5604x1 Type=Byte, ColorInterp=Green\\r\\n  Overviews: 2802x2812, 1401x1406, 701x703\\r\\n  Image Structure Metadata:\\r\\n    COMPRESSION=JPEG\\r\\nBand 3 Block=5604x1 Type=Byte, ColorInterp=Blue\\r\\n  Overviews: 2802x2812, 1401x1406, 701x703\\r\\n  Image Structure Metadata:\\r\\n    COMPRESSION=JPEG\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>Now we need to create a VRT file using the command <b>gdal_translate</b>. Remember to change the coordinates with your own corner coordinates.</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"gdal_translate -of VRT -a_srs EPSG:4326 -gcp 0 0 3.6198320749999766 40.28546171792043 -gcp 5604 0 4.498738324999977 40.28546171792043 -gcp 0 5624 3.6198320749999766 39.61168298121881 -gcp 5604 5624 4.498738324999977 39.61168298121881 yourimage.jpg output.vrt\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>Now do the WARP:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"gdalwarp -of VRT -t_srs EPSG:4326 output.vrt new_output.vrt\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>Generate the tiles ready to use with Google Maps:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"gdal2tiles.py -p geodetic new_output.vrt\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>In your directory you'll see a bunch of folders and some auto-generated HTML files. These are the tiles folders and a couple of examples using Google Maps and Open Layers. The Google Maps example might not work properly because the generated code uses an old version of the Google Maps Javascript API. A Google Maps JS example that works:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"$(document).ready(function() {\\r\\n\\r\\n    var map;\\r\\n\\r\\n    function initialize() {\\r\\n      var mapMinZoom = 8;\\r\\n      var mapMaxZoom = 13;\\r\\n      var center = new google.maps.LatLng(39.94940191877162, 4.059285199999977);\\r\\n      var myOptions = {\\r\\n            zoom: 10,\\r\\n            center: center,\\r\\n            mapTypeId: google.maps.MapTypeId.SATELLITE,\\r\\n            mapTypeControl: false,\\r\\n            streetViewControl: false\\r\\n      };\\r\\n\\r\\n      map = new google.maps.Map(document.getElementById('small-map'), myOptions);\\r\\n      //Custom tiles overlay\\r\\n      var mapBounds = new google.maps.LatLngBounds(new google.maps.LatLng(39.6116914406, 3.619832075), new google.maps.LatLng(40.2854617179, 4.49872734429));\\r\\n      var imageMapType = new google.maps.ImageMapType({\\r\\n        getTileUrl: function(coord, zoom, ownerDocument) {\\r\\n          var zfactor = Math.pow(2,zoom);\\r\\n\\r\\n          if ((zoom &lt; mapMinZoom) || (zoom &gt; mapMaxZoom)) {\\r\\n              return '/images/none.png';\\r\\n          }\\r\\n          var ymax = 1 &lt;&lt; zoom;\\r\\n          var y = ymax - coord.y -1;\\r\\n          var tileBounds = new google.maps.LatLngBounds(\\r\\n              map.getProjection().fromPointToLatLng( new google.maps.Point( ((coord.x)*256) / zfactor, ((coord.y+1)*256)/ zfactor ) ),\\r\\n              map.getProjection().fromPointToLatLng( new google.maps.Point( ((coord.x+1)*256)/ zfactor, ((coord.y)*256 )/ zfactor ) )\\r\\n          );\\r\\n          if (mapBounds.intersects(tileBounds)) {\\r\\n              return '/path_to_tiles/'+zoom+\\\"/\\\"+coord.x+\\\"/\\\"+y+\\\".png\\\";\\r\\n          } else {\\r\\n              return '/images/none.png';\\r\\n          }\\r\\n        },\\r\\n        tileSize: new google.maps.Size(256, 256),\\r\\n        maxZoom: mapMinZoom,\\r\\n        minZoom: mapMaxZoom,\\r\\n        opacity:1\\r\\n      });\\r\\n\\r\\n      map.overlayMapTypes.push(imageMapType);\\r\\n    }\\r\\n\\r\\n    google.maps.event.addDomListener(window, 'load', initialize);\\r\\n\\r\\n});\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>Remember to set the path to your tiles folder or might not work properly.</p><p>And that's all! Now you should be able to generate your own custom map/layers and create some impressive stuff with Google Maps or another Map Server ;)</p><p>SOURCES:</p><p></p><ul><li><a href=\\\"http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/the-google-maps-api-and-custom-overlays/\\\">http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/the-google-maps-api-and-custom-overlays/</a></li><li><a href=\\\"http://www.maptiler.org/photoshop-google-maps-overlay-tiles/\\\">http://www.maptiler.org/photoshop-google-maps-overlay-tiles/</a></li><li><a href=\\\"http://gis.stackexchange.com/questions/27321/understanding-the-map-tile-creation-properties\\\">http://gis.stackexchange.com/questions/27321/understanding-the-map-tile-creation-properties</a></li><li><a href=\\\"http://www.gdal.org/index.html\\\">http://www.gdal.org/index.html</a></li><li><a href=\\\"http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries\\\">http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries</a></li><li><a href=\\\"https://developers.google.com/kml/articles/raster\\\">https://developers.google.com/kml/articles/raster</a></li></ul><p></p>\"}]",
+        "category": 3,
+        "intro": "<p>Have you ever thought of creating your own custom map and displaying it using Google Maps? Well, I did and I want to share the experience. The goal was to be able to use an old map to display a kayak trip I did some time ago..</p>",
+        "date": "2014-02-26",
+        "feed_image": null
+    },
+    "model": "core.basepage",
+    "pk": 4
+},
+{
+    "fields": {
+        "body": "[{\"type\": \"content\", \"value\": \"<p>This post explains how to add your own thumbnails in Google Maps. I did it for one of my websites in a very similar way as <a href=\\\"http://www.panoramio.com/\\\">Panoramio</a> does it. In fact You could use Panoramio, but if you're not willing to share your pictures then this is a good alternative.</p>\"}, {\"type\": \"image\", \"value\": {\"attribution\": \"\", \"alternative_title\": \"\", \"license_name\": \"\", \"image\": 3, \"caption\": \"\", \"license_url\": \"\"}}, {\"type\": \"content\", \"value\": \"<p></p><p>The first thing you're gonna need is the <b>RichMarker</b> library. You can download it and browse the documentation <a href=\\\"http://google-maps-utility-library-v3.googlecode.com/svn/trunk/richmarker/\\\">here</a>. I'm gonna assume you have a Javascript file with your own map already created. First thing you should do is to link the RichMarker library in your HEAD section:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"<script src=\\\"http://google-maps-utility-library-v3.googlecode.com/svn/trunk/richmarker/src/richmarker-compiled.js\\\"></script>\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>After the initialization of your map instance you need some images and coordinates to display in your map. This information can be static or be pulled from your app DB. Suit yourself with the option that fits your needs better. Each image is going to be displayed in its own coordinate (Latitude, Longitude). The code to show one thumbnail:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"var marker_0 = new RichMarker({\\r\\n          position: new google.maps.LatLng(39.955083, 4.268875),\\r\\n          map: map,\\r\\n          content: '<div id=\\\"thumbnail-1\\\" class=\\\"my-marker\\\"><img width=\\\"65\\\" height=\\\"40\\\" class=\\\"map-thumbnail\\\" src=\\\"/yourpicture.jpg\\\"/></div>'\\r\\n});\\r\\n\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>Easy right? Now you can try adding more than one and see how it looks like. If two or more thumbnails are very close to each other you might have problems displaying them (overlapping):</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"<p style=\\\"text-align: center;\\\">\\r\\n    <a href=\\\"http://jordijoan.me/wp-content/uploads/2014/03/detail.jpg\\\">\\r\\n        <img class=\\\"aligncenter size-medium wp-image-63\\\" alt=\\\"Thumbnails overlapping\\\" src=\\\"http://jordijoan.me/wp-content/uploads/2014/03/detail-300x140.jpg\\\" width=\\\"300\\\" height=\\\"140\\\" />\\r\\n    </a>\\r\\n</p>\\r\\n\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>That's why I usually to add a couple of listeners for each marker to adjust the z-index whenever mouse goes over them:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"google.maps.event.addListener(marker_0, 'mouseover', function(event) {\\r\\n    this.setZIndex(10);\\r\\n});\\r\\n\\r\\ngoogle.maps.event.addListener(marker_0, 'mouseout', function(event) {\\r\\n    this.setZIndex(0);\\r\\n});\\r\\n\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>If, let's say, you're displaying 10 pictures, when we mouse-in the z-index gets the highest value (10), meaning the index of the last position of the array. This way we ensure the thumbnail is going to be on top of the z-index when we hover it. If we move the mouse out of the thumbnail then it gets back to its original value (the index of its position of the array). Now we can add a bit of CSS to add borders:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"img.map-thumbnail {\\r\\n    cursor: pointer;\\r\\n    border: 2px solid #ffffff;\\r\\n}\\r\\n\", \"language\": \"css\"}}, {\"type\": \"content\", \"value\": \"<p>Once you have the thumbnails displaying in your map you could do something else; in my case I wanted to be able to show the original image in full screen. You could use any image viewer available out there. I usually use <a href=\\\"http://brutaldesign.github.io/swipebox/\\\">Swipebox.js</a> because its simplicity and flexibility but feel free to use another one.\\u00a0</p><p>We add the HTML code we need in the marker:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"var marker_0 = new RichMarker({\\r\\n      position: new google.maps.LatLng(39.955083, 4.268875),\\r\\n      map: map,\\r\\n      content: '<div id=\\\"thumbnail-1\\\" class=\\\"my-marker\\\"><a href=\\\"/uploads/yourpicture.jpg\\\" class=\\\"swipebox\\\" title=\\\"Your title\\\"><img alt=\\\"Your title\\\" title=\\\"Your title\\\" width=\\\"65\\\" height=\\\"40\\\" class=\\\"map-thumbnail\\\" src=\\\"/uploads/yourpicture.jpg\\\"/></a></div>'\\r\\n});\\r\\n\\r\\ngoogle.maps.event.addListener(marker_0, 'markerready', function(event) {\\r\\n    $(\\\".swipebox\\\").swipebox({hideBarsDelay:5000});\\r\\n});\\r\\n\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>Now we already have a nice interactive map with a bunch of thumbnails and a gallery to display the full-size images! In case you have plenty of thumbnails you might be interested in changing the way they get displayed; sizes, visibility and so on. In another post we'll see how to do that :)</p>\"}]",
+        "category": 3,
+        "intro": "<p>This post explains how to add your own thumbnails in Google Maps. I did it for one of my websites in a very similar way as <a href=\"http://www.panoramio.com/\">Panoramio</a> does it. In fact You could use Panoramio, but if you're not willing to share your pictures then this is a good alternative.</p>",
+        "date": "2014-03-04",
+        "feed_image": null
+    },
+    "model": "core.basepage",
+    "pk": 5
+},
+{
+    "fields": {
+        "body": "[{\"type\": \"content\", \"value\": \"<p>Have you ever tried to include Skype links in a Wordpress menu? If the answer is yes then you know that it's not something that will work by default. Wordpress sanitation function will prevent it from working.</p><p>However you can use the following workaround in your <b><i>functions.php</i></b>:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"function custom_allow_skype_protocol( $protocols ){\\r\\n    $protocols[] = 'skype';\\r\\n    return $protocols;\\r\\n}\\r\\nadd_filter( 'kses_allowed_protocols' , 'custom_allow_skype_protocol' );\\r\\n\", \"language\": \"python\"}}, {\"type\": \"content\", \"value\": \"<p>Now you can happily add your Skype link to any of your Wordpress menus.</p>\"}, {\"type\": \"image\", \"value\": {\"attribution\": \"\", \"alternative_title\": \"\", \"license_name\": \"\", \"image\": 4, \"caption\": \"\", \"license_url\": \"\"}}]",
+        "category": 3,
+        "intro": "<p>Have you ever tried to include Skype links in a Wordpress menu? If the answer is yes then you know that it's not something that will work by default. Wordpress sanitation function will prevent it from working..</p>",
+        "date": "2014-03-06",
+        "feed_image": null
+    },
+    "model": "core.basepage",
+    "pk": 6
+},
+{
+    "fields": {
+        "body": "[{\"type\": \"content\", \"value\": \"<p>Some of you may be familiar with <a href=\\\"http://www.sweetcaptcha.com/\\\">sweetCaptcha</a>, a fun and simple captcha service. It's one of the captcha services I usually use. I've just released a package to integrate it with Laravel 4.</p>\"}, {\"type\": \"image\", \"value\": {\"attribution\": \"\", \"alternative_title\": \"\", \"license_name\": \"\", \"image\": 5, \"caption\": \"<p>SweetCaptcha fun UI</p>\", \"license_url\": \"\"}}, {\"type\": \"heading\", \"value\": {\"title\": \"Installation\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>Begin by installing this package through Composer. Edit your project's <b>composer.json</b>\\u00a0file to require <b>jordij/sweet-captcha.</b></p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"\\\"require\\\": {\\r\\n\\t\\\"jordij/sweet-captcha\\\": \\\"dev-master\\\"\\r\\n},\\r\\n\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>Save the changes and run a composer update:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"composer update\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>Add <b>'Jordij\\\\SweetCaptcha\\\\SweetCaptchaServiceProvider'\\u00a0</b>to the providers array in your <b>app/config/app.php</b></p>\"}, {\"type\": \"heading\", \"value\": {\"title\": \"Configuration\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>Register your sweetCaptcha account <a href=\\\"http://www.sweetcaptcha.com/accounts/signup\\\">here</a>. Set the ApplicationID, the key and the secret in the package configuration file <b>config/config.php</b>.</p>\"}, {\"type\": \"heading\", \"value\": {\"title\": \"Localization\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>By default the package will use the current locale of your Laravel application. If by any reasons you want to set a fixed locale you can do it by editing the package configuration file <b>config/config.php.</b></p>\"}, {\"type\": \"heading\", \"value\": {\"title\": \"Usage\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>In your form:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"{{ Form::sweetcaptcha() }}\", \"language\": \"python\"}}, {\"type\": \"content\", \"value\": \"<p>Add <b>'sckey' =&gt; 'sweetcaptcha'</b>\\u00a0to your rules array before validating the form.</p><p>If you want to change the error message you can do it in the package language file <b>lang/en/validation.php</b></p><p>The package is available on <a href=\\\"https://github.com/jordij/sweet-captcha\\\">GitHub</a>.</p>\"}]",
+        "category": 3,
+        "intro": "<p>Some of you may be familiar with <a href=\"http://www.sweetcaptcha.com\">sweetCaptcha</a>, a fun and simple captcha service. It's one of the captcha services I usually use. I've just released a package to integrate it with Laravel 4..</p>",
+        "date": "2014-03-13",
+        "feed_image": null
+    },
+    "model": "core.basepage",
+    "pk": 7
+},
+{
+    "fields": {
+        "body": "[{\"type\": \"content\", \"value\": \"<p>Not long ago I discovered <a href=\\\"http://bower.io/\\\">Bower</a>, a package manager for web resources such as CSS and JS. I used to copy/paste all the needed resources to each one of my projects. You know what I'm talking about here: downloading jQuery and Twitter Bootstrap all the time, copying them into the project folder, etc.. Enough of that crap. Bower enables you to automatically install those required resources and manage them as you may like in your development process.</p>\"}, {\"type\": \"image\", \"value\": {\"attribution\": \"\", \"alternative_title\": \"\", \"license_name\": \"\", \"image\": 6, \"caption\": \"\", \"license_url\": \"\"}}, {\"type\": \"content\", \"value\": \"<p>Bower depends on <a href=\\\"http://nodejs.org/\\\">Node</a>\\u00a0and <a href=\\\"http://npmjs.org/\\\">npm</a>, so be sure you have those installed in your system before proceeding.</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"npm install -g bower\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>Now, in your Laravel project folder you should choose a folder where Bower is gonna put all the resources we want to install. I usually like to put it under the <b>public</b>\\u00a0folder. Let's create a folder named <b>bower_resources</b>\\u00a0under the <b>public</b>\\u00a0folder. Using your favorite editor or the command line you should create a file named <b>.bowerrc</b>\\u00a0in the root of your Laravel project. In this file you override the default directory where Bower installs all the resources:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"{\\r\\n  \\\"directory\\\": \\\"public/bower_resources\\\"\\r\\n}\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>Now Bower is able to save the dependencies whenever we install a resource. Using the <b>bower install</b>\\u00a0command and the <b>-S</b>\\u00a0flag, install the popular <a href=\\\"http://jquery.com/\\\">jQuery</a>\\u00a0library:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"bower install jquery -S\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>If you check your <b>public/bower_resources</b>\\u00a0you're gonna see a <b>jquery</b>\\u00a0folder with the library contents in it. Awesome right? Well there's much more. You can manage your dependencies for development and production environments. Check the <a href=\\\"http://bower.io/\\\">Bower</a>\\u00a0documentation to know more about all the possibilities Bower offers you.</p><p>Another cool thing is that we don't longer have to keep track of our resources in our code repository. We don't need to commit the <b>public/bower_resources</b>, we just need to commit <b>.bowerrc</b>\\u00a0and <b>bower.json</b> and when we run Bower the resources folder will be created and filled with all of our resources!</p><p>Enjoy!</p>\"}]",
+        "category": 3,
+        "intro": "<p>Not long ago I discovered <a href=\"http://bower.io/\">Bower</a>, a package manager for web resources such as CSS and JS. I used to copy/paste all the needed resources to each one of my projects. You know what I'm talking about here: downloading jQuery and Twitter Bootstrap all the time, copying them into the project folder, etc.. Enough of that crap. Bower enables you to automatically install those required resources and manage them as you may like in your development process.</p>",
+        "date": "2014-04-02",
+        "feed_image": null
+    },
+    "model": "core.basepage",
+    "pk": 8
+},
+{
+    "fields": {
+        "body": "[{\"type\": \"content\", \"value\": \"<p>Let's say we're building a web application that enables users to post comments about movies; a very simple movie review system. The simplified UML class diagram to define the relations between the classes would look something like:</p>\"}, {\"type\": \"image\", \"value\": {\"attribution\": \"\", \"alternative_title\": \"\", \"license_name\": \"\", \"image\": 7, \"caption\": \"\", \"license_url\": \"\"}}, {\"type\": \"content\", \"value\": \"<p>Very simple. The simplified SQL structure would be:</p><p>Table <b>USERS</b>:</p><p></p><ul><li><b>id</b>: primary key</li><li>name: string</li></ul><p></p><p>Table <b>MOVIES</b>:</p><ul><li><b>id</b>: primary key</li><li>title: string</li></ul><p></p><p></p><p>Table <b>COMMENTS</b>:</p><ul><li><b>id</b>: primary key</li><li>user_id: foreign key to USERS table</li><li>movie_id: foreign key to MOVIES table</li><li>body: text</li></ul><p></p><p></p><p>There's nothing wrong with this but if we think of expanding our application in the future we may encounter a few issues. What if we besides movies we want to have books? We should add a new class BOOK and the necessary relationships to enable users to post comments to books. A couple of ways to do that.</p><p>The first way would be to modify our existing COMMENTS table and to add a new BOOKS table:</p><b>BOOKS</b> table:<p></p><p></p><ul><li>id: primary key</li><li>title:string</li></ul><p></p><p>Add a new foreign key to the <b>COMMENTS</b> table:</p><p></p><ul><li><b>book_id</b>: foreign key to BOOKS table</li></ul><p></p><p></p><p>Not very pretty right? Each time we want to expand our application by adding a new class we need to add a new foreign key to the COMMENTS table. Ugly.</p><p>Another way would be to add a new BOOKS table and a new COMMENTS table where only book comments would be stored:</p><b>BOOKS</b> table:<p></p><p></p><ul><li><b>id</b>: primary key</li><li>title:string</li></ul><p></p><p><b>COMMENTS</b> table:</p><p></p><ul><li><b>id</b>: primary key</li><li><b>user_id</b>: foreign key to USERS table</li><li><b>book_id</b>: foreign key to BOOKS table</li><li>body: text</li></ul><p></p><p></p><p>Again, this is not a very pretty solution as each time we add a new class we also add a new table to store comments for this new class of objects. Movies have their own comments table, books have their own comments table and so on.. It's a pity because all these comments table have the same structure and it would be nice if they could be stored in the same table.</p><p>What if we could find a solution where we could avoid adding new tables or new foreign keys columns each time we expand our application? <b>Polymorphic</b> relations are <i>the</i> answer!</p><p>Table <b>USERS</b>:</p><ul><li><b>id</b>: primary key</li><li>name: string</li></ul><p></p><p></p><p>Table <b>MOVIES</b>:</p><ul><li><b>id</b>: primary key</li><li>title: string</li></ul><p></p><p></p><p>Table <b>BOOKS</b> table:</p><ul><li><b>id</b>: primary key</li><li>title:string</li></ul><p></p><p></p><p>Table <b>COMMENTS</b>:</p><ul><li><b>id</b>: primary key</li><li><b>user_id</b>: foreign key to USERS table</li><li><b>commentable_id</b>: int</li><li><b>commentable_type</b>: string</li><li>body: text</li></ul><p></p><p></p><p>The table COMMENTS has a <b>commentable_id</b> pointing to Movies, Books or any other table we want. The <b>commentable_type</b> column stores the name of the table the <b>commentable_id</b> is pointing to. Sexy right? Each time we add a new class to our application we don't have to change the existing tables, just add the new table, in this case <b>BOOKS</b>.</p><p>If we are using Laravel migrations, the schema for comments is:</p><p></p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"<?php\\r\\n\\r\\nuse Illuminate\\\\Database\\\\Migrations\\\\Migration;\\r\\nuse Illuminate\\\\Database\\\\Schema\\\\Blueprint;\\r\\n\\r\\nclass CreateCommentsTable extends Migration {\\r\\n\\r\\n\\t/**\\r\\n\\t * Run the migrations.\\r\\n\\t *\\r\\n\\t * @return void\\r\\n\\t */\\r\\n\\tpublic function up()\\r\\n\\t{\\r\\n\\t\\tSchema::create('comments', function(Blueprint $table)\\r\\n\\t\\t{\\r\\n\\t\\t\\t$table->increments('id');\\r\\n\\t\\t\\t$table->integer('user_id')->unsigned();\\r\\n\\t\\t\\t$table->foreign('user_id')->references('id')->on('users');\\r\\n\\t\\t\\t$table->integer('commentable_id')->unsigned();\\r\\n\\t\\t\\t$table->string('commentable_type');\\r\\n\\t\\t\\t$table->text('body');\\r\\n\\t\\t\\t$table->timestamps();\\r\\n\\t\\t});\\r\\n\\t}\\r\\n\\r\\n\\r\\n\\t/**\\r\\n\\t * Reverse the migrations.\\r\\n\\t *\\r\\n\\t * @return void\\r\\n\\t */\\r\\n\\tpublic function down()\\r\\n\\t{\\r\\n\\t\\tSchema::drop('comments');\\r\\n\\t}\\r\\n\\r\\n}\", \"language\": \"python\"}}, {\"type\": \"content\", \"value\": \"<p>The comment model class, Comment.php:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"<?php\\r\\n\\r\\nclass Comment extends \\\\Eloquent {\\r\\n\\r\\n    public function commentable()\\r\\n    {\\r\\n        return $this->morphTo();\\r\\n    }\\r\\n\\r\\n    public function author()\\r\\n    {\\r\\n        return $this->belongsTo('User');\\r\\n    }\\r\\n}\", \"language\": \"python\"}}, {\"type\": \"content\", \"value\": \"<p>The movie model class, Movie.php:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"<?php\\r\\n\\r\\nclass Movie extends \\\\Eloquent {\\r\\n\\r\\n    public function comments()\\r\\n    {\\r\\n        return $this->morphMany('Comment', 'commentable');\\r\\n    }\\r\\n\\r\\n}\", \"language\": \"python\"}}, {\"type\": \"content\", \"value\": \"<p>The book model class, Book.php:</p><p></p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"<?php\\r\\n\\r\\nclass Book extends \\\\Eloquent {\\r\\n\\r\\n    public function comments()\\r\\n    {\\r\\n        return $this->morphMany('Comment', 'commentable');\\r\\n    }\\r\\n\\r\\n}\", \"language\": \"python\"}}, {\"type\": \"content\", \"value\": \"<p>The cool thing is to navigate through the relationship with Laravel. Getting the comments from a given book:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"$book = Book::find(1);\\r\\n\\r\\nforeach ($book->comments as $comments)\\r\\n{\\r\\n    //do what you want with each comment\\r\\n}\", \"language\": \"python\"}}, {\"type\": \"content\", \"value\": \"<p>Or getting the commentable object of a given comment (book, movie, whatever..):</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"$comment = Comment::find(1);\\r\\n\\r\\n$commentable = $comment->commentable;\\r\\n\", \"language\": \"python\"}}, {\"type\": \"content\", \"value\": \"<p>Laravel's ORM Eloquent is smart enough to return a Book or a Movie, depending on what the comment is related to. Very cool right? Now, each time we add a new class we don't need to do anything besides coding the new class. The disadvantage is we loose the foreign key constraint from the COMMENTS table to the other tables but our application logic is in charge of managing this now.This is a great feature that can save you time and work while developing. You can check the official <a href=\\\"http://laravel.com/docs/eloquent#polymorphic-relations\\\">documentation</a>\\u00a0to learn more about polymorphic relationships. Enjoy!</p>\"}]",
+        "category": 3,
+        "intro": "<p>Polymorphic relations are one of the many great features <a href=\"http://www.laravel.com\">Laravel</a>\u00a0has to offer. Let's illustrate how to effectively use them through a very simple example!</p>",
+        "date": "2014-04-11",
+        "feed_image": null
+    },
+    "model": "core.basepage",
+    "pk": 9
+},
+{
+    "fields": {
+        "body": "[{\"type\": \"content\", \"value\": \"<p>The last few months I've been doing a good amount of work using <a href=\\\"https://github.com/torchbox/wagtail\\\">Wagtail</a>. Wagtail is a pretty cool CMS built on top of the <a href=\\\"https://www.djangoproject.com/\\\">Django</a> framework. It hasn't been around for long but it has a pretty active community and a nice <a href=\\\"http://wagtail.readthedocs.org/en/stable/\\\">documentation</a>. I've built a couple of relatively large sites with it and been quite happy with the result so far.</p><p>If you're new to Wagtail this <a href=\\\"https://github.com/torchbox/wagtaildemo\\\">demo</a> is a great starting point. I highly recommend playing around for a bit and checking some of the cool features Wagtail ships with. One of these features are the so-called <i>Snippets</i>. Snippets are basically simple Django models that can be edited through a default Wagtail admin interface. They're a very handy tool to build something like a simple menu.</p><p>In your <b>models.py</b> you probably already have a <i>LinkFields</i> class as it comes with the Wagtail demo:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"class LinkFields(models.Model):\\r\\n    \\\"\\\"\\\"\\r\\n    Represents a link to an external page, a document or a Wagtail page\\r\\n    \\\"\\\"\\\"\\r\\n    link_external = models.URLField(\\r\\n        \\\"External link\\\",\\r\\n        blank=True,\\r\\n        null=True,\\r\\n        help_text='Set an external link if you want the link to point somewhere outside the CMS.'\\r\\n    )\\r\\n    link_page = models.ForeignKey(\\r\\n        'wagtailcore.Page',\\r\\n        null=True,\\r\\n        on_delete=models.SET_NULL,\\r\\n        blank=True,\\r\\n        related_name='+',\\r\\n        help_text='Choose an existing page if you want the link to point somewhere inside the CMS.'\\r\\n    )\\r\\n    link_document = models.ForeignKey(\\r\\n        'wagtaildocs.Document',\\r\\n        null=True,\\r\\n        on_delete=models.SET_NULL,\\r\\n        blank=True,\\r\\n        related_name='+',\\r\\n        help_text='Choose an existing document if you want the link to open a document.'\\r\\n    )\\r\\n\", \"language\": \"python\"}}, {\"type\": \"content\", \"value\": \"<p>Define a class inheriting from <i>LinkFields</i> to represent your menu items:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"class MenuItem(LinkFields):\\r\\n    @property\\r\\n    def url(self):\\r\\n        return self.link\\r\\n\\r\\n    def __unicode__(self):\\r\\n        if self.link_external:\\r\\n            title = self.link_external\\r\\n        elif self.link_page:\\r\\n            title = self.link_page.title\\r\\n        elif self.link_document:\\r\\n            title = self.link_document.title\\r\\n        return title\\r\\n\\r\\n    class Meta:\\r\\n        verbose_name = \\\"Menu item\\\"\\r\\n        description = \\\"Items appearing in the menu\\\"\\r\\n\", \"language\": \"python\"}}, {\"type\": \"content\", \"value\": \"<p>* Feel free to add extra fields such as title, CSS class etc.. if you need them :)</p><p>And finally add the <i>Menu</i> class, the <i>MenuManager</i> class and another class to represent the relationship between a Menu and an item (<i>MenuMenuItem</i>)</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"class MenuMenuItem(Orderable, MenuItem):\\r\\n    parent = ParentalKey(to='yourapp.Menu', related_name='menu_items')\\r\\n    \\r\\nclass MenuManager(models.Manager):\\r\\n    def get_by_natural_key(self, name):\\r\\n        return self.get(menu_name=name)\\r\\n\\r\\n@register_snippet\\r\\nclass Menu(models.Model):\\r\\n    objects = MenuManager()\\r\\n    menu_name = models.CharField(max_length=255, null=False, blank=False)\\r\\n\\r\\n    @property\\r\\n    def items(self):\\r\\n        return self.menu_items.all()\\r\\n\\r\\n    def __unicode__(self):\\r\\n        return self.menu_name\\r\\n\\r\\n    class Meta:\\r\\n        verbose_name = \\\"Navigation menu\\\"\\r\\n        description = \\\"Navigation menu\\\"\\r\\n\\r\\nMenu.panels = [\\r\\n    FieldPanel('menu_name', classname='full title'),\\r\\n    InlinePanel(Menu, 'menu_items', label=\\\"Menu Items\\\", help_text='Set the menu items for the current menu.')\\r\\n]\", \"language\": \"python\"}}, {\"type\": \"content\", \"value\": \"<p>Don't forget to add the <b>@register_snippet</b> decorator!</p><p>If everything is fine you should end up with something like :</p><p><a href=\\\"http://jordijoan.me/wp-content/uploads/2015/02/wagtail_menu.jpg\\\"></a></p>\"}, {\"type\": \"image\", \"value\": {\"attribution\": \"\", \"alternative_title\": \"\", \"license_name\": \"\", \"image\": 8, \"caption\": \"\", \"license_url\": \"\"}}, {\"type\": \"content\", \"value\": \"<p>Enjoy!</p>\"}]",
+        "category": 3,
+        "intro": "<p>The last few months I've been doing a good amount of work using <a href=\"https://github.com/torchbox/wagtail\">Wagtail</a>. Wagtail is a pretty cool CMS built on top of the <a href=\"https://www.djangoproject.com/\">Django</a>\u00a0framework. It hasn't been around for long but it has a pretty active community and a nice <a href=\"http://wagtail.readthedocs.org/en/stable/\">documentation</a>. I've built a couple of relatively large sites with it and been quite happy with the result so far.</p>",
+        "date": "2015-02-14",
+        "feed_image": null
+    },
+    "model": "core.basepage",
+    "pk": 10
+},
+{
+    "fields": {
+        "body": "[{\"type\": \"content\", \"value\": \"<p>I recently co-wrote an article for my current company, <a href=\\\"http://www.springload.co.nz/\\\">Springload</a>, about the Wagtail CMS. For those of you who do not know, <a href=\\\"https://wagtail.io/\\\">Wagtail</a> is an awesome CMS built on top of <a href=\\\"https://www.djangoproject.com/\\\">Django</a>, a Python-based framework. If you would like to know a bit more about Wagtail you should read the <a href=\\\"http://www.springload.co.nz/blog/introducing-wagtail\\\">full article</a>. Enjoy!</p><p></p>\"}]",
+        "category": 3,
+        "intro": "<p>I recently co-wrote an article for my current company, <a href=\"http://www.springload.co.nz/\">Springload</a>, about the Wagtail CMS. For those of you who do not know, <a href=\"https://wagtail.io/\">Wagtail</a> is an awesome CMS built on top of <a href=\"https://www.djangoproject.com/\">Django</a>, a Python-based framework. If you would like to know a bit more about Wagtail you should read the <a href=\"http://www.springload.co.nz/blog/introducing-wagtail\">full article</a>. Enjoy!</p>",
+        "date": "2015-03-12",
+        "feed_image": null
+    },
+    "model": "core.basepage",
+    "pk": 11
+},
+{
+    "fields": {
+        "body": "[{\"type\": \"content\", \"value\": \"<p>At Springload, the place I currently work, we've recently released <a href=\\\"http://madewithwagtail.org/\\\">Made with Wagtail</a>, a showcase of websites built with the Wagtail CMS. I recommend you guys to check it out if you're interested in this cool CMS built on top of Django.</p><p>One of the many cool features this CMS ships with is the <a href=\\\"http://docs.wagtail.io/en/latest/reference/form_builder.html\\\">form builder</a>. It allows you to create a form page from the admin backend choosing the number of field you want. It also comes with a default interface where and administrator can see the submissions and their values. Cool stuff!!</p><p>Unfortunately, it doesn't give you the option to add a captcha field to the form. That why I thought of somehow, try to integrate <a href=\\\"http://sweetcaptcha.com/\\\">SweetCaptcha</a> in the builder. I previously built a <a href=\\\"https://github.com/jordij/sweet-captcha\\\">plugin</a> to integrate it with Laravel so I knew it wasn't a complicated job.</p><p>After looking around for some existing stuff, I found an existing <a href=\\\"https://pypi.python.org/pypi/sweetcaptcha\\\">Python package</a>, from where I took the main client class. First I did the Django field, wrapping it in a package, the repo being in <a href=\\\"https://github.com/jordij/django-sweetcaptcha\\\">https://github.com/jordij/django-sweetcaptcha</a></p><p>Then I did the Wagtail integration, you can access the repo in <a href=\\\"https://github.com/jordij/wagtailsweetcaptcha\\\">https://github.com/jordij/wagtailsweetcaptcha</a></p><p>Installation and usage is really easy. Once you've installed and done the settings, you just need to declare you FormPage class inheriting from one the available form classes in the package, depending if you'd like to enable email notification for each form submission or not. As I said it's pretty straightforward, in case of doubts read the docs or send me message.</p><p>Enjoy!</p>\"}]",
+        "category": 3,
+        "intro": "<p>At Springload, the place I currently work, we've recently released <a href=\"http://madewithwagtail.org\">Made with Wagtail</a>, a showcase of websites built with the Wagtail CMS. I recommend you guys to check it out if you're interested in this cool CMS built on top of Django.</p>",
+        "date": "2015-05-20",
+        "feed_image": null
+    },
+    "model": "core.basepage",
+    "pk": 12
+},
+{
+    "fields": {
+        "body": "[{\"type\": \"content\", \"value\": \"<p>Due to all <a href=\\\"https://blog.sucuri.net/2015/06/sweetcaptcha-service-used-to-distribute-adware.html\\\">malware issues</a> problems caused by SweetCaptcha I decided to write another captcha package for <a href=\\\"https://wagtail.io/\\\">Wagtail</a> under my current's company repo.</p><p>This time I thought that I'd go for a reliable and proven captcha provider such as <a href=\\\"https://www.google.com/recaptcha\\\">Google's ReCaptcha</a>. And I didn't even need to write a Django package first because <a href=\\\"https://github.com/praekelt/django-recaptcha\\\">django-recaptcha</a> was already there.</p><p>So if you need a reliable captcha field for you Wagtail form pages go to the <a href=\\\"https://github.com/springload/wagtail-django-recaptcha\\\">Github repo</a> or the <a href=\\\"https://pypi.python.org/pypi/wagtail-django-recaptcha/\\\">Python Package Index</a> and take it from there.</p><p><a href=\\\"http://springload.co.nz/\\\">Springload</a>'s excellent <a href=\\\"http://madewithwagtail.org/\\\">Made with Wagtail</a> listing site is using it in production. See the code in <a href=\\\"https://github.com/springload/madewithwagtail/blob/master/core/forms.py\\\">the repo.</a></p>\"}]",
+        "category": 3,
+        "intro": "<p>Due to all <a href=\"https://blog.sucuri.net/2015/06/sweetcaptcha-service-used-to-distribute-adware.html\">malware issues</a> problems caused by SweetCaptcha I decided to write another captcha package for <a href=\"https://wagtail.io/\">Wagtail</a> under my current's company repo.</p>",
+        "date": "2015-10-18",
+        "feed_image": null
+    },
+    "model": "core.basepage",
+    "pk": 13
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "Root",
+        "numchild": 1,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": null,
+        "depth": 1,
+        "first_published_at": null,
+        "search_description": "",
+        "content_type": [
+            "wagtailcore",
+            "page"
+        ],
+        "has_unpublished_changes": false,
+        "owner": null,
+        "path": "0001",
+        "url_path": "/",
+        "expired": false,
+        "slug": "root",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 1
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "Jordi Joan",
+        "numchild": 10,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": "2015-11-29T04:56:01.835Z",
+        "depth": 2,
+        "first_published_at": "2015-11-29T04:56:01.887Z",
+        "search_description": "",
+        "content_type": [
+            "core",
+            "homepage"
+        ],
+        "has_unpublished_changes": false,
+        "owner": [
+            "admin"
+        ],
+        "path": "00010002",
+        "url_path": "/jordi-joan/",
+        "expired": false,
+        "slug": "jordi-joan",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 2
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "Creating your own Google Maps tiles in OSX",
+        "numchild": 0,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": "2015-12-09T09:04:40.057Z",
+        "depth": 3,
+        "first_published_at": "2015-11-29T07:49:21.470Z",
+        "search_description": "",
+        "content_type": [
+            "core",
+            "basepage"
+        ],
+        "has_unpublished_changes": false,
+        "owner": [
+            "admin"
+        ],
+        "path": "000100020001",
+        "url_path": "/jordi-joan/creating-your-own-google-maps-tiles-osx/",
+        "expired": false,
+        "slug": "creating-your-own-google-maps-tiles-osx",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 3
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "Add your own thumbnails in Google Maps, Panoramio style",
+        "numchild": 0,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": "2015-12-09T09:04:53.201Z",
+        "depth": 3,
+        "first_published_at": "2015-12-01T09:15:52.972Z",
+        "search_description": "",
+        "content_type": [
+            "core",
+            "basepage"
+        ],
+        "has_unpublished_changes": false,
+        "owner": [
+            "admin"
+        ],
+        "path": "000100020002",
+        "url_path": "/jordi-joan/add-your-own-thumbnails-google-maps-panoramio-style/",
+        "expired": false,
+        "slug": "add-your-own-thumbnails-google-maps-panoramio-style",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 4
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "Using Skype links in Wordpress menus",
+        "numchild": 0,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": "2015-12-09T09:05:03.967Z",
+        "depth": 3,
+        "first_published_at": "2015-12-01T09:49:05.076Z",
+        "search_description": "",
+        "content_type": [
+            "core",
+            "basepage"
+        ],
+        "has_unpublished_changes": false,
+        "owner": [
+            "admin"
+        ],
+        "path": "000100020003",
+        "url_path": "/jordi-joan/using-skype-links-wordpress-menus/",
+        "expired": false,
+        "slug": "using-skype-links-wordpress-menus",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 5
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "SweetCaptcha package for Laravel 4",
+        "numchild": 0,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": "2015-12-09T09:05:16.435Z",
+        "depth": 3,
+        "first_published_at": "2015-12-01T10:14:44.341Z",
+        "search_description": "",
+        "content_type": [
+            "core",
+            "basepage"
+        ],
+        "has_unpublished_changes": false,
+        "owner": [
+            "admin"
+        ],
+        "path": "000100020004",
+        "url_path": "/jordi-joan/sweetcaptcha-package-laravel-4/",
+        "expired": false,
+        "slug": "sweetcaptcha-package-laravel-4",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 6
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "Integrating Bower with Laravel",
+        "numchild": 0,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": "2015-12-09T09:05:30.922Z",
+        "depth": 3,
+        "first_published_at": "2015-12-08T07:51:06.401Z",
+        "search_description": "",
+        "content_type": [
+            "core",
+            "basepage"
+        ],
+        "has_unpublished_changes": false,
+        "owner": [
+            "admin"
+        ],
+        "path": "000100020005",
+        "url_path": "/jordi-joan/integrating-bower-laravel/",
+        "expired": false,
+        "slug": "integrating-bower-laravel",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 7
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "Using Polymorphic Relations in Laravel",
+        "numchild": 0,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": "2015-12-09T09:05:43.408Z",
+        "depth": 3,
+        "first_published_at": "2015-12-08T08:24:44.456Z",
+        "search_description": "",
+        "content_type": [
+            "core",
+            "basepage"
+        ],
+        "has_unpublished_changes": false,
+        "owner": [
+            "admin"
+        ],
+        "path": "000100020006",
+        "url_path": "/jordi-joan/using-polymorphic-relations-laravel/",
+        "expired": false,
+        "slug": "using-polymorphic-relations-laravel",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 8
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "Simple orderable menus for Wagtail",
+        "numchild": 0,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": "2015-12-11T22:05:16.013Z",
+        "depth": 3,
+        "first_published_at": "2015-12-09T08:31:59.604Z",
+        "search_description": "",
+        "content_type": [
+            "core",
+            "basepage"
+        ],
+        "has_unpublished_changes": false,
+        "owner": [
+            "admin"
+        ],
+        "path": "000100020007",
+        "url_path": "/jordi-joan/simple-orderable-menus-wagtail/",
+        "expired": false,
+        "slug": "simple-orderable-menus-wagtail",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 9
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "Introducing Wagtail",
+        "numchild": 0,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": "2015-12-11T22:04:35.738Z",
+        "depth": 3,
+        "first_published_at": "2015-12-11T22:04:35.784Z",
+        "search_description": "",
+        "content_type": [
+            "core",
+            "basepage"
+        ],
+        "has_unpublished_changes": false,
+        "owner": [
+            "admin"
+        ],
+        "path": "000100020008",
+        "url_path": "/jordi-joan/introducing-wagtail/",
+        "expired": false,
+        "slug": "introducing-wagtail",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 10
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "SweetCaptcha for Django and Wagtail",
+        "numchild": 0,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": "2015-12-11T22:16:14.241Z",
+        "depth": 3,
+        "first_published_at": "2015-12-11T22:16:14.287Z",
+        "search_description": "",
+        "content_type": [
+            "core",
+            "basepage"
+        ],
+        "has_unpublished_changes": false,
+        "owner": [
+            "admin"
+        ],
+        "path": "000100020009",
+        "url_path": "/jordi-joan/sweetcaptcha-django-and-wagtail/",
+        "expired": false,
+        "slug": "sweetcaptcha-django-and-wagtail",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 11
+},
+{
+    "fields": {
+        "locked": false,
+        "title": "Wagtail ReCaptcha",
+        "numchild": 0,
+        "show_in_menus": false,
+        "live": true,
+        "seo_title": "",
+        "latest_revision_created_at": "2015-12-11T22:18:36.856Z",
+        "depth": 3,
+        "first_published_at": "2015-12-11T22:18:36.902Z",
+        "search_description": "",
+        "content_type": [
+            "core",
+            "basepage"
+        ],
+        "has_unpublished_changes": false,
+        "owner": [
+            "admin"
+        ],
+        "path": "00010002000A",
+        "url_path": "/jordi-joan/wagtail-recaptcha/",
+        "expired": false,
+        "slug": "wagtail-recaptcha",
+        "expire_at": null,
+        "go_live_at": null
+    },
+    "model": "wagtailcore.page",
+    "pk": 12
+},
+{
+    "fields": {
+        "focal_point_width": null,
+        "title": "Menorkayak map",
+        "focal_point_height": null,
+        "created_at": "2015-11-29T08:26:00.532Z",
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "height": 594,
+        "width": 1166,
+        "file": "original_images/Screen-Shot-2014-02-26-at-17.02.27.png",
+        "file_size": null,
+        "uploaded_by_user": [
+            "admin"
+        ]
+    },
+    "model": "wagtailimages.image",
+    "pk": 1
+},
+{
+    "fields": {
+        "focal_point_width": null,
+        "title": "Menorca Island",
+        "focal_point_height": null,
+        "created_at": "2015-11-29T09:24:02.918Z",
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "height": 1280,
+        "width": 1280,
+        "file": "original_images/menorcabounds.jpg",
+        "file_size": 311390,
+        "uploaded_by_user": [
+            "admin"
+        ]
+    },
+    "model": "wagtailimages.image",
+    "pk": 2
+},
+{
+    "fields": {
+        "focal_point_width": null,
+        "title": "Panoramio map",
+        "focal_point_height": null,
+        "created_at": "2015-12-01T09:20:44.098Z",
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "height": 546,
+        "width": 1166,
+        "file": "original_images/map.jpg",
+        "file_size": null,
+        "uploaded_by_user": [
+            "admin"
+        ]
+    },
+    "model": "wagtailimages.image",
+    "pk": 3
+},
+{
+    "fields": {
+        "focal_point_width": null,
+        "title": "Wordpress Skype",
+        "focal_point_height": null,
+        "created_at": "2015-12-01T09:48:06.195Z",
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "height": 334,
+        "width": 820,
+        "file": "original_images/Screen-Shot-2014-03-06-at-16.10.42.png",
+        "file_size": 45563,
+        "uploaded_by_user": [
+            "admin"
+        ]
+    },
+    "model": "wagtailimages.image",
+    "pk": 4
+},
+{
+    "fields": {
+        "focal_point_width": null,
+        "title": "SweetCaptcha",
+        "focal_point_height": null,
+        "created_at": "2015-12-01T10:05:12.455Z",
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "height": 129,
+        "width": 383,
+        "file": "original_images/Screen-Shot-2014-03-13-at-11.41.30.png",
+        "file_size": null,
+        "uploaded_by_user": [
+            "admin"
+        ]
+    },
+    "model": "wagtailimages.image",
+    "pk": 5
+},
+{
+    "fields": {
+        "focal_point_width": null,
+        "title": "Laravel Bower",
+        "focal_point_height": null,
+        "created_at": "2015-12-08T07:40:58.026Z",
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "height": 194,
+        "width": 400,
+        "file": "original_images/laravelbower.jpg",
+        "file_size": null,
+        "uploaded_by_user": [
+            "admin"
+        ]
+    },
+    "model": "wagtailimages.image",
+    "pk": 6
+},
+{
+    "fields": {
+        "focal_point_width": null,
+        "title": "UML diagram",
+        "focal_point_height": null,
+        "created_at": "2015-12-08T08:03:34.234Z",
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "height": 178,
+        "width": 711,
+        "file": "original_images/Screen-Shot-2014-04-11-at-9.53.54-AM.png",
+        "file_size": null,
+        "uploaded_by_user": [
+            "admin"
+        ]
+    },
+    "model": "wagtailimages.image",
+    "pk": 7
+},
+{
+    "fields": {
+        "focal_point_width": null,
+        "title": "Wagtail menu",
+        "focal_point_height": null,
+        "created_at": "2015-12-09T08:41:38.865Z",
+        "focal_point_x": null,
+        "focal_point_y": null,
+        "height": 700,
+        "width": 919,
+        "file": "original_images/wagtail_menu.jpg",
+        "file_size": null,
+        "uploaded_by_user": [
+            "admin"
+        ]
+    },
+    "model": "wagtailimages.image",
+    "pk": 8
+}
+]

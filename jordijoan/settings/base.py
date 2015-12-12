@@ -104,20 +104,9 @@ MIDDLEWARE_CLASSES = (
     'wagtail.wagtailredirects.middleware.RedirectMiddleware',
 )
 
-# Name and email addresses of recipients
-ADMINS = (
-    ('Tech-urgent', 'tech-urgent@springload.co.nz'),
-)
-
-# Default from address for CMS auto email messages (logs, errors..)
-SERVER_EMAIL = 'errors-%s@springload.co.nz' % 'jordijoan.me'
-
-# Default from address for CMS email messages to users (forgot password etc..)
-DEFAULT_FROM_EMAIL = '%s@springload.co.nz' % SITE_NAME
 
 ROOT_URLCONF = SITE_NAME + '.urls'
 WSGI_APPLICATION = SITE_NAME + '.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
