@@ -46,15 +46,10 @@ CELERY_RESULT_SERIALIZER = 'json'
 
 EMAIL_BACKEND = 'djcelery_email.backends.CeleryEmailBackend'
 
-# Use Elasticsearch as the search backend for extra performance and better search results:
-# http://wagtail.readthedocs.org/en/latest/howto/performance.html#search
-# http://wagtail.readthedocs.org/en/latest/core_components/search/backends.html#elasticsearch-backend
-
 WAGTAILSEARCH_BACKENDS = {
     'default': {
-        'BACKEND': 'wagtail.wagtailsearch.backends.elasticsearch.ElasticSearch',
-        'INDEX': SITE_NAME,
-    },
+        'BACKEND': 'wagtail.wagtailsearch.backends.db',
+    }
 }
 
 # Use Redis as the cache backend for extra performance

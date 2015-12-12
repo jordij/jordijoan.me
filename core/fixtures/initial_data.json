@@ -199,38 +199,6 @@
 },
 {
     "fields": {
-        "content_object": 4,
-        "tag": 1
-    },
-    "model": "core.pagetag",
-    "pk": 17
-},
-{
-    "fields": {
-        "content_object": 5,
-        "tag": 1
-    },
-    "model": "core.pagetag",
-    "pk": 18
-},
-{
-    "fields": {
-        "content_object": 6,
-        "tag": 2
-    },
-    "model": "core.pagetag",
-    "pk": 19
-},
-{
-    "fields": {
-        "content_object": 7,
-        "tag": 3
-    },
-    "model": "core.pagetag",
-    "pk": 20
-},
-{
-    "fields": {
         "body": "[{\"type\": \"content\", \"value\": \"<p>Have you ever thought of creating your own custom map and displaying it using Google Maps? Well, I did and I want to share the experience. The goal was to be able to use an old map to display a kayak trip I did some time ago. I put together a whole website around that trip,\\u00a0<a href=\\\"http://www.menorkayak.com\\\">MenorKayak</a>.</p>\"}, {\"type\": \"image\", \"value\": {\"attribution\": \"\", \"alternative_title\": \"\", \"license_name\": \"\", \"image\": 1, \"caption\": \"<p>Menorca Island</p>\", \"license_url\": \"\"}}, {\"type\": \"content\", \"value\": \"<p>To generate the tiles, I originally used a high resolution image from the <i>Institut Cartogr\\u00e0fic i Geol\\u00f2gic de Catalunya</i>. They have a very nice collection of old maps available <a href=\\\"http://cartotecadigital.icc.cat/cdm/index/lang/en_US\\\">here</a>\\u00a0that I totally recommend checking it out if you're into this sort of stuff.</p>\"}, {\"type\": \"heading\", \"value\": {\"title\": \"Installing GDAL\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>GDAL is a very cool library for raster geospatial data formats. More info available <a href=\\\"http://www.gdal.org\\\">here</a>. You can download the complete framework from\\u00a0<a href=\\\"http://www.kyngchaos.com/software:frameworks#gdal_complete\\\">http://www.kyngchaos.com/software:frameworks#gdal_complete</a>.\\u00a0</p><p>Add GDAL to your PATH:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"echo 'export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH' >> ~/.bash_profile\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>Ensure it's working by checking the output of GDAL to your PATH:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"gdal-config --version\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>By the time I did it the version was <b>1.10.1</b>.\\u00a0</p>\"}, {\"type\": \"heading\", \"value\": {\"title\": \"Getting your area template\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>Now you have to choose the area where you want to overlay your own map. Go to <a href=\\\"http://www.maptiler.org/photoshop-google-maps-overlay-tiles\\\">http://www.maptiler.org/photoshop-google-maps-overlay-tiles</a>\\u00a0and follow steps 1 and 2. No need to follow the rests of steps mentioned there.</p><p></p><ul><li>Step 1: Pan and zoom the map until you see the exact area you want to overlay.</li><li><p>Step 2: Save the image on your computer.</p></li></ul><p>After this you're gonna need the corner coordinates of the selected area. To find them out, in that very same page, open your Javascript console and execute:</p><p></p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"map.getBounds().toString()\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>Now you have the lat/lng bounds of the current map. In my case:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"\\\"((39.61168293107564, 3.6198320749999766), (40.28546166826872, 4.498738324999977))\\\"\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>With these two pair of coordinates (SW and NE) you can already figure out the four corners:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"3.6198320749999766, 40.28546166826872\\r\\n4.498738324999977, 40.28546166826872\\r\\n3.6198320749999766, 39.61168293107564\\r\\n4.498738324999977, 39.61168293107564\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>In my case the downloaded image looked like:</p>\"}, {\"type\": \"image\", \"value\": {\"attribution\": \"\", \"alternative_title\": \"\", \"license_name\": \"\", \"image\": 2, \"caption\": \"<p>Bounding box area</p>\", \"license_url\": \"\"}}, {\"type\": \"heading\", \"value\": {\"title\": \"Overlaying images\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>Now you need to use Photoshop or any other similar software to overlay your own map and the downloaded image from the previous step. Open your custom image, add the downloaded Google Map image as a layer and use the opacity controls to adjust them. Once you're done save the result, JPG or PNG depending if you need transparency or not. I used JPG because I didn't need any transparency. If you're using a weather map or similar then go for PNG option.</p>\"}, {\"type\": \"heading\", \"value\": {\"title\": \"Generating the tiles\", \"subtitle\": \"\", \"size\": \"h3\"}}, {\"type\": \"content\", \"value\": \"<p>Now that you have your own custom image you're ready to use GDAL to create the map tiles. Tiles are small images of 256x256 used by Google Maps.</p><p>Check your custom image:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"gdalinfo yourimage.jpg\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>Output:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"Driver: JPEG/JPEG JFIF\\r\\nFiles: yourimage.jpg\\r\\nSize is 5604, 5624\\r\\nCoordinate System is \\r\\nMetadata:\\r\\n  EXIF_BitsPerSample=8 8 8\\r\\n  EXIF_ColorSpace=65535\\r\\n  EXIF_Compression=1\\r\\n  EXIF_DateTime=2014:01:09 14:34:21\\r\\n  EXIF_Make=Metis Systems srl\\r\\n  EXIF_Model=Metis DRS 2A0 - CCD 14.4K - Firmware : 0001.01\\r\\n  EXIF_Orientation=1\\r\\n  EXIF_PhotometricInterpretation=2\\r\\n  EXIF_PixelXDimension=5604\\r\\n  EXIF_PixelYDimension=5624\\r\\n  EXIF_PlanarConfiguration=1\\r\\n  EXIF_ResolutionUnit=2\\r\\n  EXIF_SamplesPerPixel=3\\r\\n  EXIF_Software=Adobe Photoshop CS3 Macintosh\\r\\n  EXIF_XResolution=(300)\\r\\n  EXIF_YResolution=(300)\\r\\nImage Structure Metadata:\\r\\n  COMPRESSION=JPEG\\r\\n  INTERLEAVE=PIXEL\\r\\n  SOURCE_COLOR_SPACE=YCbCr\\r\\nCorner Coordinates:\\r\\nUpper Left  (    0.0,    0.0)\\r\\nLower Left  (    0.0, 5624.0)\\r\\nUpper Right ( 5604.0,    0.0)\\r\\nLower Right ( 5604.0, 5624.0)\\r\\nCenter      ( 2802.0, 2812.0)\\r\\nBand 1 Block=5604x1 Type=Byte, ColorInterp=Red\\r\\n  Overviews: 2802x2812, 1401x1406, 701x703\\r\\n  Image Structure Metadata:\\r\\n    COMPRESSION=JPEG\\r\\nBand 2 Block=5604x1 Type=Byte, ColorInterp=Green\\r\\n  Overviews: 2802x2812, 1401x1406, 701x703\\r\\n  Image Structure Metadata:\\r\\n    COMPRESSION=JPEG\\r\\nBand 3 Block=5604x1 Type=Byte, ColorInterp=Blue\\r\\n  Overviews: 2802x2812, 1401x1406, 701x703\\r\\n  Image Structure Metadata:\\r\\n    COMPRESSION=JPEG\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>Now we need to create a VRT file using the command <b>gdal_translate</b>. Remember to change the coordinates with your own corner coordinates.</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"gdal_translate -of VRT -a_srs EPSG:4326 -gcp 0 0 3.6198320749999766 40.28546171792043 -gcp 5604 0 4.498738324999977 40.28546171792043 -gcp 0 5624 3.6198320749999766 39.61168298121881 -gcp 5604 5624 4.498738324999977 39.61168298121881 yourimage.jpg output.vrt\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>Now do the WARP:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"gdalwarp -of VRT -t_srs EPSG:4326 output.vrt new_output.vrt\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>Generate the tiles ready to use with Google Maps:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"gdal2tiles.py -p geodetic new_output.vrt\", \"language\": \"bash\"}}, {\"type\": \"content\", \"value\": \"<p>In your directory you'll see a bunch of folders and some auto-generated HTML files. These are the tiles folders and a couple of examples using Google Maps and Open Layers. The Google Maps example might not work properly because the generated code uses an old version of the Google Maps Javascript API. A Google Maps JS example that works:</p>\"}, {\"type\": \"code\", \"value\": {\"code\": \"$(document).ready(function() {\\r\\n\\r\\n    var map;\\r\\n\\r\\n    function initialize() {\\r\\n      var mapMinZoom = 8;\\r\\n      var mapMaxZoom = 13;\\r\\n      var center = new google.maps.LatLng(39.94940191877162, 4.059285199999977);\\r\\n      var myOptions = {\\r\\n            zoom: 10,\\r\\n            center: center,\\r\\n            mapTypeId: google.maps.MapTypeId.SATELLITE,\\r\\n            mapTypeControl: false,\\r\\n            streetViewControl: false\\r\\n      };\\r\\n\\r\\n      map = new google.maps.Map(document.getElementById('small-map'), myOptions);\\r\\n      //Custom tiles overlay\\r\\n      var mapBounds = new google.maps.LatLngBounds(new google.maps.LatLng(39.6116914406, 3.619832075), new google.maps.LatLng(40.2854617179, 4.49872734429));\\r\\n      var imageMapType = new google.maps.ImageMapType({\\r\\n        getTileUrl: function(coord, zoom, ownerDocument) {\\r\\n          var zfactor = Math.pow(2,zoom);\\r\\n\\r\\n          if ((zoom &lt; mapMinZoom) || (zoom &gt; mapMaxZoom)) {\\r\\n              return '/images/none.png';\\r\\n          }\\r\\n          var ymax = 1 &lt;&lt; zoom;\\r\\n          var y = ymax - coord.y -1;\\r\\n          var tileBounds = new google.maps.LatLngBounds(\\r\\n              map.getProjection().fromPointToLatLng( new google.maps.Point( ((coord.x)*256) / zfactor, ((coord.y+1)*256)/ zfactor ) ),\\r\\n              map.getProjection().fromPointToLatLng( new google.maps.Point( ((coord.x+1)*256)/ zfactor, ((coord.y)*256 )/ zfactor ) )\\r\\n          );\\r\\n          if (mapBounds.intersects(tileBounds)) {\\r\\n              return '/path_to_tiles/'+zoom+\\\"/\\\"+coord.x+\\\"/\\\"+y+\\\".png\\\";\\r\\n          } else {\\r\\n              return '/images/none.png';\\r\\n          }\\r\\n        },\\r\\n        tileSize: new google.maps.Size(256, 256),\\r\\n        maxZoom: mapMinZoom,\\r\\n        minZoom: mapMaxZoom,\\r\\n        opacity:1\\r\\n      });\\r\\n\\r\\n      map.overlayMapTypes.push(imageMapType);\\r\\n    }\\r\\n\\r\\n    google.maps.event.addDomListener(window, 'load', initialize);\\r\\n\\r\\n});\", \"language\": \"html\"}}, {\"type\": \"content\", \"value\": \"<p>Remember to set the path to your tiles folder or might not work properly.</p><p>And that's all! Now you should be able to generate your own custom map/layers and create some impressive stuff with Google Maps or another Map Server ;)</p><p>SOURCES:</p><p></p><ul><li><a href=\\\"http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/the-google-maps-api-and-custom-overlays/\\\">http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/the-google-maps-api-and-custom-overlays/</a></li><li><a href=\\\"http://www.maptiler.org/photoshop-google-maps-overlay-tiles/\\\">http://www.maptiler.org/photoshop-google-maps-overlay-tiles/</a></li><li><a href=\\\"http://gis.stackexchange.com/questions/27321/understanding-the-map-tile-creation-properties\\\">http://gis.stackexchange.com/questions/27321/understanding-the-map-tile-creation-properties</a></li><li><a href=\\\"http://www.gdal.org/index.html\\\">http://www.gdal.org/index.html</a></li><li><a href=\\\"http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries\\\">http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries</a></li><li><a href=\\\"https://developers.google.com/kml/articles/raster\\\">https://developers.google.com/kml/articles/raster</a></li></ul><p></p>\"}]",
         "category": 3,
         "intro": "<p>Have you ever thought of creating your own custom map and displaying it using Google Maps? Well, I did and I want to share the experience. The goal was to be able to use an old map to display a kayak trip I did some time ago..</p>",
@@ -238,7 +206,7 @@
         "feed_image": null
     },
     "model": "core.basepage",
-    "pk": 4
+    "pk": 3
 },
 {
     "fields": {
@@ -249,7 +217,7 @@
         "feed_image": null
     },
     "model": "core.basepage",
-    "pk": 5
+    "pk": 4
 },
 {
     "fields": {
@@ -260,7 +228,7 @@
         "feed_image": null
     },
     "model": "core.basepage",
-    "pk": 6
+    "pk": 5
 },
 {
     "fields": {
@@ -271,7 +239,7 @@
         "feed_image": null
     },
     "model": "core.basepage",
-    "pk": 7
+    "pk": 6
 },
 {
     "fields": {
@@ -282,7 +250,7 @@
         "feed_image": null
     },
     "model": "core.basepage",
-    "pk": 8
+    "pk": 7
 },
 {
     "fields": {
@@ -293,7 +261,7 @@
         "feed_image": null
     },
     "model": "core.basepage",
-    "pk": 9
+    "pk": 8
 },
 {
     "fields": {
@@ -304,7 +272,7 @@
         "feed_image": null
     },
     "model": "core.basepage",
-    "pk": 10
+    "pk": 9
 },
 {
     "fields": {
@@ -315,7 +283,7 @@
         "feed_image": null
     },
     "model": "core.basepage",
-    "pk": 11
+    "pk": 10
 },
 {
     "fields": {
@@ -326,7 +294,7 @@
         "feed_image": null
     },
     "model": "core.basepage",
-    "pk": 12
+    "pk": 11
 },
 {
     "fields": {
@@ -337,7 +305,7 @@
         "feed_image": null
     },
     "model": "core.basepage",
-    "pk": 13
+    "pk": 12
 },
 {
     "fields": {

@@ -14,6 +14,12 @@ DATABASES['default']['PASSWORD'] = ''
 # To have fake email backend
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+WAGTAILSEARCH_BACKENDS = {
+    'default': {
+        'BACKEND': 'wagtail.wagtailsearch.backends.db',
+    }
+}
+
 # As required by debug_toolbar
 INTERNAL_IPS = (
    '10.0.2.2',
