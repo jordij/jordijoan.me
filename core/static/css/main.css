@@ -1246,7 +1246,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600; }
 
 h1 {
-  font-size: 1.6em;
+  font-size: 2em;
   line-height: 1.5em; }
 
 h2 {
@@ -1329,6 +1329,8 @@ header p {
   color: #b2b2b2;
   position: relative;
   margin: 0 0 1.5em 0; }
+header h1 {
+  margin: 0 0 0.5em 0; }
 header h2 + p {
   font-size: 1.25em;
   margin-top: -1em;
@@ -1347,6 +1349,8 @@ header.major h2 {
   font-size: 1.6em; }
 header.major span {
   font-size: 0.8em; }
+header ul.actions li {
+  text-align: left; }
 
 /* Form */
 form {
@@ -1859,15 +1863,27 @@ input[type="button"],
     color: #b2b2b2 !important;
     cursor: default; }
 
-/* Work Item */
-.work-item {
+/* Responsive object -- embed */
+.responsive-object, .img--responsive {
+  height: auto;
+  width: 100%; }
+
+.responsive-object {
+  padding-top: 5%;
+  padding-bottom: 5%; }
+
+.responsive-object iframe {
+  width: 100%; }
+
+/* Gallery Item */
+.gallery-item {
   margin: 0 0 2em 0; }
-  .work-item .image {
+  .gallery-item .image {
     margin: 0 0 1.5em 0; }
-  .work-item h3 {
+  .gallery-item h3 {
     font-size: 1em;
     margin: 0 0 0.5em 0; }
-  .work-item p {
+  .gallery-item p {
     font-size: 0.8em;
     line-height: 1.5em;
     margin: 0; }
@@ -2004,8 +2020,7 @@ input[type="button"],
   background: #fff;
   border-radius: 0.35em;
   box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  padding-bottom: 3em; }
+  overflow: hidden; }
   .poptrox-popup .loader {
     text-decoration: none;
     -moz-animation: spin 1s linear infinite;
@@ -2205,7 +2220,7 @@ body.is-touch .poptrox-popup .closer {
     top: auto;
     width: 100%; }
     #header h1 {
-      font-size: 1.75em; }
+      font-size: 1.25em; }
       #header h1 br {
         display: inline; }
 
@@ -2213,7 +2228,7 @@ body.is-touch .poptrox-popup .closer {
   #footer {
     background-attachment: scroll;
     background-color: #1f1815;
-    background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+    background-image: url("images/overlay.png"), url("../images/bg.jpg");
     background-position: top left,						bottom center;
     background-repeat: repeat,							no-repeat;
     background-size: auto,							cover;
@@ -2268,7 +2283,7 @@ body.is-touch .poptrox-popup .closer {
   #header {
     padding: 2.25em 1.5em; }
     #header h1 {
-      font-size: 1.35em; }
+      font-size: 1.15em; }
 
   /* Footer */
   #footer {

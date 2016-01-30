@@ -1,0 +1,11 @@
+{% load wagtailembeds_tags commonblocks_tags wagtailimages_tags %}
+
+<div class="responsive-object">
+    {{ self.video.url|embed }}
+</div>
+
+{% if self.caption %}
+<caption>
+    {{ self.caption|simplerichtext }}
+</caption>
+{% endif %}

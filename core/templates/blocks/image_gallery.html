@@ -1,0 +1,34 @@
+{% load wagtailcore_tags commonblocks_tags wagtailimages_tags %}
+
+<div class="image-gallery">
+    {% if self.title %}
+        <h3>{{ self.title }}</h3>
+    {% endif %}
+    
+    <div class="row">
+
+        {% for image in self.images %}
+
+            {% image image.image width-1200 as wide_img %}
+            {% image image.image width-370 as thumb_img %}
+
+            <div class="6u 12u$(xsmall) gallery-item">
+
+                <a href="{{ wide_img.url }}" class="image fit thumb"><img src="{{ thumb_img.url }}" width="{{ thumb_img.width }}" height="{{ thumb_img.height }}" alt="{{ image.image.title }}"/></a>
+                {% if image.image.title %}
+                    <h3>{{ image.image.title }}</h3>
+                {% endif %}
+
+                {% if image.caption %}
+                    <caption>
+                    {{ image.caption|simplerichtext }}
+                    </caption>
+                {% endif %}
+            
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>

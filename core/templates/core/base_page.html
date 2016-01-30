@@ -3,20 +3,19 @@
 
 {% block content %}
     <header class="major">
-        <span>{{ page.date|date:"j F Y" }}</span>
+        <span>Published on {{ page.date|date:"j F Y" }}</span>
         <h1>{{ self.title }}</h1>
-        <!-- {% if self.tags %}
+        {% if self.tags %}
             <ul class="actions horizontal small">
                 {% for tag in self.tags.all  %}
-                <li>
-                    <a href="{% pageurl self.parent %}?tag={{ tag.slug }}" class="small special">{{ tag.name }}</a>
-                </li>
+                <li><a href="{% pageurl self.parent %}?tag={{ tag.slug }}" class="small special">#{{ tag.name }}</a></li>
                 {% endfor %}
             </ul>
-        {% endif %} -->
+        {% endif %}
     </header>
 
     {% for block in self.body %}
         {{ block }}
     {% endfor %}
+
 {% endblock %}

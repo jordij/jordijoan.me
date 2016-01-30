@@ -5,7 +5,7 @@
     {% for page in pages %}
         <article>
             <header class="major">
-                <span>{{ page.date|date:"j F Y" }}</span>
+                <span>Published on {{ page.date|date:"j F Y" }}</span>
                 <h2><a href="{% pageurl page %}">{{ page.title }}</a></h2>
             </header>
                 

@@ -20,7 +20,8 @@ from commonblocks.blocks import *
 from commonblocks.fields import SimpleRichTextField
 
 from core.snippets import Category
-from core.blocks import CodeBlock
+from core.blocks import CodeBlock, ImageGalleryBlock
+
 
 options.DEFAULT_NAMES = options.DEFAULT_NAMES + ('description',)
 
@@ -90,6 +91,7 @@ class BasePage(Page):
             ('quote', CommonQuoteBlock()),
             ('video', CommonVideoBlock()),
             ('code', CodeBlock()),
+            ('gallery', ImageGalleryBlock()),
         ],
         null=True,
         blank=True,

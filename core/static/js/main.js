@@ -94,22 +94,21 @@
 
 				}
 
-		// Main Sections: Two.
-
 			// Lightbox gallery.
 				$window.on('load', function() {
 
-					$('#two').poptrox({
-						caption: function($a) { return $a.next('h3').text(); },
+					$('.image-gallery').poptrox({
 						overlayColor: '#2c2c2c',
+						caption: null,  
 						overlayOpacity: 0.85,
 						popupCloserText: '',
 						popupLoaderText: '',
-						selector: '.work-item a.image',
-						usePopupCaption: true,
+						selector: '.gallery-item a.image',
+						usePopupCaption: false,
 						usePopupDefaultStyling: false,
 						usePopupEasyClose: false,
 						usePopupNav: true,
+						popupCaptionHeight: 0,
 						windowMargin: (skel.breakpoint('small').active ? 0 : 50)
 					});
 
