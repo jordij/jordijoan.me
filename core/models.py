@@ -44,14 +44,14 @@ class HomePage(Page):
         # Get pages
         pages = BasePage.objects.child_of(self).live().order_by('-date')
 
-        # Filter by tag
-        tag = request.GET.get('tag')
-        if tag:
-            pages = pages.filter(tags__name=tag)
+        # Filter by category
+        category = request.GET.get('category')
+        if category:
+            pages = pages.filter(category__slug=category)
 
         # Pagination
         page = request.GET.get('page')
-        paginator = Paginator(pages, 6)  # Show 5 pages per page
+        paginator = Paginator(pages, 6)  # Show 6 pages per page
         try:
             pages = paginator.page(page)
         except PageNotAnInteger:

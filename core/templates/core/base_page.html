@@ -5,11 +5,9 @@
     <header class="major">
         <span>Published on {{ page.date|date:"j F Y" }}</span>
         <h1>{{ self.title }}</h1>
-        {% if self.tags %}
+        {% if self.category %}
             <ul class="actions horizontal small">
-                {% for tag in self.tags.all  %}
-                <li><a href="{% pageurl self.parent %}?tag={{ tag.slug }}" class="small special">#{{ tag.name }}</a></li>
-                {% endfor %}
+                <li><a href="{% pageurl self.parent %}?category={{ self.category.slug }}" class="small special">#{{ self.category.slug }}</a></li>
             </ul>
         {% endif %}
     </header>
