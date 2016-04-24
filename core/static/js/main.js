@@ -106,10 +106,10 @@
 						selector: '.gallery-item a.image',
 						usePopupCaption: false,
 						usePopupDefaultStyling: false,
-						usePopupEasyClose: false,
+						usePopupEasyClose: true,
 						usePopupNav: true,
 						popupCaptionHeight: 0,
-						windowMargin: (skel.breakpoint('small').active ? 0 : 50)
+						windowMargin: 10,
 					});
 
 				});
