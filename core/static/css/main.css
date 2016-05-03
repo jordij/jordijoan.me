@@ -1887,19 +1887,16 @@ input[type="button"],
 /* Header */
 #header {
   background-color: #1f1815;
-  background-attachment: scroll,								fixed;
+  background-attachment: scroll;
   background-image: url("images/overlay.png"), url("../images/bg.jpg");
-  background-position: top left,							top left;
+  background-position: top left,							center center;
+  background-size: auto,								cover;
   background-repeat: repeat,								no-repeat;
-  background-size: auto,								auto 100%;
   color: rgba(255, 255, 255, 0.5);
-  height: 100%;
-  left: 0;
-  padding: 8em 4em 0 0;
-  position: fixed;
-  text-align: right;
-  top: 0;
-  width: 35%; }
+  padding: 8em 0 8em 0;
+  position: relative;
+  text-align: center;
+  width: 100%; }
   #header strong, #header b {
     color: #ffffff; }
   #header h2, #header h3, #header h4, #header h5, #header h6 {
@@ -1923,7 +1920,7 @@ input[type="button"],
   padding: 0 4em 6em 0;
   position: fixed;
   text-align: right;
-  width: 35%; }
+  width: 100%; }
   #footer .icons {
     margin: 1em 0 0 0; }
     #footer .icons a {
@@ -1949,10 +1946,10 @@ input[type="button"],
 
 /* Main */
 #main {
-  margin-left: 35%;
   max-width: 54em;
-  padding: 8em 4em 4em 4em;
-  width: calc(100% - 35%); }
+  padding: 4em 4em 4em 4em;
+  margin-left: auto;
+  margin-right: auto; }
   #main > section {
     border-top: solid 2px #efefef;
     margin: 4em 0 0 0;
@@ -2167,10 +2164,11 @@ body.is-touch .poptrox-popup .closer {
     font-size: 12pt; } }
 /* Large */
 @media screen and (max-width: 1280px) {
+  /*$size-header-width: 30%;*/
   /* Header */
   #header {
     padding: 6em 3em 3em 3em;
-    width: 30%; }
+    /* width: $size-header-width;*/ }
     #header h1 {
       font-size: 1.25em; }
       #header h1 br {
@@ -2178,21 +2176,43 @@ body.is-touch .poptrox-popup .closer {
 
   /* Footer */
   #footer {
-    padding: 0 3em 5em 3em;
-    width: 30%; }
-    #footer .copyright li {
-      border-left-width: 0;
-      display: block;
-      line-height: 2.25em;
-      margin-left: 0;
-      padding-left: 0; }
+    background-attachment: scroll;
+    background-color: #1f1815;
+    background-image: url("images/overlay.png"), url("../images/bg.jpg");
+    background-position: top left,						bottom center;
+    background-repeat: repeat,							no-repeat;
+    background-size: auto,							cover;
+    bottom: auto;
+    left: auto;
+    padding: 3em 3em 4.5em 3em;
+    position: relative;
+    text-align: center;
+    width: 100%; }
+    #footer .icons {
+      margin: 0 0 1em 0; }
+    #footer .copyright {
+      margin: 0 0 1em 0; }
+      #footer .copyright li {
+        border-left-width: 1px;
+        display: inline-block;
+        line-height: 1em;
+        margin-left: 0.75em;
+        padding-left: 0.75em; }
 
-  /* Main */
-  #main {
-    margin-left: 30%;
-    max-width: none;
-    padding: 6em 3em 3em 3em;
-    width: calc(100% - 30%); } }
+  			/*#footer {
+  				padding: 0 $size-header-pad ($size-header-pad + _size(element-margin)) $size-header-pad;
+  				width: $size-header-width;
+  
+  				.copyright {
+  					li {
+  						border-left-width: 0;
+  						display: block;
+  						line-height: 2.25em;
+  						margin-left: 0;
+  						padding-left: 0;
+  					}
+  				}
+  			}*/ }
 /* Medium */
 @media screen and (max-width: 980px) {
   /* Basic */
@@ -2218,31 +2238,6 @@ body.is-touch .poptrox-popup .closer {
       font-size: 1.25em; }
       #header h1 br {
         display: inline; }
-
-  /* Footer */
-  #footer {
-    background-attachment: scroll;
-    background-color: #1f1815;
-    background-image: url("images/overlay.png"), url("../images/bg.jpg");
-    background-position: top left,						bottom center;
-    background-repeat: repeat,							no-repeat;
-    background-size: auto,							cover;
-    bottom: auto;
-    left: auto;
-    padding: 4em 4em 6em 4em;
-    position: relative;
-    text-align: center;
-    width: 100%; }
-    #footer .icons {
-      margin: 0 0 1em 0; }
-    #footer .copyright {
-      margin: 0 0 1em 0; }
-      #footer .copyright li {
-        border-left-width: 1px;
-        display: inline-block;
-        line-height: 1em;
-        margin-left: 0.75em;
-        padding-left: 0.75em; }
 
   /* Main */
   #main {

@@ -39,8 +39,8 @@
 			)
 		)
 	));
-
-	$size-header-width: 35%;
+	$size-main-width: 35%;
+	$size-header-width: 100%;
 	$size-header-pad: 4em;
 
 /* Basic */
@@ -947,19 +947,16 @@
 
 	#header {
 		background-color:		_palette(accent2, bg);
-		background-attachment:	scroll,								fixed;
+		background-attachment:	scroll;
 		background-image:		url('images/overlay.png'),			url('../images/bg.jpg');
-		background-position:	top left,							top left;
+		background-position:	top left,							center center;
+		background-size:		auto,								cover;
 		background-repeat:		repeat,								no-repeat;
-		background-size:		auto,								auto 100%;
 		color: _palette(accent2, fg);
-		height: 100%;
-		left: 0;
-		padding: ($size-header-pad * 2) $size-header-pad 0 0;
-		position: fixed;
-		text-align: right;
-		top: 0;
-		width: $size-header-width;
+		padding: ($size-header-pad * 2) 0 ($size-header-pad * 2) 0;
+		position: relative;
+		text-align: center;
+		width: 100%;
 
 		strong, b {
 			color: _palette(accent2, fg-bold);
@@ -1035,10 +1032,10 @@
 /* Main */
 
 	#main {
-		margin-left: $size-header-width;
 		max-width: 50em + $size-header-pad;
-		padding: ($size-header-pad * 2) $size-header-pad $size-header-pad $size-header-pad;
-		width: calc(100% - #{$size-header-width});
+		padding: $size-header-pad $size-header-pad $size-header-pad $size-header-pad;
+		margin-left: auto;
+		margin-right: auto;
 
 		> section {
 			border-top: solid 2px _palette(border);
@@ -1242,14 +1239,14 @@
 
 	@include breakpoint(large) {
 
-		$size-header-width: 30%;
+		/*$size-header-width: 30%;*/
 		$size-header-pad: 3em;
 
 		/* Header */
 
 			#header {
 				padding: ($size-header-pad * 2) $size-header-pad $size-header-pad $size-header-pad;
-				width: $size-header-width;
+				/* width: $size-header-width;*/
 
 				h1 {
 					font-size: 1.25em;
@@ -1263,6 +1260,36 @@
 		/* Footer */
 
 			#footer {
+				background-attachment:	scroll;
+				background-color:		_palette(accent2, bg);
+				background-image:		url('images/overlay.png'),		url('../images/bg.jpg');
+				background-position:	top left,						bottom center;
+				background-repeat:		repeat,							no-repeat;
+				background-size:		auto,							cover;
+				bottom: auto;
+				left: auto;
+				padding: $size-header-pad $size-header-pad ($size-header-pad * 1.5) $size-header-pad;
+				position: relative;
+				text-align: center;
+				width: $size-header-width;
+
+				.icons {
+					margin: 0 0 (_size(element-margin) * 0.5) 0;
+				}
+
+				.copyright {
+					margin: 0 0 (_size(element-margin) * 0.5) 0;
+
+					li {
+						border-left-width: 1px;
+						display: inline-block;
+						line-height: 1em;
+						margin-left: 0.75em;
+						padding-left: 0.75em;
+					}
+				}
+			}
+			/*#footer {
 				padding: 0 $size-header-pad ($size-header-pad + _size(element-margin)) $size-header-pad;
 				width: $size-header-width;
 
@@ -1275,16 +1302,7 @@
 						padding-left: 0;
 					}
 				}
-			}
-
-		/* Main */
-
-			#main {
-				margin-left: $size-header-width;
-				max-width: none;
-				padding: ($size-header-pad * 2) $size-header-pad $size-header-pad $size-header-pad;
-				width: calc(100% - #{$size-header-width});
-			}
+			}*/
 
 	}
 
@@ -1332,39 +1350,6 @@
 
 					br {
 						display: inline;
-					}
-				}
-			}
-
-		/* Footer */
-
-			#footer {
-				background-attachment:	scroll;
-				background-color:		_palette(accent2, bg);
-				background-image:		url('images/overlay.png'),		url('../images/bg.jpg');
-				background-position:	top left,						bottom center;
-				background-repeat:		repeat,							no-repeat;
-				background-size:		auto,							cover;
-				bottom: auto;
-				left: auto;
-				padding: $size-header-pad $size-header-pad ($size-header-pad * 1.5) $size-header-pad;
-				position: relative;
-				text-align: center;
-				width: 100%;
-
-				.icons {
-					margin: 0 0 (_size(element-margin) * 0.5) 0;
-				}
-
-				.copyright {
-					margin: 0 0 (_size(element-margin) * 0.5) 0;
-
-					li {
-						border-left-width: 1px;
-						display: inline-block;
-						line-height: 1em;
-						margin-left: 0.75em;
-						padding-left: 0.75em;
 					}
 				}
 			}
