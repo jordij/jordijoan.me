@@ -211,6 +211,18 @@
 		&.special {
 			text-align: center;
 		}
+		a {
+			color: _palette(fg);
+			text-decoration:none;
+			border:none;
+
+			&:hover {
+				color: _palette(fg);
+				text-decoration: none;
+			}
+		}
+
+
 	}
 
 	header {

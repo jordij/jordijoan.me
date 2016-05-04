@@ -1,0 +1,21 @@
+{% load static wagtailimages_tags wagtailcore_tags commonblocks_tags %}
+
+<article>
+    <header class="major">
+        <span>Published on {{ page.date|date:"j F Y" }}</span>
+        <h2><a href="{% pageurl page %}">{{ page.title }}</a></h2>
+    </header>
+    {% if page.feed_image %}
+        {% image page.feed_image fill-800x300 as tmp_photo %}
+        <figure>
+        <a href="{% pageurl page %}" class="image fit thumb">
+        <img src="{{ tmp_photo.url }}" alt="{{ page.feed_image.title }}" />
+        </a>
+        </figure>
+    {% endif %}       
+    {{ page.intro|simplerichtext }}
+    <ul class="actions">
+        <li><a href="{% pageurl page %}" class="button">Read on</a></li>
+    </ul>
+</article>
+<hr/>

@@ -1324,6 +1324,13 @@ pre {
 /* Section/Article */
 section.special, article.special {
   text-align: center; }
+section a, article a {
+  color: #5F5F5F;
+  text-decoration: none;
+  border: none; }
+  section a:hover, article a:hover {
+    color: #5F5F5F;
+    text-decoration: none; }
 
 header p {
   color: #b2b2b2;

@@ -1,20 +1,10 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags commonblocks_tags %}
 
 {% block content %}
     
     {% if pages %}
         {% for page in pages %}
-            <article>
-                <header class="major">
-                    <span>Published on {{ page.date|date:"j F Y" }}</span>
-                    <h2><a href="{% pageurl page %}">{{ page.title }}</a></h2>
-                </header>
-                    
-                {{ page.intro|simplerichtext }}
-
-            </article>
-            <hr/>
+            {% include "core/includes/blog_card.html" %}
         {% endfor %}
     {% else %}
         <h1>Sorry but there are no posts available</h1>
