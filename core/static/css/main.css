@@ -1922,11 +1922,17 @@ input[type="button"],
 
 /* Footer */
 #footer {
-  bottom: 0;
-  left: 0;
-  padding: 0 4em 6em 0;
-  position: fixed;
-  text-align: right;
+  background-attachment: scroll;
+  background-color: #1f1815;
+  background-image: url("images/overlay.png"), url("../images/bg.jpg");
+  background-position: top left,						center center;
+  background-repeat: repeat,							no-repeat;
+  background-size: auto,							cover;
+  bottom: auto;
+  left: auto;
+  padding: 4em 4em 6em 4em;
+  position: relative;
+  text-align: center;
   width: 100%; }
   #footer .icons {
     margin: 1em 0 0 0; }
@@ -2186,7 +2192,7 @@ body.is-touch .poptrox-popup .closer {
     background-attachment: scroll;
     background-color: #1f1815;
     background-image: url("images/overlay.png"), url("../images/bg.jpg");
-    background-position: top left,						bottom center;
+    background-position: top left,						center center;
     background-repeat: repeat,							no-repeat;
     background-size: auto,							cover;
     bottom: auto;
@@ -2204,22 +2210,7 @@ body.is-touch .poptrox-popup .closer {
         display: inline-block;
         line-height: 1em;
         margin-left: 0.75em;
-        padding-left: 0.75em; }
-
-  			/*#footer {
-  				padding: 0 $size-header-pad ($size-header-pad + _size(element-margin)) $size-header-pad;
-  				width: $size-header-width;
-  
-  				.copyright {
-  					li {
-  						border-left-width: 0;
-  						display: block;
-  						line-height: 2.25em;
-  						margin-left: 0;
-  						padding-left: 0;
-  					}
-  				}
-  			}*/ }
+        padding-left: 0.75em; } }
 /* Medium */
 @media screen and (max-width: 980px) {
   /* Basic */
