@@ -8,6 +8,6 @@
     {% image self.og_image.image width-400 as tmp_twitter_image %}
     <meta name="twitter:image:src" content="{{ BASE_URL }}{{ tmp_twitter_image.url }}">
 {% else %}
-    <meta name="twitter:image:src" content="{{ BASE_URL }}{% static 'images/springtail.png' %}">
+    <meta name="twitter:image:src" content="{{ BASE_URL }}{% static 'images/bg.jpg' %}">
 {% endif %}
 <!-- end:twitter card -->
