@@ -20,22 +20,8 @@ WAGTAILSEARCH_BACKENDS = {
     }
 }
 
-# As required by debug_toolbar
-INTERNAL_IPS = (
-   '10.0.2.2',
-   '127.0.0.1',
-)
-
-INSTALLED_APPS += (
-    'debug_toolbar',
-)
-
 CACHE_MIDDLEWARE_SECONDS = 0
 
 INSTALLED_APPS = INSTALLED_APPS + (
     'wagtail.contrib.wagtailstyleguide',
 )
-
-MIDDLEWARE_CLASSES = (
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-) + MIDDLEWARE_CLASSES

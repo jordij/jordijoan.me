@@ -125,6 +125,10 @@ class BasePage(Page):
     )
 
     @property
+    def get_next_sibling(self):
+        return self.get_next_siblings().live().first()
+
+    @property
     def parent(self):
         # Find closest ancestor which is a blog index
         return self.get_ancestors().last()
