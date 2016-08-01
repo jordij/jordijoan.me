@@ -9,7 +9,7 @@
         <li class="1u align-center"></li>
         <li class="5u align-left">
         {% if self.get_next_sibling %}
-            <a href="{% pageurl self.get_next_sibling %}">Next</a>
+            <a href="{% pageurl self.get_previous_sibling %}">Next</a>
         {% else %}
             <span class="disabled">Next</span>
         {% endif %}

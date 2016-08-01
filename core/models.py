@@ -125,8 +125,8 @@ class BasePage(Page):
     )
 
     @property
-    def get_next_sibling(self):
-        return self.get_next_siblings().live().first()
+    def get_previous_sibling(self):
+        return self.get_prev_siblings().live().first()
 
     @property
     def parent(self):
