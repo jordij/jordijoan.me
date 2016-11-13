@@ -99,7 +99,7 @@
 
 					$('.image-gallery').poptrox({
 						overlayColor: '#2c2c2c',
-						caption: null,  
+						caption: null,
 						overlayOpacity: 0.85,
 						popupCloserText: '',
 						popupLoaderText: '',
@@ -109,7 +109,7 @@
 						usePopupEasyClose: true,
 						usePopupNav: true,
 						popupCaptionHeight: 0,
-						windowMargin: 10,
+						windowMargin: 5,
 					});
 
 				});

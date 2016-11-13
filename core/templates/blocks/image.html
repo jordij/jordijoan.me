@@ -1,4 +1,4 @@
-{% load commonblocks_tags wagtailimages_tags %}
+{% load wagtailimages_tags %}
 
 <figure>
 
@@ -6,9 +6,8 @@
 
     <img src="{{ tmp_photo.url }}" alt="{{ self.image.title }}" style="max-width:{{ self.image.width }}px;" />
 
-    
     {% if self.caption %}
-        <figcaption>{{ self.caption|simplerichtext }}</figcaption>
+        <figcaption>{{ self.caption }}</figcaption>
     {% endif %}
 
      {% if self.license_url %}

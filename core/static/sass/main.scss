@@ -2,7 +2,7 @@
 @import 'libs/functions';
 @import 'libs/mixins';
 @import url('font-awesome.min.css');
-@import url(https://fonts.googleapis.com/css?family=Cardo:400,400italic|Raleway:400,600);
+@import url(https://fonts.googleapis.com/css?family=Pontano+Sans|Work+Sans:700,800);
 
 /*
 	Strata by HTML5 UP
@@ -59,9 +59,9 @@
 	body, input, select, textarea {
 		color: _palette(fg);
 		font-family: _font(family);
-		font-size: 16pt;
+		font-size: 12pt;
 		font-weight: _font(weight);
-		line-height: 1.75em;
+		line-height: 1.5em;
 	}
 
 	a {
@@ -109,7 +109,7 @@
 	}
 
 	h1 {
-		font-size: 2em;
+		font-size: 1.75em;
 		line-height: 1.5em;
 	}
 
@@ -152,7 +152,7 @@
 
 	hr {
 		border: 0;
-		border-bottom: solid 2px _palette(border);
+		border-bottom: solid 1px _palette(border);
 
 		// This is the *only* instance where we need to rely on margin collapse.
 		margin: _size(element-margin) 0;
@@ -234,16 +234,17 @@
 
 		h1 {
 			margin: 0 0 (_size(element-margin) * 0.25) 0;
+			#font-size: 1.25em;
 		}
 
 		h2 + p {
-			font-size: 1.25em;
+			#font-size: 1.25em;
 			margin-top: (_size(element-margin) * -0.5);
 			line-height: 1.5em;
 		}
 
 		h3 + p {
-			font-size: 1.1em;
+			#font-size: 1.1em;
 			margin-top: (_size(element-margin) * -0.4);
 			line-height: 1.5em;
 		}
@@ -251,9 +252,13 @@
 		h4 + p,
 		h5 + p,
 		h6 + p {
-			font-size: 0.9em;
+			#font-size: 0.9em;
 			margin-top: (_size(element-margin) * -0.3);
 			line-height: 1.5em;
+		}
+
+		h1 + h2 + a {
+			color: _palette(fg);
 		}
 
 		&.major {
@@ -584,6 +589,7 @@
 		img {
 			width: 100%;
 			height: auto;
+			margin: 0 0 0.5em 0;
 		}
 
 	}
@@ -591,6 +597,7 @@
 	figcaption {
 		p {
 			font-size: 0.75em;
+			line-height: 1.5em;
 		}
 	}
 
@@ -844,7 +851,7 @@
 		@include vendor('transition', ('background-color #{_duration(transition)} ease-in-out', 'color #{_duration(transition)} ease-in-out', 'border-color #{_duration(transition)} ease-in-out'));
 		background-color: transparent;
 		border-radius: _size(border-radius);
-		border: solid 3px _palette(border);
+		border: solid 2px _palette(border);
 		color: _palette(fg) !important;
 		cursor: pointer;
 		display: inline-block;
@@ -948,11 +955,11 @@
 			margin: 0 0 (_size(element-margin) * 0.25) 0;
 		}
 
-		p {
+		/*p {
 			font-size: 0.8em;
 			line-height: 1.5em;
 			margin: 0;
-		}
+		}*/
 	}
 
 /* Header */
@@ -975,13 +982,13 @@
 		}
 
 		h2, h3, h4, h5, h6 {
-			color: _palette(accent2, fg-bold);
+			color: _palette(accent2, fg);
 		}
 
 		h1 {
-			color: _palette(accent2, fg);
-			font-size: 1.35em;
-			line-height: 1.75em;
+			color: _palette(accent2, fg-bold);
+			#font-size: 2em;
+			#line-height: 1.75em;
 			margin: 0;
 		}
 
@@ -1249,7 +1256,7 @@
 		/* Basic */
 
 			body, input, select, textarea {
-				font-size: 12pt;
+				font-size: 11pt;
 			}
 
 	}
@@ -1268,7 +1275,7 @@
 				/* width: $size-header-width;*/
 
 				h1 {
-					font-size: 1.25em;
+					#font-size: 1.25em;
 
 					br {
 						display: none;
@@ -1351,7 +1358,7 @@
 				width: 100%;
 
 				h1 {
-					font-size: 1.25em;
+					#font-size: 1.5em;
 
 					br {
 						display: inline;
@@ -1378,7 +1385,7 @@
 		/* Basic */
 
 			h1 {
-				font-size: 1.5em;
+				#font-size: 1.5em;
 			}
 
 			h2 {
@@ -1425,7 +1432,7 @@
 				padding: ($size-header-pad * 1.5) $size-header-pad;
 
 				h1 {
-					font-size: 1.15em;
+					#font-size: 1.15em;
 				}
 			}
 

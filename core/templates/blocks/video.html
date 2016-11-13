@@ -1,4 +1,4 @@
-{% load wagtailembeds_tags commonblocks_tags wagtailimages_tags %}
+{% load wagtailembeds_tags wagtailimages_tags %}
 
 <div class="responsive-object">
     {{ self.video.url|embed }}
@@ -6,6 +6,6 @@
 
 {% if self.caption %}
 <caption>
-    {{ self.caption|simplerichtext }}
+    {{ self.caption }}
 </caption>
 {% endif %}

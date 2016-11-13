@@ -4,7 +4,6 @@ from datetime import date
 import django.db.models.options as options
 from django.db import models
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.utils.translation import ugettext_lazy as _
 
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel
@@ -12,16 +11,16 @@ from wagtail.wagtailcore.fields import StreamField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
+from wagtail.wagtailcore import blocks
 
 from modelcluster.fields import ParentalKey
 from modelcluster.tags import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 from bs4 import BeautifulSoup
-from commonblocks.blocks import *
-from commonblocks.fields import SimpleRichTextField
 
+from core.blocks import (CommonImageBlock, CommonQuoteBlock, CommonLinksBlock,
+                         CommonHeadingBlock, CommonVideoBlock, CodeBlock, ImageGalleryBlock)
 from core.snippets import Category
-from core.blocks import CodeBlock, ImageGalleryBlock
 
 
 options.DEFAULT_NAMES = options.DEFAULT_NAMES + ('description',)
@@ -42,13 +41,21 @@ class HomePage(Page):
     search_fields = ()
 
     def get_context(self, request):
+        # get template context
+        context = super(HomePage, self).get_context(request)
         # Get pages
         pages = BasePage.objects.child_of(self).live().order_by('-date')
 
         # Filter by category
         category = request.GET.get('category')
         if category:
-            pages = pages.filter(category__slug=category)
+            try:
+                category = Category.objects.get(slug=category)
+            except:
+                pass
+            else:
+                pages = pages.filter(category=category)
+                context['category'] = category
 
         # Pagination
         page = request.GET.get('page')
@@ -60,8 +67,6 @@ class HomePage(Page):
         except EmptyPage:
             pages = paginator.page(paginator.num_pages)
 
-        # Update template context
-        context = super(HomePage, self).get_context(request)
         context['pages'] = pages
         return context
 
@@ -86,7 +91,7 @@ class BasePage(Page):
     body = StreamField(
         [
             ('heading', CommonHeadingBlock()),
-            ('content', SimpleRichTextBlock()),
+            ('content', blocks.RichTextBlock(editor='default')),
             ('image', CommonImageBlock()),
             ('links', CommonLinksBlock()),
             ('quote', CommonQuoteBlock()),
@@ -97,11 +102,12 @@ class BasePage(Page):
         null=True,
         blank=True,
     )
-    intro = SimpleRichTextField(
-        help_text=_('An excerpt of the page'),
-        null=True,
+    intro = models.TextField(
+        max_length=1000,
         blank=True,
+        null=True,
     )
+
     category = models.ForeignKey(
         Category,
         null=True,

@@ -1,7 +1,10 @@
 {% extends "base.html" %}
+{% load wagtailcore_tags %}
 
 {% block content %}
-    
+    {% if category %}
+        <p><a href="/">Home</a> &#8811; <a href="/?category={{ category.slug }}" class="small special"> {{ category.name }}</a></p>
+    {% endif %}
     {% if pages %}
         {% for page in pages %}
             {% include "core/includes/blog_card.html" %}
@@ -11,6 +14,6 @@
         <p>Try going to the <a href="/">home page</a> and taking it from there.
     {% endif %}
 
-    {% include "core/includes/pagination.html" with pages=pages only %}
+    {% include "core/includes/pagination.html" with pages=pages %}
 
 {% endblock %}

@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 # Absolute filesystem path to the Django project directory:
 DJANGO_ROOT = dirname(dirname(dirname(abspath(__file__))))
@@ -75,7 +74,6 @@ INSTALLED_APPS = (
     'taggit',
     'modelcluster',
     'overextends',
-    'commonblocks',
     'core',
     'wagtail.contrib.wagtailsitemaps',
     'wagtail.contrib.wagtailroutablepage',
@@ -152,19 +150,102 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = join(PROJECT_ROOT, 'media')
 MEDIA_URL = '/media/'
 
-# Template configuration
-TEMPLATE_CONTEXT_PROCESSORS += (
-    'django.core.context_processors.request',
-    'core.context_processors.baseurl',
-    'core.context_processors.google_analytics',
-    'django.contrib.messages.context_processors.messages',
-)
 
-
-TEMPLATE_DIRS = (
-    normpath(join(DJANGO_ROOT, 'core/templates')),
-)
+TEMPLATES = [
+    {
+        # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
+        'DIRS': [
+            normpath(join(DJANGO_ROOT, 'core/templates')),
+        ],
+        'OPTIONS': {
+            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
+            'debug': True,
+            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
+            # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
+            'loaders': [
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+            ],
+            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+                # custom processors
+                'core.context_processors.baseurl',
+                'core.context_processors.google_analytics',
+            ],
+        },
+    },
+]
 
 # Wagtail settings
 LOGIN_URL = 'wagtailadmin_login'
 LOGIN_REDIRECT_URL = 'wagtailadmin_home'
+
+WAGTAILADMIN_RICH_TEXT_EDITORS = {
+    'simple': {
+        'WIDGET': 'core.rich_text.SimpleRichTextArea'
+    },
+    'default': {
+        'WIDGET': 'core.rich_text.RichTextArea'
+    },
+}
+
+WAGTAIL_EDITOR_OPTIONS = {
+    'simple': {
+        'halloheadings': {
+            'formatBlocks': ['p']
+        },
+        'halloformat': {
+            'formattings': {
+                'bold': True,
+                'italic': True,
+            },
+        },
+        'hallowagtaillink': {},
+        'hallolists': {},
+        'hallorequireparagraphs': {},
+        'hallocleanhtml': {
+            'format': False,
+            'removeTags': ['span', 'div', 'table', 'strong'],
+            'allowedTags': ['a', 'p', 'i', 'b'],
+            'removeAttrs': ['class', 'style', 'id'],
+            'allowedAttributes': [
+                ['a', ['href', 'id', 'target', 'id', 'linktype']]
+            ]
+        }
+    },
+    'default': {
+        'halloheadings': {
+            'formatBlocks': ['p', 'h2', 'h3']
+        },
+        'halloformat': {
+            'formattings': {
+                'bold': True,
+                'italic': True,
+            },
+        },
+        'hallowagtaillink': {},
+        'hallorequireparagraphs': {},
+        'hallolists': {},
+        # 'hallocode': {},
+        'hallocleanhtml': {
+            'format': False,
+            'removeTags': ['span', 'div', 'table', 'strong'],
+            'allowedTags': ['a', 'p', 'i', 'b', 'code', 'ul', 'ol', 'li'],
+            'removeAttrs': ['class', 'style', 'id'],
+            'allowedAttributes': [
+                ['a', ['href', 'id', 'target', 'id', 'linktype']]
+            ]
+        }
+    }
+}
+

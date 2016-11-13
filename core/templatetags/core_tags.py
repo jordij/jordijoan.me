@@ -2,7 +2,6 @@ from django import template
 from django.core.exceptions import ObjectDoesNotExist
 
 from core.snippets import NavigationMenu
-from core.utilities import *
 
 register = template.Library()
 

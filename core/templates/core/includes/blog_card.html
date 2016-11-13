@@ -1,4 +1,4 @@
-{% load static wagtailimages_tags wagtailcore_tags commonblocks_tags %}
+{% load static wagtailimages_tags wagtailcore_tags %}
 
 <article>
     <header class="major">
@@ -12,8 +12,8 @@
         <img src="{{ tmp_photo.url }}" alt="{{ page.feed_image.title }}" />
         </a>
         </figure>
-    {% endif %}       
-    {{ page.intro|simplerichtext }}
+    {% endif %}
+    <p>{{ page.intro|striptags }}</p>
     <ul class="actions">
         <li><a href="{% pageurl page %}" class="button">Read on</a></li>
     </ul>
