@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
     url(r'^images/', include(wagtailimages_urls)),
+    url(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    url(r'^humans\.txt', TemplateView.as_view(template_name='humans.txt', content_type='text/plain')),
     url('^sitemap\.xml$', sitemap),
     url(r'', include(wagtail_urls)),
 ]
@@ -33,7 +35,5 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL + 'images/', document_root=os.path.join(settings.MEDIA_ROOT, 'images'))
 else:
     urlpatterns += [
-        url(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
-        url(r'^humans\.txt', TemplateView.as_view(template_name='humans.txt', content_type='text/plain')),
         url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT})
     ]
