@@ -66,7 +66,6 @@ class CodeBlock(blocks.StructBlock):
 
     class Meta:
         icon = 'code'
-        template = 'blocks/code.html'
 
 
 class CommonImageBlock(blocks.StructBlock):
