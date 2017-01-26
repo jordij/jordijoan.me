@@ -1,5 +1,806 @@
 @import url("font-awesome.min.css");
 @import url(https://fonts.googleapis.com/css?family=Pontano+Sans|Work+Sans:700,800);
+/* Pygments code highlighters */
+.syntax {
+  background: #f8f8f8; }
+  .syntax .hll {
+    background-color: #ffffcc; }
+  .syntax .c {
+    color: #408080;
+    font-style: italic; }
+  .syntax .err {
+    border: 1px solid #FF0000; }
+  .syntax .k {
+    color: #008000;
+    font-weight: bold; }
+  .syntax .o {
+    color: #666666; }
+  .syntax .ch, .syntax .cm {
+    color: #408080;
+    font-style: italic; }
+  .syntax .cp {
+    color: #BC7A00; }
+  .syntax .cpf, .syntax .c1, .syntax .cs {
+    color: #408080;
+    font-style: italic; }
+  .syntax .gd {
+    color: #A00000; }
+  .syntax .ge {
+    font-style: italic; }
+  .syntax .gr {
+    color: #FF0000; }
+  .syntax .gh {
+    color: #000080;
+    font-weight: bold; }
+  .syntax .gi {
+    color: #00A000; }
+  .syntax .go {
+    color: #888888; }
+  .syntax .gp {
+    color: #000080;
+    font-weight: bold; }
+  .syntax .gs {
+    font-weight: bold; }
+  .syntax .gu {
+    color: #800080;
+    font-weight: bold; }
+  .syntax .gt {
+    color: #0044DD; }
+  .syntax .kc, .syntax .kd, .syntax .kn {
+    color: #008000;
+    font-weight: bold; }
+  .syntax .kp {
+    color: #008000; }
+  .syntax .kr {
+    color: #008000;
+    font-weight: bold; }
+  .syntax .kt {
+    color: #B00040; }
+  .syntax .m {
+    color: #666666; }
+  .syntax .s {
+    color: #BA2121; }
+  .syntax .na {
+    color: #7D9029; }
+  .syntax .nb {
+    color: #008000; }
+  .syntax .nc {
+    color: #0000FF;
+    font-weight: bold; }
+  .syntax .no {
+    color: #880000; }
+  .syntax .nd {
+    color: #AA22FF; }
+  .syntax .ni {
+    color: #999999;
+    font-weight: bold; }
+  .syntax .ne {
+    color: #D2413A;
+    font-weight: bold; }
+  .syntax .nf {
+    color: #0000FF; }
+  .syntax .nl {
+    color: #A0A000; }
+  .syntax .nn {
+    color: #0000FF;
+    font-weight: bold; }
+  .syntax .nt {
+    color: #008000;
+    font-weight: bold; }
+  .syntax .nv {
+    color: #19177C; }
+  .syntax .ow {
+    color: #AA22FF;
+    font-weight: bold; }
+  .syntax .w {
+    color: #bbbbbb; }
+  .syntax .mb, .syntax .mf, .syntax .mh, .syntax .mi, .syntax .mo {
+    color: #666666; }
+  .syntax .sb, .syntax .sc {
+    color: #BA2121; }
+  .syntax .sd {
+    color: #BA2121;
+    font-style: italic; }
+  .syntax .s2 {
+    color: #BA2121; }
+  .syntax .se {
+    color: #BB6622;
+    font-weight: bold; }
+  .syntax .sh {
+    color: #BA2121; }
+  .syntax .si {
+    color: #BB6688;
+    font-weight: bold; }
+  .syntax .sx {
+    color: #008000; }
+  .syntax .sr {
+    color: #BB6688; }
+  .syntax .s1 {
+    color: #BA2121; }
+  .syntax .ss {
+    color: #19177C; }
+  .syntax .bp {
+    color: #008000; }
+  .syntax .vc, .syntax .vg, .syntax .vi {
+    color: #19177C; }
+  .syntax .il {
+    color: #666666; }
+
+/* Comment */
+/* Error */
+/* Keyword */
+/* Operator */
+/* Comment.Hashbang */
+/* Comment.Multiline */
+/* Comment.Preproc */
+/* Comment.PreprocFile */
+/* Comment.Single */
+/* Comment.Special */
+/* Generic.Deleted */
+/* Generic.Emph */
+/* Generic.Error */
+/* Generic.Heading */
+/* Generic.Inserted */
+/* Generic.Output */
+/* Generic.Prompt */
+/* Generic.Strong */
+/* Generic.Subheading */
+/* Generic.Traceback */
+/* Keyword.Constant */
+/* Keyword.Declaration */
+/* Keyword.Namespace */
+/* Keyword.Pseudo */
+/* Keyword.Reserved */
+/* Keyword.Type */
+/* Literal.Number */
+/* Literal.String */
+/* Name.Attribute */
+/* Name.Builtin */
+/* Name.Class */
+/* Name.Constant */
+/* Name.Decorator */
+/* Name.Entity */
+/* Name.Exception */
+/* Name.Function */
+/* Name.Label */
+/* Name.Namespace */
+/* Name.Tag */
+/* Name.Variable */
+/* Operator.Word */
+/* Text.Whitespace */
+/* Literal.Number.Bin */
+/* Literal.Number.Float */
+/* Literal.Number.Hex */
+/* Literal.Number.Integer */
+/* Literal.Number.Oct */
+/* Literal.String.Backtick */
+/* Literal.String.Char */
+/* Literal.String.Doc */
+/* Literal.String.Double */
+/* Literal.String.Escape */
+/* Literal.String.Heredoc */
+/* Literal.String.Interpol */
+/* Literal.String.Other */
+/* Literal.String.Regex */
+/* Literal.String.Single */
+/* Literal.String.Symbol */
+/* Name.Builtin.Pseudo */
+/* Name.Variable.Class */
+/* Name.Variable.Global */
+/* Name.Variable.Instance */
+/* Literal.Number.Integer.Long */
+.emacs {
+  background: #f8f8f8; }
+  .emacs .hll {
+    background-color: #ffffcc; }
+  .emacs .c {
+    color: #008800;
+    font-style: italic; }
+  .emacs .err {
+    border: 1px solid #FF0000; }
+  .emacs .k {
+    color: #AA22FF;
+    font-weight: bold; }
+  .emacs .o {
+    color: #666666; }
+  .emacs .ch, .emacs .cm {
+    color: #008800;
+    font-style: italic; }
+  .emacs .cp {
+    color: #008800; }
+  .emacs .cpf, .emacs .c1 {
+    color: #008800;
+    font-style: italic; }
+  .emacs .cs {
+    color: #008800;
+    font-weight: bold; }
+  .emacs .gd {
+    color: #A00000; }
+  .emacs .ge {
+    font-style: italic; }
+  .emacs .gr {
+    color: #FF0000; }
+  .emacs .gh {
+    color: #000080;
+    font-weight: bold; }
+  .emacs .gi {
+    color: #00A000; }
+  .emacs .go {
+    color: #888888; }
+  .emacs .gp {
+    color: #000080;
+    font-weight: bold; }
+  .emacs .gs {
+    font-weight: bold; }
+  .emacs .gu {
+    color: #800080;
+    font-weight: bold; }
+  .emacs .gt {
+    color: #0044DD; }
+  .emacs .kc, .emacs .kd, .emacs .kn {
+    color: #AA22FF;
+    font-weight: bold; }
+  .emacs .kp {
+    color: #AA22FF; }
+  .emacs .kr {
+    color: #AA22FF;
+    font-weight: bold; }
+  .emacs .kt {
+    color: #00BB00;
+    font-weight: bold; }
+  .emacs .m {
+    color: #666666; }
+  .emacs .s, .emacs .na {
+    color: #BB4444; }
+  .emacs .nb {
+    color: #AA22FF; }
+  .emacs .nc {
+    color: #0000FF; }
+  .emacs .no {
+    color: #880000; }
+  .emacs .nd {
+    color: #AA22FF; }
+  .emacs .ni {
+    color: #999999;
+    font-weight: bold; }
+  .emacs .ne {
+    color: #D2413A;
+    font-weight: bold; }
+  .emacs .nf {
+    color: #00A000; }
+  .emacs .nl {
+    color: #A0A000; }
+  .emacs .nn {
+    color: #0000FF;
+    font-weight: bold; }
+  .emacs .nt {
+    color: #008000;
+    font-weight: bold; }
+  .emacs .nv {
+    color: #B8860B; }
+  .emacs .ow {
+    color: #AA22FF;
+    font-weight: bold; }
+  .emacs .w {
+    color: #bbbbbb; }
+  .emacs .mb, .emacs .mf, .emacs .mh, .emacs .mi, .emacs .mo {
+    color: #666666; }
+  .emacs .sb, .emacs .sc {
+    color: #BB4444; }
+  .emacs .sd {
+    color: #BB4444;
+    font-style: italic; }
+  .emacs .s2 {
+    color: #BB4444; }
+  .emacs .se {
+    color: #BB6622;
+    font-weight: bold; }
+  .emacs .sh {
+    color: #BB4444; }
+  .emacs .si {
+    color: #BB6688;
+    font-weight: bold; }
+  .emacs .sx {
+    color: #008000; }
+  .emacs .sr {
+    color: #BB6688; }
+  .emacs .s1 {
+    color: #BB4444; }
+  .emacs .ss {
+    color: #B8860B; }
+  .emacs .bp {
+    color: #AA22FF; }
+  .emacs .vc, .emacs .vg, .emacs .vi {
+    color: #B8860B; }
+  .emacs .il {
+    color: #666666; }
+
+/* Comment */
+/* Error */
+/* Keyword */
+/* Operator */
+/* Comment.Hashbang */
+/* Comment.Multiline */
+/* Comment.Preproc */
+/* Comment.PreprocFile */
+/* Comment.Single */
+/* Comment.Special */
+/* Generic.Deleted */
+/* Generic.Emph */
+/* Generic.Error */
+/* Generic.Heading */
+/* Generic.Inserted */
+/* Generic.Output */
+/* Generic.Prompt */
+/* Generic.Strong */
+/* Generic.Subheading */
+/* Generic.Traceback */
+/* Keyword.Constant */
+/* Keyword.Declaration */
+/* Keyword.Namespace */
+/* Keyword.Pseudo */
+/* Keyword.Reserved */
+/* Keyword.Type */
+/* Literal.Number */
+/* Literal.String */
+/* Name.Attribute */
+/* Name.Builtin */
+/* Name.Class */
+/* Name.Constant */
+/* Name.Decorator */
+/* Name.Entity */
+/* Name.Exception */
+/* Name.Function */
+/* Name.Label */
+/* Name.Namespace */
+/* Name.Tag */
+/* Name.Variable */
+/* Operator.Word */
+/* Text.Whitespace */
+/* Literal.Number.Bin */
+/* Literal.Number.Float */
+/* Literal.Number.Hex */
+/* Literal.Number.Integer */
+/* Literal.Number.Oct */
+/* Literal.String.Backtick */
+/* Literal.String.Char */
+/* Literal.String.Doc */
+/* Literal.String.Double */
+/* Literal.String.Escape */
+/* Literal.String.Heredoc */
+/* Literal.String.Interpol */
+/* Literal.String.Other */
+/* Literal.String.Regex */
+/* Literal.String.Single */
+/* Literal.String.Symbol */
+/* Name.Builtin.Pseudo */
+/* Name.Variable.Class */
+/* Name.Variable.Global */
+/* Name.Variable.Instance */
+/* Literal.Number.Integer.Long */
+.monokai {
+  background: #272822;
+  color: #f8f8f2; }
+  .monokai .hll {
+    background-color: #49483e; }
+  .monokai .c {
+    color: #75715e; }
+  .monokai .err {
+    color: #960050;
+    background-color: #1e0010; }
+  .monokai .k {
+    color: #66d9ef; }
+  .monokai .l {
+    color: #ae81ff; }
+  .monokai .n {
+    color: #f8f8f2; }
+  .monokai .o {
+    color: #f92672; }
+  .monokai .p {
+    color: #f8f8f2; }
+  .monokai .ch, .monokai .cm, .monokai .cp, .monokai .cpf, .monokai .c1, .monokai .cs {
+    color: #75715e; }
+  .monokai .gd {
+    color: #f92672; }
+  .monokai .ge {
+    font-style: italic; }
+  .monokai .gi {
+    color: #a6e22e; }
+  .monokai .gs {
+    font-weight: bold; }
+  .monokai .gu {
+    color: #75715e; }
+  .monokai .kc, .monokai .kd {
+    color: #66d9ef; }
+  .monokai .kn {
+    color: #f92672; }
+  .monokai .kp, .monokai .kr, .monokai .kt {
+    color: #66d9ef; }
+  .monokai .ld {
+    color: #e6db74; }
+  .monokai .m {
+    color: #ae81ff; }
+  .monokai .s {
+    color: #e6db74; }
+  .monokai .na {
+    color: #a6e22e; }
+  .monokai .nb {
+    color: #f8f8f2; }
+  .monokai .nc {
+    color: #a6e22e; }
+  .monokai .no {
+    color: #66d9ef; }
+  .monokai .nd {
+    color: #a6e22e; }
+  .monokai .ni {
+    color: #f8f8f2; }
+  .monokai .ne, .monokai .nf {
+    color: #a6e22e; }
+  .monokai .nl, .monokai .nn {
+    color: #f8f8f2; }
+  .monokai .nx {
+    color: #a6e22e; }
+  .monokai .py {
+    color: #f8f8f2; }
+  .monokai .nt {
+    color: #f92672; }
+  .monokai .nv {
+    color: #f8f8f2; }
+  .monokai .ow {
+    color: #f92672; }
+  .monokai .w {
+    color: #f8f8f2; }
+  .monokai .mb, .monokai .mf, .monokai .mh, .monokai .mi, .monokai .mo {
+    color: #ae81ff; }
+  .monokai .sb, .monokai .sc, .monokai .sd, .monokai .s2 {
+    color: #e6db74; }
+  .monokai .se {
+    color: #ae81ff; }
+  .monokai .sh, .monokai .si, .monokai .sx, .monokai .sr, .monokai .s1, .monokai .ss {
+    color: #e6db74; }
+  .monokai .bp, .monokai .vc, .monokai .vg, .monokai .vi {
+    color: #f8f8f2; }
+  .monokai .il {
+    color: #ae81ff; }
+
+/* Comment */
+/* Error */
+/* Keyword */
+/* Literal */
+/* Name */
+/* Operator */
+/* Punctuation */
+/* Comment.Hashbang */
+/* Comment.Multiline */
+/* Comment.Preproc */
+/* Comment.PreprocFile */
+/* Comment.Single */
+/* Comment.Special */
+/* Generic.Deleted */
+/* Generic.Emph */
+/* Generic.Inserted */
+/* Generic.Strong */
+/* Generic.Subheading */
+/* Keyword.Constant */
+/* Keyword.Declaration */
+/* Keyword.Namespace */
+/* Keyword.Pseudo */
+/* Keyword.Reserved */
+/* Keyword.Type */
+/* Literal.Date */
+/* Literal.Number */
+/* Literal.String */
+/* Name.Attribute */
+/* Name.Builtin */
+/* Name.Class */
+/* Name.Constant */
+/* Name.Decorator */
+/* Name.Entity */
+/* Name.Exception */
+/* Name.Function */
+/* Name.Label */
+/* Name.Namespace */
+/* Name.Other */
+/* Name.Property */
+/* Name.Tag */
+/* Name.Variable */
+/* Operator.Word */
+/* Text.Whitespace */
+/* Literal.Number.Bin */
+/* Literal.Number.Float */
+/* Literal.Number.Hex */
+/* Literal.Number.Integer */
+/* Literal.Number.Oct */
+/* Literal.String.Backtick */
+/* Literal.String.Char */
+/* Literal.String.Doc */
+/* Literal.String.Double */
+/* Literal.String.Escape */
+/* Literal.String.Heredoc */
+/* Literal.String.Interpol */
+/* Literal.String.Other */
+/* Literal.String.Regex */
+/* Literal.String.Single */
+/* Literal.String.Symbol */
+/* Name.Builtin.Pseudo */
+/* Name.Variable.Class */
+/* Name.Variable.Global */
+/* Name.Variable.Instance */
+/* Literal.Number.Integer.Long */
+.vim {
+  background: #000000;
+  color: #cccccc; }
+  .vim .hll {
+    background-color: #222222; }
+  .vim .c {
+    color: #000080; }
+  .vim .err {
+    color: #cccccc;
+    border: 1px solid #FF0000; }
+  .vim .esc, .vim .g {
+    color: #cccccc; }
+  .vim .k {
+    color: #cdcd00; }
+  .vim .l, .vim .n {
+    color: #cccccc; }
+  .vim .o {
+    color: #3399cc; }
+  .vim .x, .vim .p {
+    color: #cccccc; }
+  .vim .ch, .vim .cm, .vim .cp, .vim .cpf, .vim .c1 {
+    color: #000080; }
+  .vim .cs {
+    color: #cd0000;
+    font-weight: bold; }
+  .vim .gd {
+    color: #cd0000; }
+  .vim .ge {
+    color: #cccccc;
+    font-style: italic; }
+  .vim .gr {
+    color: #FF0000; }
+  .vim .gh {
+    color: #000080;
+    font-weight: bold; }
+  .vim .gi {
+    color: #00cd00; }
+  .vim .go {
+    color: #888888; }
+  .vim .gp {
+    color: #000080;
+    font-weight: bold; }
+  .vim .gs {
+    color: #cccccc;
+    font-weight: bold; }
+  .vim .gu {
+    color: #800080;
+    font-weight: bold; }
+  .vim .gt {
+    color: #0044DD; }
+  .vim .kc {
+    color: #cdcd00; }
+  .vim .kd {
+    color: #00cd00; }
+  .vim .kn {
+    color: #cd00cd; }
+  .vim .kp, .vim .kr {
+    color: #cdcd00; }
+  .vim .kt {
+    color: #00cd00; }
+  .vim .ld {
+    color: #cccccc; }
+  .vim .m {
+    color: #cd00cd; }
+  .vim .s {
+    color: #cd0000; }
+  .vim .na {
+    color: #cccccc; }
+  .vim .nb {
+    color: #cd00cd; }
+  .vim .nc {
+    color: #00cdcd; }
+  .vim .no, .vim .nd, .vim .ni {
+    color: #cccccc; }
+  .vim .ne {
+    color: #666699;
+    font-weight: bold; }
+  .vim .nf, .vim .nl, .vim .nn, .vim .nx, .vim .py, .vim .nt {
+    color: #cccccc; }
+  .vim .nv {
+    color: #00cdcd; }
+  .vim .ow {
+    color: #cdcd00; }
+  .vim .w {
+    color: #cccccc; }
+  .vim .mb, .vim .mf, .vim .mh, .vim .mi, .vim .mo {
+    color: #cd00cd; }
+  .vim .sb, .vim .sc, .vim .sd, .vim .s2, .vim .se, .vim .sh, .vim .si, .vim .sx, .vim .sr, .vim .s1, .vim .ss {
+    color: #cd0000; }
+  .vim .bp {
+    color: #cd00cd; }
+  .vim .vc, .vim .vg, .vim .vi {
+    color: #00cdcd; }
+  .vim .il {
+    color: #cd00cd; }
+
+/* Comment */
+/* Error */
+/* Escape */
+/* Generic */
+/* Keyword */
+/* Literal */
+/* Name */
+/* Operator */
+/* Other */
+/* Punctuation */
+/* Comment.Hashbang */
+/* Comment.Multiline */
+/* Comment.Preproc */
+/* Comment.PreprocFile */
+/* Comment.Single */
+/* Comment.Special */
+/* Generic.Deleted */
+/* Generic.Emph */
+/* Generic.Error */
+/* Generic.Heading */
+/* Generic.Inserted */
+/* Generic.Output */
+/* Generic.Prompt */
+/* Generic.Strong */
+/* Generic.Subheading */
+/* Generic.Traceback */
+/* Keyword.Constant */
+/* Keyword.Declaration */
+/* Keyword.Namespace */
+/* Keyword.Pseudo */
+/* Keyword.Reserved */
+/* Keyword.Type */
+/* Literal.Date */
+/* Literal.Number */
+/* Literal.String */
+/* Name.Attribute */
+/* Name.Builtin */
+/* Name.Class */
+/* Name.Constant */
+/* Name.Decorator */
+/* Name.Entity */
+/* Name.Exception */
+/* Name.Function */
+/* Name.Label */
+/* Name.Namespace */
+/* Name.Other */
+/* Name.Property */
+/* Name.Tag */
+/* Name.Variable */
+/* Operator.Word */
+/* Text.Whitespace */
+/* Literal.Number.Bin */
+/* Literal.Number.Float */
+/* Literal.Number.Hex */
+/* Literal.Number.Integer */
+/* Literal.Number.Oct */
+/* Literal.String.Backtick */
+/* Literal.String.Char */
+/* Literal.String.Doc */
+/* Literal.String.Double */
+/* Literal.String.Escape */
+/* Literal.String.Heredoc */
+/* Literal.String.Interpol */
+/* Literal.String.Other */
+/* Literal.String.Regex */
+/* Literal.String.Single */
+/* Literal.String.Symbol */
+/* Name.Builtin.Pseudo */
+/* Name.Variable.Class */
+/* Name.Variable.Global */
+/* Name.Variable.Instance */
+/* Literal.Number.Integer.Long */
+.xcode {
+  background: #ffffff; }
+  .xcode .hll {
+    background-color: #ffffcc; }
+  .xcode .c {
+    color: #177500; }
+  .xcode .err {
+    color: #000000; }
+  .xcode .k {
+    color: #A90D91; }
+  .xcode .l {
+    color: #1C01CE; }
+  .xcode .n, .xcode .o {
+    color: #000000; }
+  .xcode .ch, .xcode .cm {
+    color: #177500; }
+  .xcode .cp {
+    color: #633820; }
+  .xcode .cpf, .xcode .c1, .xcode .cs {
+    color: #177500; }
+  .xcode .kc, .xcode .kd, .xcode .kn, .xcode .kp, .xcode .kr, .xcode .kt {
+    color: #A90D91; }
+  .xcode .ld, .xcode .m {
+    color: #1C01CE; }
+  .xcode .s {
+    color: #C41A16; }
+  .xcode .na {
+    color: #836C28; }
+  .xcode .nb {
+    color: #A90D91; }
+  .xcode .nc {
+    color: #3F6E75; }
+  .xcode .no, .xcode .nd, .xcode .ni, .xcode .ne, .xcode .nf, .xcode .nl, .xcode .nn, .xcode .nx, .xcode .py, .xcode .nt, .xcode .nv, .xcode .ow {
+    color: #000000; }
+  .xcode .mb, .xcode .mf, .xcode .mh, .xcode .mi, .xcode .mo {
+    color: #1C01CE; }
+  .xcode .sb {
+    color: #C41A16; }
+  .xcode .sc {
+    color: #2300CE; }
+  .xcode .sd, .xcode .s2, .xcode .se, .xcode .sh, .xcode .si, .xcode .sx, .xcode .sr, .xcode .s1, .xcode .ss {
+    color: #C41A16; }
+  .xcode .bp {
+    color: #5B269A; }
+  .xcode .vc, .xcode .vg, .xcode .vi {
+    color: #000000; }
+  .xcode .il {
+    color: #1C01CE; }
+
+/* Comment */
+/* Error */
+/* Keyword */
+/* Literal */
+/* Name */
+/* Operator */
+/* Comment.Hashbang */
+/* Comment.Multiline */
+/* Comment.Preproc */
+/* Comment.PreprocFile */
+/* Comment.Single */
+/* Comment.Special */
+/* Keyword.Constant */
+/* Keyword.Declaration */
+/* Keyword.Namespace */
+/* Keyword.Pseudo */
+/* Keyword.Reserved */
+/* Keyword.Type */
+/* Literal.Date */
+/* Literal.Number */
+/* Literal.String */
+/* Name.Attribute */
+/* Name.Builtin */
+/* Name.Class */
+/* Name.Constant */
+/* Name.Decorator */
+/* Name.Entity */
+/* Name.Exception */
+/* Name.Function */
+/* Name.Label */
+/* Name.Namespace */
+/* Name.Other */
+/* Name.Property */
+/* Name.Tag */
+/* Name.Variable */
+/* Operator.Word */
+/* Literal.Number.Bin */
+/* Literal.Number.Float */
+/* Literal.Number.Hex */
+/* Literal.Number.Integer */
+/* Literal.Number.Oct */
+/* Literal.String.Backtick */
+/* Literal.String.Char */
+/* Literal.String.Doc */
+/* Literal.String.Double */
+/* Literal.String.Escape */
+/* Literal.String.Heredoc */
+/* Literal.String.Interpol */
+/* Literal.String.Other */
+/* Literal.String.Regex */
+/* Literal.String.Single */
+/* Literal.String.Symbol */
+/* Name.Builtin.Pseudo */
+/* Name.Variable.Class */
+/* Name.Variable.Global */
+/* Name.Variable.Instance */
+/* Literal.Number.Integer.Long */
 /*
 	Strata by HTML5 UP
 	html5up.net | @n33co
@@ -1292,14 +2093,15 @@ blockquote {
   margin: 0 0 1.5em 0;
   padding: 0.5em 0 0.5em 1.5em; }
 
-code {
+.code {
   background: #f7f7f7;
   border-radius: 0.35em;
   border: solid 2px #efefef;
   font-family: "Courier New", monospace;
   font-size: 0.9em;
   margin: 0 0.25em;
-  padding: 0.25em 0.65em; }
+  padding: 0.25em 0.65em;
+  overflow: auto; }
 
 pre {
   -webkit-overflow-scrolling: touch;
