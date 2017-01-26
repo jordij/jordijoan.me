@@ -3,7 +3,7 @@
 My blog on jordijoan.me
 =======================
 
-Codebase for my personal site/blog living on [http://jordijoan.me](http://jordijoan.me)
+Codebase for my personal site/blog living on [https://jordijoan.me](https://jordijoan.me)
 
 # Installation
 
@@ -24,6 +24,10 @@ Install Vagrant and  VirtualBox:
   [..... wait until everything gets installed]
   $ vagrant ssh
   $ djrun
+```
+Generate assets:
+```
+    $ sass sass/main.scss > css/main.css
 ```
 
 The site should be Available on **http://localhost:8111** Admin credentials are admin-admin.

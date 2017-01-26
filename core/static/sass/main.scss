@@ -3,6 +3,12 @@
 @import 'libs/mixins';
 @import url('font-awesome.min.css');
 @import url(https://fonts.googleapis.com/css?family=Pontano+Sans|Work+Sans:700,800);
+/* Pygments code highlighters */
+@import 'pygments/default';
+@import 'pygments/emacs';
+@import 'pygments/monokai';
+@import 'pygments/vim';
+@import 'pygments/xcode';
 
 /*
 	Strata by HTML5 UP
@@ -169,7 +175,7 @@
 		padding: 0.5em 0 0.5em 1.5em;
 	}
 
-	code {
+	.code {
 		background: _palette(border-bg);
 		border-radius: _size(border-radius);
 		border: solid 2px _palette(border);
@@ -177,6 +183,7 @@
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
+		overflow:auto;
 	}
 
 	pre {
