@@ -1,7 +1,7 @@
 {% load wagtailembeds_tags wagtailimages_tags %}
 
 <div class="responsive-object">
-    {{ self.video.url|embed }}
+    {% embed self.video.url %}
 </div>
 
 {% if self.caption %}
