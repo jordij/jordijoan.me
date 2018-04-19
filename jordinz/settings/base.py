@@ -248,4 +248,3 @@ WAGTAIL_EDITOR_OPTIONS = {
         }
     }
 }
-

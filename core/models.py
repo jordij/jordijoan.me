@@ -58,14 +58,15 @@ class HomePage(Page):
                 context['category'] = category
 
         # Pagination
-        page = request.GET.get('page')
-        paginator = Paginator(pages, 6)  # Show 6 pages per page
-        try:
-            pages = paginator.page(page)
-        except PageNotAnInteger:
-            pages = paginator.page(1)
-        except EmptyPage:
-            pages = paginator.page(paginator.num_pages)
+        if pages:
+            page = request.GET.get('page')
+            paginator = Paginator(pages, 6)  # Show 6 pages per page
+            try:
+                pages = paginator.page(page)
+            except PageNotAnInteger:
+                pages = paginator.page(1)
+            except EmptyPage:
+                pages = paginator.page(paginator.num_pages)
 
         context['pages'] = pages
         return context
