@@ -20,7 +20,7 @@ PROJECT_ROOT = dirname(DJANGO_ROOT)
 # Site name:
 SITE_NAME = basename(DJANGO_ROOT)
 
-WAGTAIL_SITE_NAME = "jordijoan.me"
+WAGTAIL_SITE_NAME = "jordi.nz"
 
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:

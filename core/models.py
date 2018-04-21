@@ -87,7 +87,7 @@ class PageTag(TaggedItemBase):
 
 class BasePage(Page):
     """
-    Our main custom Page class. All content pages should inherit from this one.
+    Our main custom Page class.
     """
     body = StreamField(
         [
@@ -117,6 +117,7 @@ class BasePage(Page):
         related_name='pages'
     )
     date = models.DateField("Post date", default=date.today)
+    is_static = models.BooleanField(default=False, null=False)
     feed_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -176,6 +177,7 @@ class BasePage(Page):
 
     content_panels = [
         FieldPanel('title', classname="full title"),
+        FieldPanel('is_static'),
         FieldPanel('date'),
         FieldPanel('intro', classname="full"),
         StreamFieldPanel('body'),

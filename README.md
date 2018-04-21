@@ -1,9 +1,9 @@
-[ ![Codeship Status for jordij/jordijoan.me](https://codeship.com/projects/3f0d2bc0-829a-0133-5908-5a5099820553/status?branch=master)](https://codeship.com/projects/121639)
+[ ![Codeship Status for jordij/jordi.nz](https://codeship.com/projects/3f0d2bc0-829a-0133-5908-5a5099820553/status?branch=master)](https://codeship.com/projects/121639)
 
-My blog on jordijoan.me
+My blog on jordi.nz
 =======================
 
-Codebase for my personal site/blog living on [https://jordijoan.me](https://jordijoan.me)
+Codebase for my personal site/blog living on [https://jordi.nz](https://jordi.nz)
 
 # Installation
 
@@ -27,6 +27,7 @@ Install Vagrant and  VirtualBox:
 ```
 Generate assets:
 ```
+	$ cd core/static
     $ sass sass/main.scss > css/main.css
 ```
 

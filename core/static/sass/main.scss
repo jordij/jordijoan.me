@@ -213,6 +213,32 @@
 		text-align: right;
 	}
 
+/* Nav */
+	nav {
+	    font-size: 1em;
+	    background-color: _palette(accent2, bg);
+	    padding: ($size-header-pad / 6);
+	    margin: 0;
+
+	    > ul {
+	        list-style-type: none;
+	        margin: 0;
+	        padding: 0;
+	        text-align: right;
+
+	        > li {
+	            display: inline;
+	            border-right: 1px solid;
+	            padding-right: 0.8em;
+	            > a {
+	                color: _palette(accent2, fg-light);
+	                text-decoration: none;
+	                border: none;
+	            }
+	        }
+	    }
+	}
+
 /* Section/Article */
 
 	section, article {
@@ -1010,6 +1036,7 @@
 			}
 		}
 	}
+
 
 /* Footer */
 
