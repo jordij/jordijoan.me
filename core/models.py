@@ -44,7 +44,7 @@ class HomePage(Page):
         # get template context
         context = super(HomePage, self).get_context(request)
         # Get pages
-        pages = BasePage.objects.child_of(self).live().order_by('-date')
+        pages = BasePage.objects.child_of(self).live().exclude(is_static=True).order_by('-date')
 
         # Filter by category
         category = request.GET.get('category')
