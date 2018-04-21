@@ -44,7 +44,7 @@ class HomePage(Page):
         # get template context
         context = super(HomePage, self).get_context(request)
         # Get pages
-        pages = BasePage.objects.child_of(self).live().order_by('-date')
+        pages = BasePage.objects.child_of(self).live().exclude(is_static=True).order_by('-date')
 
         # Filter by category
         category = request.GET.get('category')
@@ -58,14 +58,15 @@ class HomePage(Page):
                 context['category'] = category
 
         # Pagination
-        page = request.GET.get('page')
-        paginator = Paginator(pages, 6)  # Show 6 pages per page
-        try:
-            pages = paginator.page(page)
-        except PageNotAnInteger:
-            pages = paginator.page(1)
-        except EmptyPage:
-            pages = paginator.page(paginator.num_pages)
+        if pages:
+            page = request.GET.get('page')
+            paginator = Paginator(pages, 6)  # Show 6 pages per page
+            try:
+                pages = paginator.page(page)
+            except PageNotAnInteger:
+                pages = paginator.page(1)
+            except EmptyPage:
+                pages = paginator.page(paginator.num_pages)
 
         context['pages'] = pages
         return context
@@ -86,7 +87,7 @@ class PageTag(TaggedItemBase):
 
 class BasePage(Page):
     """
-    Our main custom Page class. All content pages should inherit from this one.
+    Our main custom Page class.
     """
     body = StreamField(
         [
@@ -116,6 +117,7 @@ class BasePage(Page):
         related_name='pages'
     )
     date = models.DateField("Post date", default=date.today)
+    is_static = models.BooleanField(default=False, null=False)
     feed_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -175,6 +177,7 @@ class BasePage(Page):
 
     content_panels = [
         FieldPanel('title', classname="full title"),
+        FieldPanel('is_static'),
         FieldPanel('date'),
         FieldPanel('intro', classname="full"),
         StreamFieldPanel('body'),

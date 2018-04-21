@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 # Set your project name
-PROJECT_NAME = 'jordijoan'
-
+PROJECT_NAME = 'jordinz'
+ 
 Vagrant.configure(2) do |config|
     # Base box to build off, and download URL for when it doesn't exist on the user's system already
     config.vm.box = "torchbox/wagtail"
@@ -17,6 +17,10 @@ Vagrant.configure(2) do |config|
     # Share additional folders, one with the project, another with the media folder mounted from
     # the preview site in delila
     config.vm.synced_folder ".", "/home/vagrant/" + PROJECT_NAME
+    
+    # Export var
+    config.vm.provision "shell",
+        inline: "export VAGRANT_PREFER_SYSTEM_BIN=1"
 
     # Forward agent
     config.ssh.forward_agent = true

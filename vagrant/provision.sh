@@ -36,7 +36,7 @@ install_reqs()
     done < "$1"
 }
 
-install_reqs $filename
+pip install -r $filename
 
 # Set execute permissions on manage.py
 chmod a+x $DJANGO_DIR/manage.py

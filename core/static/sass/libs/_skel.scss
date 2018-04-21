@@ -569,16 +569,18 @@
 			    }
 			}
 
-		// Expand just the value?
-			@elseif $expandValue {
-			    @each $vendor in $vendor-prefixes {
-			        #{$property}: #{str-replace-all($value, '-prefix-', $vendor)};
-			    }
-			}
-
-		// Neither? Treat them as a normal declaration.
 			@else {
-		        #{$property}: #{$value};
+			// Expand just the value?
+				@if $expandValue {
+				    @each $vendor in $vendor-prefixes {
+				        #{$property}: #{str-replace-all($value, '-prefix-', $vendor)};
+				    }
+				}
+			// Neither? Treat them as a normal declaration.
+				@else {
+					#{$property}: #{$value};
+				}
+		        
 			}
 
 	}

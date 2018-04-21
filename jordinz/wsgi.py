@@ -1,5 +1,5 @@
 """
-WSGI config for jordijoan.me project.
+WSGI config for jordi.nz project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,5 +11,5 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "jordijoan.settings.production")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "jordinz.settings.production")
 application = get_wsgi_application()
