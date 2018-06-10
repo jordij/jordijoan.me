@@ -810,6 +810,9 @@
 		margin: 0 0 _size(element-margin) 0;
 		width: 100%;
 
+		caption {
+			font-size: 0.75em;
+		}
 		tbody {
 			tr {
 				border: solid 1px _palette(border);
