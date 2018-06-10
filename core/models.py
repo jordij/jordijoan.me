@@ -8,11 +8,14 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel
+from wagtail.wagtailcore.blocks import RawHTMLBlock
 from wagtail.wagtailcore.fields import StreamField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 from wagtail.wagtailcore import blocks
+
+from wagtail.contrib.table_block.blocks import TableBlock
 
 from modelcluster.fields import ParentalKey
 from modelcluster.tags import ClusterTaggableManager
@@ -20,7 +23,8 @@ from taggit.models import TaggedItemBase
 from bs4 import BeautifulSoup
 
 from core.blocks import (CommonImageBlock, CommonQuoteBlock, CommonLinksBlock,
-                         CommonHeadingBlock, CommonVideoBlock, CodeBlock, ImageGalleryBlock)
+                        CommonHeadingBlock, CommonVideoBlock, CodeBlock, 
+                        ImageGalleryBlock)
 from core.snippets import Category
 
 
@@ -90,6 +94,8 @@ class BasePage(Page):
     """
     Our main custom Page class.
     """
+    from wagtail.contrib.table_block.blocks import TableBlock
+
     body = StreamField(
         [
             ('heading', CommonHeadingBlock()),
@@ -100,6 +106,8 @@ class BasePage(Page):
             ('video', CommonVideoBlock()),
             ('code', CodeBlock()),
             ('gallery', ImageGalleryBlock()),
+            ('table', TableBlock()),
+            ('html', RawHTMLBlock()),
         ],
         null=True,
         blank=True,
@@ -147,14 +155,14 @@ class BasePage(Page):
         """
         Returns body field contents text. Useful for search purposes
         """
-        return BeautifulSoup(self.body).get_text()
+        return BeautifulSoup(self.body, "html5lib").get_text()
 
     @property
     def intro_text(self):
         """
         Returns intro field contents text. Useful for search purposes
         """
-        return BeautifulSoup(self.intro).get_text()
+        return BeautifulSoup(self.intro, "html5lib").get_text()
 
     @property
     def body_excerpt(self):

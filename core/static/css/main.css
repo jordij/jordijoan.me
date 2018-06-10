@@ -3224,6 +3224,9 @@ table {
   margin: 0 0 1.5em 0;
   width: 100%;
 }
+table caption {
+  font-size: 0.75em;
+}
 table tbody tr {
   border: solid 1px #efefef;
   border-left: 0;
