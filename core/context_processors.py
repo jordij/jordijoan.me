@@ -1,6 +1,7 @@
 from django.conf import settings
 
 import wagtail
+from wagtail.wagtailcore.models import Site
 
 
 def google_analytics(request):
@@ -33,3 +34,11 @@ def baseurl(request):
 
 def wagtail_version(request):
     return {'wagtail_version': wagtail.VERSION}
+
+
+def root_site(request):
+    site = Site.find_for_request(request)
+    real_site_name = None
+    if site:
+        real_site_name = site.site_name if site.site_name else site.hostname
+    return {'root_site': real_site_name if real_site_name else settings.WAGTAIL_SITE_NAME}

@@ -182,6 +182,7 @@ TEMPLATES = [
                 # custom processors
                 'core.context_processors.baseurl',
                 'core.context_processors.google_analytics',
+                'core.context_processors.root_site',
             ],
         },
     },
