@@ -2693,25 +2693,23 @@ pre code {
 /* Nav */
 nav {
   font-size: 1em;
-  background-color: #1f1815;
-  padding: 0.6666666667em;
+  padding-bottom: 2em;
   margin: 0;
 }
 nav > ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  text-align: right;
 }
 nav > ul > li {
   display: inline;
-  border-right: 1px solid;
-  padding-right: 0.8em;
+  padding: 0 1em 0 0;
 }
 nav > ul > li > a {
-  color: rgba(255, 255, 255, 0.4);
-  text-decoration: none;
-  border: none;
+  font-size: 1.1em;
+  font-weight: 700;
+  font-family: "Work Sans", sans-serif;
+  color: #5F5F5F;
 }
 
 /* Section/Article */
@@ -2735,22 +2733,18 @@ header p {
 }
 header h1 {
   margin: 0 0 0.375em 0;
-  #font-size: 1.25em;
 }
 header h2 + p {
-  #font-size: 1.25em;
   margin-top: -0.75em;
   line-height: 1.5em;
 }
 header h3 + p {
-  #font-size: 1.1em;
   margin-top: -0.6em;
   line-height: 1.5em;
 }
 header h4 + p,
 header h5 + p,
 header h6 + p {
-  #font-size: 0.9em;
   margin-top: -0.45em;
   line-height: 1.5em;
 }
@@ -3498,7 +3492,7 @@ input[type=button]:disabled,
 /* Main */
 #main {
   max-width: 54em;
-  padding: 4em 4em 4em 4em;
+  padding: 2em 4em 4em 4em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -3758,7 +3752,7 @@ body.is-touch .poptrox-popup .closer {
   /*$size-header-width: 30%;*/
   /* Header */
   #header {
-    padding: 6em 3em 3em 3em;
+    padding: 4.5em 3em 3em 3em;
     /* width: $size-header-width;*/
   }
   #header h1 {
@@ -3815,7 +3809,7 @@ body.is-touch .poptrox-popup .closer {
     background-position: top left, center center;
     background-size: auto, cover;
     left: auto;
-    padding: 6em 4em;
+    padding: 5em 4em;
     position: relative;
     text-align: center;
     top: auto;
@@ -3831,7 +3825,7 @@ body.is-touch .poptrox-popup .closer {
   /* Main */
   #main {
     margin: 0;
-    padding: 6em 4em;
+    padding: 2em 4em;
     width: 100%;
   }
 }
@@ -3869,7 +3863,7 @@ body.is-touch .poptrox-popup .closer {
 
   /* Header */
   #header {
-    padding: 2.25em 1.5em;
+    padding: 1.5em 1.5em;
   }
   #header h1 {
     #font-size: 1.15em;
