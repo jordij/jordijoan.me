@@ -27,7 +27,7 @@ Install Vagrant and  VirtualBox:
 ```
 Generate assets:
 ```
-	$ cd core/static
+    $ cd core/static
     $ sass sass/main.scss > css/main.css
 ```
 

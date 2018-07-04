@@ -9,7 +9,7 @@ register = template.Library()
 @register.filter
 def content_type(model):
     """
-    Return the model name/"content type" as a string e.g BlogPage, NewsListingPage.
+    Return the model name/"content type" as a string e.g BlogPage.
     Can be used with "slugify" to create CSS-friendly classnames
     Usage: {% raw %}{{ self|content_type|slugify }} {% endraw %}
     """
@@ -26,15 +26,24 @@ def footer(context):
     except ObjectDoesNotExist:
         return None
 
-    result = {
-       'items': items,
-    }
+    result = {'items': items}
+    result['request'] = context['request'] if 'request' in context else None
+    return result
 
-    if 'request' in context:
-        result['request'] = context['request']
-    else:
-        result['request'] = None
 
+@register.inclusion_tag('core/includes/menu.html', takes_context=True)
+def main_menu(context):
+    """
+    Retrieves the MenuElement(s) under the NavigationMenu with menu_name as "main"
+    """
+    try:
+        items = NavigationMenu.objects.get(menu_name='main').items
+    except ObjectDoesNotExist:
+        return None
+    result = {'items': items}
+    result['request'] = context['request'] if 'request' in context else None
+    result['self'] = context['self'].specific if 'self' in context else None
+    result['category'] = context['category'] if 'category' in context else None
     return result
 
 

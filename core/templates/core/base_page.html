@@ -2,9 +2,6 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-    {% if not self.is_static %}
-    <p><a href="{% pageurl self.parent %}">Home</a> &#8811; <a href="{% pageurl self.parent %}?category={{ self.category.slug }}" class="small special"> {{ self.category.name }}</a></p>
-    {% endif %}
     <header class="major">
         {% if not self.is_static %}<span>Published on {{ page.date|date:"j F Y" }}</span>{% endif %}
         <h1>{{ self.title }}</h1>

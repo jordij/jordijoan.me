@@ -45,6 +45,10 @@ class HomePage(Page):
     )
     search_fields = ()
 
+    @property
+    def is_static(self):
+        return True
+
     def get_context(self, request):
         # get template context
         context = super(HomePage, self).get_context(request)

@@ -1,18 +1,6 @@
 {% load static wagtailcore_tags %}
 
-<!-- Header -->
-<nav>
-   <ul>
-       <li><a href="{{ BASE_URL }}">Home</a></li>
-       <li><a href="{{ BASE_URL }}/nature/">Nature</a></li>
-       <li><a href="{{ BASE_URL }}/science/">Science</a></li>
-       <li><a href="{{ BASE_URL }}/code/">Code</a></li>
-       <li style="border:none;"><a href="{{ BASE_URL }}/about/">Me</a></li>
-    </ul>
-</nav>
-
 <header id="header">
-    <!--<a href="/" class="image avatar"><img src="{% static 'images/avatar.jpeg' %}" alt="Your avatar" /></a>-->
-    <h1>I am Jordi</h1>
-    <h3>Bridging the gap between computer and environmental sciences</h3>
+    <h1>{{ root_site }}</h1>
+    <h3>Bridging the gap between computer and environmental sciences.</h3>
 </header>
