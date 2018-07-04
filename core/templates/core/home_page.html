@@ -2,9 +2,6 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-    {% if category %}
-        <p><a href="/">Home</a> &#8811; <a href="/?category={{ category.slug }}" class="small special"> {{ category.name }}</a></p>
-    {% endif %}
     {% if pages %}
         {% for page in pages %}
             {% include "core/includes/blog_card.html" %}
