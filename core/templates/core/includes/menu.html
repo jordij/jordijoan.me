@@ -1,18 +1,17 @@
 <nav>
    <ul>
        {% for item in items %}
-           <li><a 
+           <li><a href="{{ item.url }}" 
             {% if self.is_static %}
                 {% if category %}
-                    {% ifequal category.name item.title %} style="color: black;border-bottom:solid 1px;"{% endifequal %}
+                    {% ifequal category.name item.title %} class="active"{% endifequal %}
                 {% else %}
-                    {% ifequal self.pk item.link_page.pk %} style="color: black;border-bottom:solid 1px;"{% endifequal %}
+                    {% ifequal self.pk item.link_page.pk %} class="active"{% endifequal %}
                 {% endif %}
             {% else %}
-                {% ifequal self.category.name item.title %} style="color: black;border-bottom:solid 1px;"{% endifequal %}
+                {% ifequal self.category.name item.title %} class="active"{% endifequal %}
             {% endif %}
-            
-            href="{{ item.url }}">{{ item.title }}</a></li>
+            >{{ item.title }}</a></li>
        {% endfor %}
     </ul>
 </nav>
