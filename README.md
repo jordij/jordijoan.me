@@ -27,8 +27,8 @@ Install Vagrant and  VirtualBox:
 ```
 Generate assets:
 ```
-	$ cd core/static
-    $ sass sass/main.scss > css/main.css
+  $ cd core/static
+  $ sass sass/main.scss > css/main.css
 ```
 
 The site should be Available on **http://localhost:8111** Admin credentials are admin-admin.
