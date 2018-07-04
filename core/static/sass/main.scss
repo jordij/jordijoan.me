@@ -1,8 +1,6 @@
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
-/*@import url('font-awesome.min.css');*/
-/*@import url(https://fonts.googleapis.com/css?family=Pontano+Sans|Work+Sans:700,800);*/
 /* Pygments code highlighters */
 @import 'pygments/default';
 @import 'pygments/emacs';
@@ -231,6 +229,10 @@
 	                font-size: 1.1em;
 	                font-weight: _font(weight-bold);
 	                font-family: _font(head-family);
+	                &.active {
+						color: _palette(fg-bold);
+						border-bottom:solid 1px;
+					}
 	            }
 	        }
 	    }
@@ -1497,6 +1499,21 @@
 				}
 			}
 
+		/* Nav */
+
+			nav {
+
+			    > ul {
+
+			        > li {
+			            padding: 0 0.5em 0 0;
+			            > a {
+			                font-size: 1em;
+			            }
+			    	}
+	    		}
+			}
+
 	}
 
 /* XSmall */
@@ -1569,6 +1586,20 @@
 						padding-left: 0;
 					}
 				}
+			}
+		/* Nav */
+
+			nav {
+
+			    > ul {
+
+			        > li {
+			            padding: 0 0.5em 0 0;
+			            > a {
+			                font-size: 1em;
+			            }
+			    	}
+	    		}
 			}
 
 	}
