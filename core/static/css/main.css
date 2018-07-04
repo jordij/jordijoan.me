@@ -1,6 +1,4 @@
 @charset "UTF-8";
-/*@import url('font-awesome.min.css');*/
-/*@import url(https://fonts.googleapis.com/css?family=Pontano+Sans|Work+Sans:700,800);*/
 /* Pygments code highlighters */
 .syntax {
   background: #f8f8f8;
@@ -2709,7 +2707,10 @@ nav > ul > li > a {
   font-size: 1.1em;
   font-weight: 700;
   font-family: "Work Sans", sans-serif;
-  color: #5F5F5F;
+}
+nav > ul > li > a.active {
+  color: #3C3C3C;
+  border-bottom: solid 1px;
 }
 
 /* Section/Article */
@@ -3891,6 +3892,14 @@ body.is-touch .poptrox-popup .closer {
 .poptrox-popup .nav-previous:before {
     margin-top: -1em;
   }
+
+  /* Nav */
+  nav > ul > li {
+    padding: 0 0.5em 0 0;
+  }
+  nav > ul > li > a {
+    font-size: 1em;
+  }
 }
 /* XSmall */
 @media screen and (max-width: 480px) {
@@ -3936,5 +3945,13 @@ body.is-touch .poptrox-popup .closer {
     line-height: 2.25em;
     margin-left: 0;
     padding-left: 0;
+  }
+
+  /* Nav */
+  nav > ul > li {
+    padding: 0 0.5em 0 0;
+  }
+  nav > ul > li > a {
+    font-size: 1em;
   }
 }
