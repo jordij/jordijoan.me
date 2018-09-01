@@ -691,7 +691,7 @@
 			cursor: default;
 			list-style: none;
 			padding-left: 0;
-
+			font-family: _font(head-family);
 			li {
 				display: inline-block;
 				padding: 0 (_size(element-margin) * 0.5) 0 0;
