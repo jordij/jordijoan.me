@@ -2542,7 +2542,7 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 }
 
 body, input, select, textarea {
-  color: #5F5F5F;
+  color: #000000;
   font-family: "Pontano Sans", sans-serif;
   font-size: 12pt;
   font-weight: 400;
@@ -2718,12 +2718,12 @@ section.special, article.special {
   text-align: center;
 }
 section a, article a {
-  color: #5F5F5F;
+  color: #000000;
   text-decoration: none;
   border: none;
 }
 section a:hover, article a:hover {
-  color: #5F5F5F;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -2750,7 +2750,7 @@ header h6 + p {
   line-height: 1.5em;
 }
 header h1 + h2 + a {
-  color: #5F5F5F;
+  color: #000000;
 }
 header.major h2 {
   font-size: 1.6em;
@@ -2866,7 +2866,7 @@ input[type=radio] {
 input[type=checkbox] + label,
 input[type=radio] + label {
   text-decoration: none;
-  color: #5F5F5F;
+  color: #000000;
   cursor: pointer;
   display: inline-block;
   font-size: 1em;
@@ -3131,6 +3131,7 @@ ul.actions {
   cursor: default;
   list-style: none;
   padding-left: 0;
+  font-family: "Work Sans", sans-serif;
 }
 ul.actions li {
   display: inline-block;
@@ -3283,7 +3284,7 @@ input[type=button],
   background-color: transparent;
   border-radius: 0.35em;
   border: solid 2px #efefef;
-  color: #5F5F5F !important;
+  color: #000000 !important;
   cursor: pointer;
   display: inline-block;
   font-weight: 700;
