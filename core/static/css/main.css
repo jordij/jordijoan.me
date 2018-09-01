@@ -2565,7 +2565,7 @@ a:hover {
 }
 
 strong, b {
-  color: #3C3C3C;
+  color: #000000;
   font-weight: 700;
 }
 
@@ -2578,7 +2578,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #3C3C3C;
+  color: #000000;
   font-family: "Work Sans", sans-serif;
   font-weight: 700;
   line-height: 1em;
@@ -2709,7 +2709,7 @@ nav > ul > li > a {
   font-family: "Work Sans", sans-serif;
 }
 nav > ul > li > a.active {
-  color: #3C3C3C;
+  color: #000000;
   border-bottom: solid 1px;
 }
 
@@ -2768,7 +2768,7 @@ form {
 }
 
 label {
-  color: #3C3C3C;
+  color: #000000;
   display: block;
   font-size: 0.9em;
   font-weight: 700;
@@ -2901,8 +2901,8 @@ input[type=radio] + label:before {
 }
 input[type=checkbox]:checked + label:before,
 input[type=radio]:checked + label:before {
-  background: #3C3C3C;
-  border-color: #3C3C3C;
+  background: #000000;
+  border-color: #000000;
   color: #fff;
   content: "";
 }
@@ -3235,7 +3235,7 @@ table td {
   padding: 0.75em 0.75em;
 }
 table th {
-  color: #3C3C3C;
+  color: #000000;
   font-size: 0.9em;
   font-weight: 700;
   padding: 0 0.75em 0.75em 0.75em;
