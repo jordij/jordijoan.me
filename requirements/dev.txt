@@ -1,4 +1,2 @@
 -r base.txt
-ipython==5.3.0
-ipdb==0.8
 Sphinx==1.2.2
