@@ -19,23 +19,7 @@ su - vagrant -c "/usr/local/bin/virtualenv $VIRTUALENV_DIR && \
 # Install pip dependencies, recursively and in order
 filename="$PROJECT_DIR/$REQUIREMENTS_FILE"
 
-install_reqs()
-{
-    while read -r line || [[ -n $line ]]
-    do
-        if [[ -n "$line" && "$line" =~ ^\-r ]];then
-            for word in $line; do
-                echo $word
-            done
-            echo "INSTALLING file $word"
-            install_reqs "$PROJECT_DIR/requirements/$word"
-        elif [[ -n "$line" && "$line" != [[:blank:]#]* ]];then
-            echo "INSTALLING package $line"
-            su - vagrant -c "$PIP install $line"
-        fi
-    done < "$1"
-}
-
+pip install --upgrade setuptools pip
 pip install -r $filename
 
 # Set execute permissions on manage.py
