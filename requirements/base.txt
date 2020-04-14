@@ -3,7 +3,7 @@ psycopg2==2.6.1
 django-compressor==2.1
 django-modelcluster==3.1
 django-taggit==0.21.6
-wagtail==1.13.4
+wagtail==2.7.2
 djangorestframework==3.9.4
 beautifulsoup4==4.5.3
 django-overextends==0.4.3
