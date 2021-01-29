@@ -19,7 +19,8 @@ su - vagrant -c "/usr/local/bin/virtualenv $VIRTUALENV_DIR && \
 # Install pip dependencies, recursively and in order
 filename="$PROJECT_DIR/$REQUIREMENTS_FILE"
 
-pip install --upgrade setuptools pip
+source $VIRTUALENV_DIR/bin/activate
+pip install pip==20.3.4
 pip install -r $filename
 
 # Set execute permissions on manage.py
