@@ -63,7 +63,7 @@
 	body, input, select, textarea {
 		color: _palette(fg);
 		font-family: _font(family);
-		font-size: 12pt;
+		font-size: 14pt;
 		font-weight: _font(weight);
 		line-height: 1.5em;
 	}
@@ -113,8 +113,8 @@
 	}
 
 	h1 {
-		font-size: 1.75em;
-		line-height: 1.5em;
+		font-size: 2em;
+		line-height: 1.75em;
 	}
 
 	h2 {
@@ -1289,7 +1289,7 @@
 		/* Basic */
 
 			body, input, select, textarea {
-				font-size: 11pt;
+				font-size: 14pt;
 			}
 
 	}
