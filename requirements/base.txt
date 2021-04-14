@@ -10,4 +10,4 @@ django-appconf==1.0.3
 wagtail==1.13.4
 beautifulsoup4==4.6.0
 django-overextends==0.4.3
-pygments==2.5.2
+pygments==2.7.4
