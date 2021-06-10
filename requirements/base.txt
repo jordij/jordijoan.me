@@ -1,6 +1,6 @@
 Pillow==2.9.0
 setuptools==44.1.1
-Django==1.11.29
+Django==2.2.24
 psycopg2==2.6.1
 django-treebeard==3.0
 django-compressor==2.1
