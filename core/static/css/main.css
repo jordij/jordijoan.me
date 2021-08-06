@@ -2580,9 +2580,9 @@ p {
 h1, h2, h3, h4, h5, h6 {
   color: #000000;
   font-family: "Work Sans", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1em;
-  margin: 0 0 0.75em 0;
+  margin: 0.225em 0 0.75em 0;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: inherit;
@@ -2590,12 +2590,12 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   border-bottom: none;
 }
 h1 b, h1 strong, h2 b, h2 strong, h3 b, h3 strong, h4 b, h4 strong, h5 b, h5 strong, h6 b, h6 strong {
-  font-weight: 800;
+  font-weight: 600;
 }
 
 h1 {
   font-size: 2em;
-  line-height: 1.65em;
+  line-height: 1.25em;
 }
 
 h2 {
@@ -2733,7 +2733,7 @@ header p {
   margin: 0 0 1.125em 0;
 }
 header h1 {
-  margin: 0 0 0.375em 0;
+  margin: 0.375em 0 0.375em 0;
 }
 header h2 + p {
   margin-top: -0.75em;
@@ -3451,7 +3451,6 @@ input[type=button]:disabled,
 #footer {
   background-attachment: scroll;
   background-color: #1f1815;
-  background-image: url("images/overlay.png"), url("../images/bg.jpg");
   background-position: top left, center center;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
@@ -3746,11 +3745,15 @@ body.is-touch .poptrox-popup .closer {
 @media screen and (max-width: 1800px) {
   /* Basic */
   body, input, select, textarea {
-    font-size: 14pt;
+    font-size: 13pt;
   }
 }
 /* Large */
 @media screen and (max-width: 1280px) {
+  body, input, select, textarea {
+    font-size: 13pt;
+  }
+
   /*$size-header-width: 30%;*/
   /* Header */
   #header {
@@ -3795,6 +3798,10 @@ body.is-touch .poptrox-popup .closer {
 }
 /* Medium */
 @media screen and (max-width: 980px) {
+  body, input, select, textarea {
+    font-size: 13pt;
+  }
+
   /* Basic */
   h1 br, h2 br, h3 br, h4 br, h5 br, h6 br {
     display: none;
@@ -3833,6 +3840,10 @@ body.is-touch .poptrox-popup .closer {
 }
 /* Small */
 @media screen and (max-width: 736px) {
+  body, input, select, textarea {
+    font-size: 14pt;
+  }
+
   /* Basic */
   h1 {
     #font-size: 1.5em;
@@ -3904,6 +3915,10 @@ body.is-touch .poptrox-popup .closer {
 }
 /* XSmall */
 @media screen and (max-width: 480px) {
+  body, input, select, textarea {
+    font-size: 14pt;
+  }
+
   /* List */
   ul.actions {
     margin: 0 0 1.5em 0;

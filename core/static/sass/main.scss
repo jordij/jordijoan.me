@@ -99,7 +99,7 @@
 		font-family: _font(head-family);
 		font-weight: _font(head-weight);
 		line-height: 1em;
-		margin: 0 0 (_size(element-margin) * 0.5) 0;
+		margin: (_size(element-margin) * 0.2) 0 (_size(element-margin) * 0.5) 0;
 
 		a {
 			color: inherit;
@@ -114,7 +114,7 @@
 
 	h1 {
 		font-size: 2em;
-		line-height: 1.65em;
+		line-height: 1.25em;
 	}
 
 	h2 {
@@ -266,7 +266,7 @@
 		}
 
 		h1 {
-			margin: 0 0 (_size(element-margin) * 0.25) 0;
+			margin: (_size(element-margin) * 0.25) 0 (_size(element-margin) * 0.25) 0;
 		}
 
 		h2 + p {
@@ -1042,7 +1042,7 @@
 	#footer {
 		background-attachment:	scroll;
 		background-color:		_palette(accent2, bg);
-		background-image:		url('images/overlay.png'),		url('../images/bg.jpg');
+		// background-image:		url('images/overlay.png'),		url('../images/bg.jpg');
 		background-position:	top left,						center center;
 		background-repeat:		repeat,							no-repeat;
 		background-size:		auto,							cover;
@@ -1289,7 +1289,7 @@
 		/* Basic */
 
 			body, input, select, textarea {
-				font-size: 14pt;
+				font-size: 13pt;
 			}
 
 	}
@@ -1297,6 +1297,10 @@
 /* Large */
 
 	@include breakpoint(large) {
+
+		body, input, select, textarea {
+			font-size: 13pt;
+		}
 
 		/*$size-header-width: 30%;*/
 		$size-header-pad: 3em;
@@ -1355,6 +1359,10 @@
 
 	@include breakpoint(medium) {
 
+		body, input, select, textarea {
+			font-size: 13pt;
+		}
+		
 		$size-header-pad: 4em;
 
 		/* Basic */
@@ -1413,6 +1421,9 @@
 
 	@include breakpoint(small) {
 
+		body, input, select, textarea {
+			font-size: 14pt;
+		}
 		$size-header-pad: 1.5em;
 
 		/* Basic */
@@ -1519,6 +1530,10 @@
 /* XSmall */
 
 	@include breakpoint(xsmall) {
+
+		body, input, select, textarea {
+				font-size: 14pt;
+			}
 
 		$size-header-pad: 1.5em;
 
