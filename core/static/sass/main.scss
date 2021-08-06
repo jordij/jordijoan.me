@@ -1015,6 +1015,7 @@
 
 		h2, h3, h4, h5, h6 {
 			color: _palette(accent2, fg);
+			font-weight: _font(header-weight);
 		}
 
 		h1 {
@@ -1022,6 +1023,7 @@
 			#font-size: 2em;
 			#line-height: 1.75em;
 			margin: 0;
+			font-weight: _font(header-weight);
 		}
 
 		.image.avatar {
