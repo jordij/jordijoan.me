@@ -3398,6 +3398,8 @@ input[type=button]:disabled,
   position: absolute;
   top: 0;
   left: 0;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
 }
 
 /* Gallery Item */
