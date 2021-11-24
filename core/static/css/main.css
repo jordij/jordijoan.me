@@ -3387,12 +3387,17 @@ input[type=button]:disabled,
 }
 
 .responsive-object {
-  padding-top: 5%;
-  padding-bottom: 5%;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
 }
 
 .responsive-object iframe {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* Gallery Item */
